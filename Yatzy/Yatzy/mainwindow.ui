@@ -14,43 +14,30 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btn_roll">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>220</y>
-      <width>111</width>
-      <height>28</height>
+      <x>460</x>
+      <y>360</y>
+      <width>151</width>
+      <height>101</height>
      </rect>
     </property>
     <property name="text">
-     <string>PUSH MEEEEEE</string>
+     <string>Roll</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton">
+   <widget class="QPushButton" name="btn_start">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>170</y>
-      <width>95</width>
-      <height>20</height>
+      <x>320</x>
+      <y>360</y>
+      <width>131</width>
+      <height>101</height>
      </rect>
     </property>
     <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_2">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>170</y>
-      <width>95</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
+     <string>Start</string>
     </property>
    </widget>
   </widget>
@@ -60,7 +47,7 @@
      <x>0</x>
      <y>0</y>
      <width>718</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
