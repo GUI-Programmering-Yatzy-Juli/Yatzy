@@ -5,8 +5,6 @@
 #include "Game.h"
 #include "round.h"
 
-extern Game game;
-
 namespace Ui {
 class MainWindow;
 }

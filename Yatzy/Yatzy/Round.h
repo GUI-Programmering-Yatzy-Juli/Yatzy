@@ -9,7 +9,7 @@ class Round
 public:
     Round();
     void newRound();
-    void checkResult();
+    void checkResult(Dice &dice);
 private:
 
 };
