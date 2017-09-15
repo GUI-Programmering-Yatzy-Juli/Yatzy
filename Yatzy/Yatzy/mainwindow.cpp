@@ -20,12 +20,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btn_start_clicked()
 {
-<<<<<<< HEAD
+
     //startNewGame();
     gameManager test;
-=======
 
->>>>>>> 9e9b31475be6e6686854713d84ccf34d8d5f52e1
 }
 
 void MainWindow::startNewGame()
@@ -37,5 +35,5 @@ void MainWindow::on_btn_roll_clicked()
 {
     //Om game objektet inte finns ska den säga ifrån
     Round round;
-    round.newRound();
+    round.startNewRound();
 }

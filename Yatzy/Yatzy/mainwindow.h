@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "Game.h"
-#include "round.h"
+#include "Round.h"
 #include "QTableWidget"
 
 namespace Ui {

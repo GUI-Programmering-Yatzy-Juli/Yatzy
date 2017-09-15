@@ -2,14 +2,18 @@
 
 Round::Round()
 {
-    Dice dice;
 
 }
 
-
-void Round::newRound()
+void Round::startNewRound()
 {
+    newRound(dice);
+}
 
+void Round::newRound(Dice dice)
+{
+    qDebug() << "Rullar tärningar";
+    dice.roll();
 }
 
 void Round::checkResult(Dice dice)
