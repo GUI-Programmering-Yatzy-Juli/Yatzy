@@ -6,8 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
+<<<<<<< HEAD
+    <width>1083</width>
+    <height>793</height>
+=======
     <width>1307</width>
     <height>791</height>
+>>>>>>> d4d19a04ddd4c52c7727435412b4371bb76609f7
    </rect>
   </property>
   <property name="maximumSize">
@@ -23,24 +28,415 @@
    <widget class="QPushButton" name="btn_roll">
     <property name="geometry">
      <rect>
+<<<<<<< HEAD
+      <x>350</x>
+      <y>650</y>
+      <width>131</width>
+      <height>81</height>
+=======
       <x>1030</x>
       <y>600</y>
       <width>151</width>
       <height>101</height>
+>>>>>>> d4d19a04ddd4c52c7727435412b4371bb76609f7
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 22pt &quot;Adobe Fangsong Std R&quot;;
+background: blue;</string>
     </property>
     <property name="text">
      <string>Roll</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_start">
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
+      <x>0</x>
+      <y>30</y>
+      <width>321</width>
+      <height>701</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>1920</width>
+      <height>1080</height>
+     </size>
+    </property>
+    <row>
+     <property name="text">
+      <string/>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Ettor</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Tvåor</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Treor</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Fyror</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Femmor</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Sexor</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Poäng till bonus</string>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="background">
+      <color>
+       <red>226</red>
+       <green>226</green>
+       <blue>226</blue>
+      </color>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Bonus</string>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="background">
+      <color>
+       <red>226</red>
+       <green>226</green>
+       <blue>226</blue>
+      </color>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Ett par</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Två par</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Triss</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Fyrtal</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Liten stege</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Stor stege</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Kåk</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Chans</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Yatzy</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Totalt</string>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="background">
+      <color>
+       <red>226</red>
+       <green>226</green>
+       <blue>226</blue>
+      </color>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>Spelare 1</string>
+     </property>
+     <property name="font">
+      <font>
+       <underline>false</underline>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Spelare 2</string>
+     </property>
+    </column>
+    <item row="1" column="0">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="foreground">
+      <brush brushstyle="NoBrush">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </property>
+    </item>
+    <item row="3" column="0">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="foreground">
+      <brush brushstyle="NoBrush">
+       <color alpha="255">
+        <red>226</red>
+        <green>226</green>
+        <blue>226</blue>
+       </color>
+      </brush>
+     </property>
+    </item>
+    <item row="7" column="0">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="background">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>226</red>
+        <green>226</green>
+        <blue>226</blue>
+       </color>
+      </brush>
+     </property>
+     <property name="foreground">
+      <brush brushstyle="NoBrush">
+       <color alpha="255">
+        <red>226</red>
+        <green>226</green>
+        <blue>226</blue>
+       </color>
+      </brush>
+     </property>
+    </item>
+    <item row="7" column="1">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="background">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>226</red>
+        <green>226</green>
+        <blue>226</blue>
+       </color>
+      </brush>
+     </property>
+    </item>
+    <item row="8" column="0">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="background">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>226</red>
+        <green>226</green>
+        <blue>226</blue>
+       </color>
+      </brush>
+     </property>
+     <property name="foreground">
+      <brush brushstyle="NoBrush">
+       <color alpha="255">
+        <red>226</red>
+        <green>226</green>
+        <blue>226</blue>
+       </color>
+      </brush>
+     </property>
+    </item>
+    <item row="8" column="1">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="background">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>226</red>
+        <green>226</green>
+        <blue>226</blue>
+       </color>
+      </brush>
+     </property>
+    </item>
+    <item row="18" column="0">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="background">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>226</red>
+        <green>226</green>
+        <blue>226</blue>
+       </color>
+      </brush>
+     </property>
+     <property name="foreground">
+      <brush brushstyle="NoBrush">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </property>
+    </item>
+    <item row="18" column="1">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="background">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>226</red>
+        <green>226</green>
+        <blue>226</blue>
+       </color>
+      </brush>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>980</x>
+      <y>180</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Spara</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_6">
+    <property name="geometry">
+     <rect>
+      <x>980</x>
+      <y>220</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Spara</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_7">
+    <property name="geometry">
+     <rect>
+      <x>980</x>
+      <y>260</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Spara</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_8">
+    <property name="geometry">
+     <rect>
+<<<<<<< HEAD
+      <x>980</x>
+      <y>300</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Spara</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_9">
+    <property name="geometry">
+     <rect>
+      <x>980</x>
+      <y>340</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Spara</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_roll_2">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>650</y>
+=======
       <x>870</x>
       <y>600</y>
+>>>>>>> d4d19a04ddd4c52c7727435412b4371bb76609f7
       <width>131</width>
-      <height>101</height>
+      <height>81</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 22pt &quot;Adobe Fangsong Std R&quot;;</string>
     </property>
     <property name="text">
      <string>Start</string>
@@ -52,7 +448,11 @@
     <rect>
      <x>0</x>
      <y>0</y>
+<<<<<<< HEAD
+     <width>1083</width>
+=======
      <width>1307</width>
+>>>>>>> d4d19a04ddd4c52c7727435412b4371bb76609f7
      <height>21</height>
     </rect>
    </property>
