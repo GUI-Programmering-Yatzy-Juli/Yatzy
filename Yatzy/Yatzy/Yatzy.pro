@@ -28,14 +28,12 @@ SOURCES += main.cpp\
     Dice.cpp \
     Game.cpp \
     Round.cpp \
-    Players.cpp \
     gamemanager.cpp
 
 HEADERS  += mainwindow.h \
     Dice.h \
     Game.h \
     Round.h \
-    Players.h \
     gamemanager.h
 
 FORMS    += mainwindow.ui

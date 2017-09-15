@@ -1,9 +1,10 @@
 #include "Dice.h"
 #include <random>
+#include <qdebug.h>
 
 Dice::Dice()
 {
-
+    qDebug() << "Tärningarna har skapats";
 }
 
 void Dice::roll()
@@ -17,5 +18,6 @@ void Dice::roll()
             valueDice[i] = savedDice[i];
         }
     }
-    return;
+
+
 }

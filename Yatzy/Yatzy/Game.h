@@ -3,14 +3,15 @@
 
 #include "Dice.h"
 #include "Round.h"
+#include "gamemanager.h"
 
 
 class Game
 {
 public:
     Game();
-    int round;
-    int numberOfPlayers;
+    int numRounds;
+    bool gameIsActive();
 };
 
 #endif // GAME_H

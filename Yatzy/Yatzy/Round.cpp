@@ -2,21 +2,16 @@
 
 Round::Round()
 {
+    Dice dice;
 
 }
 
 void Round::newRound()
 {
-    Dice dice;
-    /*
-    if (alla spelar spelat en runda)
-    {
-        game.round++;
-    }
-    */
+
 }
 
-void Round::checkResult(Dice &dice)
+void Round::checkResult(Dice dice)
 {
 
     //här är par
