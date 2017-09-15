@@ -18,7 +18,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btn_start_clicked()
 {
-    startNewGame();
+
 }
 
 void MainWindow::startNewGame()
