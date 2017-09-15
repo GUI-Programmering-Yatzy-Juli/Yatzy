@@ -3,6 +3,8 @@
 
 #include "Game.h"
 #include <qdebug.h>
+#include "gamemanager.h"
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -18,7 +20,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btn_start_clicked()
 {
-    startNewGame();
+<<<<<<< HEAD
+    //startNewGame();
+    gameManager test;
+=======
+
+>>>>>>> 9e9b31475be6e6686854713d84ccf34d8d5f52e1
 }
 
 void MainWindow::startNewGame()

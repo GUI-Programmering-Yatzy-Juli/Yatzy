@@ -37,19 +37,20 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(718, 524);
+        MainWindow->resize(1307, 791);
+        MainWindow->setMaximumSize(QSize(1920, 1080));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         btn_roll = new QPushButton(centralWidget);
         btn_roll->setObjectName(QStringLiteral("btn_roll"));
-        btn_roll->setGeometry(QRect(460, 360, 151, 101));
+        btn_roll->setGeometry(QRect(1030, 600, 151, 101));
         btn_start = new QPushButton(centralWidget);
         btn_start->setObjectName(QStringLiteral("btn_start"));
-        btn_start->setGeometry(QRect(320, 360, 131, 101));
+        btn_start->setGeometry(QRect(870, 600, 131, 101));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 718, 21));
+        menuBar->setGeometry(QRect(0, 0, 1307, 21));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
