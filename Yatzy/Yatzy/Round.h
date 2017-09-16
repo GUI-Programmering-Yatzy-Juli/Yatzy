@@ -11,6 +11,14 @@ public:
     Round();
     void startNewRound();
     void newRound(Dice dice);
+
+    int checkOnes(Dice dice);
+    int checkTwos(Dice dice);
+    int checkThrees(Dice dice);
+    int checkFours(Dice dice);
+    int checkFives(Dice dice);
+    int checkSixes(Dice dice);
+
     void checkResult(Dice dice);
     bool checkPair(Dice dice);
     bool checkThreeOfAKind(Dice dice);

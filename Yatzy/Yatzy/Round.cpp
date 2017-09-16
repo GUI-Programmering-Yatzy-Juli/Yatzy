@@ -368,3 +368,57 @@ bool Round::checkChance(Dice dice)                      //Klar
     // return sum;
     return true;
 }
+
+int Round::checkOnes(Dice dice)
+{
+    int sum = 0;
+    for (int i = 0; i < 5; i++)
+        if (dice.valueDice[i] == 1)
+            sum += dice.valueDice[i];
+    return sum;
+}
+
+int Round::checkTwos(Dice dice)
+{
+    int sum = 0;
+    for (int i = 0; i < 5; i++)
+        if (dice.valueDice[i] == 2)
+            sum += dice.valueDice[i];
+    return sum;
+}
+
+int Round::checkThrees(Dice dice)
+{
+    int sum = 0;
+    for (int i = 0; i < 5; i++)
+        if (dice.valueDice[i] == 3)
+            sum += dice.valueDice[i];
+    return sum;
+}
+
+int Round::checkFours(Dice dice)
+{
+    int sum = 0;
+    for (int i = 0; i < 5; i++)
+        if (dice.valueDice[i] == 4)
+            sum += dice.valueDice[i];
+    return sum;
+}
+
+int Round::checkFives(Dice dice)
+{
+    int sum = 0;
+    for (int i = 0; i < 5; i++)
+        if (dice.valueDice[i] == 5)
+            sum += dice.valueDice[i];
+    return sum;
+}
+
+int Round::checkSixes(Dice dice)
+{
+    int sum = 0;
+    for (int i = 0; i < 5; i++)
+        if (dice.valueDice[i] == 6)
+            sum += dice.valueDice[i];
+    return sum;
+}
