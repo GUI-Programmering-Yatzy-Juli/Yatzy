@@ -22,7 +22,7 @@ public:
 private slots:
     void on_btn_roll_clicked();
 
-    void on_btn_start_clicked();
+    void on_btn_roll_2_clicked();
 
 private:
     Ui::MainWindow *ui;

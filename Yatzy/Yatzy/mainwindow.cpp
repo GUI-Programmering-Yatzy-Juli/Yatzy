@@ -18,11 +18,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_btn_start_clicked()
+void MainWindow::on_btn_roll_2_clicked()
 {
 
     //startNewGame();
-    gameManager test;
+    gameManager createGame;
 
 }
 

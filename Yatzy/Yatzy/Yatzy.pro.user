@@ -1,33 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
-<!-- Written by QtCreator 4.3.1, 2017-09-15T17:12:29. -->
-=======
-<<<<<<< HEAD
-<!-- Written by QtCreator 4.3.1, 2017-09-15T14:55:55. -->
-<qtcreator>
- <data>
-  <variable>EnvironmentId</variable>
-  <value type="QByteArray">{4bbb9667-df51-47a3-a1c2-aad45c1ffb26}</value>
-=======
-<<<<<<< HEAD
-<!-- Written by QtCreator 4.3.1, 2017-09-15T14:45:36. -->
->>>>>>> de1466616baea56b4b6dc1ef6d74dbcba5022a42
+<!-- Written by QtCreator 4.3.1, 2017-09-16T18:30:42. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
   <value type="QByteArray">{3aacca0e-8246-4e36-bd91-d1468930b983}</value>
-<<<<<<< HEAD
-=======
-=======
-<!-- Written by QtCreator 4.3.1, 2017-09-15T14:41:26. -->
-<qtcreator>
- <data>
-  <variable>EnvironmentId</variable>
-  <value type="QByteArray">{1496c1fc-d10e-4cf0-b84f-3e2d7019c15b}</value>
->>>>>>> 9e9b31475be6e6686854713d84ccf34d8d5f52e1
->>>>>>> d4d19a04ddd4c52c7727435412b4371bb76609f7
->>>>>>> de1466616baea56b4b6dc1ef6d74dbcba5022a42
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -77,39 +54,19 @@
  </data>
  <data>
   <variable>ProjectExplorer.Project.PluginSettings</variable>
-  <valuemap type="QVariantMap">
-   <valuelist type="QVariantList" key="ClangStaticAnalyzer.SuppressedDiagnostics"/>
-  </valuemap>
+  <valuemap type="QVariantMap"/>
  </data>
  <data>
   <variable>ProjectExplorer.Project.Target.0</variable>
   <valuemap type="QVariantMap">
-<<<<<<< HEAD
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 5.9.1 MSVC2013 64bit</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 5.9.1 MSVC2013 64bit</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.591.win64_msvc2013_64_kit</value>
-=======
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 5.9.1 MinGW 32bit</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 5.9.1 MinGW 32bit</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.591.win32_mingw53_kit</value>
->>>>>>> d4d19a04ddd4c52c7727435412b4371bb76609f7
    <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/havi1664/Documents/GitHub/Yatzy/Yatzy/build-Yatzy-Desktop_Qt_5_9_1_MinGW_32bit-Debug</value>
-=======
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/hjal1600/Documents/GitHub/Yatzy/Yatzy/build-Yatzy-Desktop_Qt_5_9_1_MSVC2013_64bit-Debug</value>
-=======
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/havi1664/Documents/GitHub/Yatzy/Yatzy/build-Yatzy-Desktop_Qt_5_9_1_MinGW_32bit-Debug</value>
-=======
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/vijo1613/Documents/GitHub/Yatzy/Yatzy/build-Yatzy-Desktop_Qt_5_9_1_MinGW_32bit-Debug</value>
->>>>>>> 9e9b31475be6e6686854713d84ccf34d8d5f52e1
->>>>>>> d4d19a04ddd4c52c7727435412b4371bb76609f7
->>>>>>> de1466616baea56b4b6dc1ef6d74dbcba5022a42
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">G:/Yatzy/Yatzy/Yatzy/build-Yatzy-Desktop_Qt_5_9_1_MinGW_32bit-Debug</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -163,19 +120,7 @@
     <value type="bool" key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild">true</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/havi1664/Documents/GitHub/Yatzy/Yatzy/build-Yatzy-Desktop_Qt_5_9_1_MinGW_32bit-Release</value>
-=======
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/hjal1600/Documents/GitHub/Yatzy/Yatzy/build-Yatzy-Desktop_Qt_5_9_1_MSVC2013_64bit-Release</value>
-=======
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/havi1664/Documents/GitHub/Yatzy/Yatzy/build-Yatzy-Desktop_Qt_5_9_1_MinGW_32bit-Release</value>
-=======
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/vijo1613/Documents/GitHub/Yatzy/Yatzy/build-Yatzy-Desktop_Qt_5_9_1_MinGW_32bit-Release</value>
->>>>>>> 9e9b31475be6e6686854713d84ccf34d8d5f52e1
->>>>>>> d4d19a04ddd4c52c7727435412b4371bb76609f7
->>>>>>> de1466616baea56b4b6dc1ef6d74dbcba5022a42
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">G:/Yatzy/Yatzy/Yatzy/build-Yatzy-Desktop_Qt_5_9_1_MinGW_32bit-Release</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -229,19 +174,7 @@
     <value type="bool" key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild">true</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/havi1664/Documents/GitHub/Yatzy/Yatzy/build-Yatzy-Desktop_Qt_5_9_1_MinGW_32bit-Profile</value>
-=======
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/hjal1600/Documents/GitHub/Yatzy/Yatzy/build-Yatzy-Desktop_Qt_5_9_1_MSVC2013_64bit-Profile</value>
-=======
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/havi1664/Documents/GitHub/Yatzy/Yatzy/build-Yatzy-Desktop_Qt_5_9_1_MinGW_32bit-Profile</value>
-=======
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/vijo1613/Documents/GitHub/Yatzy/Yatzy/build-Yatzy-Desktop_Qt_5_9_1_MinGW_32bit-Profile</value>
->>>>>>> 9e9b31475be6e6686854713d84ccf34d8d5f52e1
->>>>>>> d4d19a04ddd4c52c7727435412b4371bb76609f7
->>>>>>> de1466616baea56b4b6dc1ef6d74dbcba5022a42
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">G:/Yatzy/Yatzy/Yatzy/build-Yatzy-Desktop_Qt_5_9_1_MinGW_32bit-Profile</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -351,30 +284,15 @@
     </valuelist>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.CustomExecutableRunConfiguration.Arguments"></value>
-    <value type="QString" key="ProjectExplorer.CustomExecutableRunConfiguration.Executable"></value>
-    <value type="QString" key="ProjectExplorer.CustomExecutableRunConfiguration.WorkingDirectory">%{buildDir}</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Custom Executable</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.CustomExecutableRunConfiguration</value>
-=======
-<<<<<<< HEAD
->>>>>>> de1466616baea56b4b6dc1ef6d74dbcba5022a42
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Yatzy</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Yatzy2</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/havi1664/Documents/GitHub/Yatzy/Yatzy/Yatzy/Yatzy.pro</value>
     <value type="bool" key="QmakeProjectManager.QmakeRunConfiguration.UseLibrarySearchPath">true</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">Yatzy.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory"></value>
-<<<<<<< HEAD
-    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory.default">C:/Users/havi1664/Documents/GitHub/Yatzy/Yatzy/build-Yatzy-Desktop_Qt_5_9_1_MinGW_32bit-Debug</value>
-=======
-    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory.default"></value>
->>>>>>> d4d19a04ddd4c52c7727435412b4371bb76609f7
->>>>>>> de1466616baea56b4b6dc1ef6d74dbcba5022a42
+    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory.default">G:/Yatzy/Yatzy/Yatzy/build-Yatzy-Desktop_Qt_5_9_1_MinGW_32bit-Debug</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>

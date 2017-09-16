@@ -12,6 +12,15 @@ public:
     void startNewRound();
     void newRound(Dice dice);
     void checkResult(Dice dice);
+    bool checkPair(Dice dice);
+    bool checkThreeOfAKind(Dice dice);
+    bool checkFourOfAKind(Dice dice);
+    bool checkTwoPairs(Dice dice);
+    bool checkYatzy(Dice dice);
+    bool checkSmallLadder(Dice dice);
+    bool checkBigLadder(Dice dice);
+    bool checkFullHouse(Dice dice);
+    bool checkChance(Dice dice);
 
     Dice dice;
 
