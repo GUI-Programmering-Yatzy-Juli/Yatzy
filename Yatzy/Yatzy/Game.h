@@ -10,10 +10,11 @@ class Game
 {
 public:
     Game();
-    int numRounds;
+    int numRounds = 0;
     bool gameIsActive();
 
-    int currentPlayer;
+    int player1 = 0;
+    int player2 = 0;
 };
 
 #endif // GAME_H

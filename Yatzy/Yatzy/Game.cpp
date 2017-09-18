@@ -6,33 +6,22 @@ Game::Game()
     Round round;
     qDebug() << "Första rundan startar";
 
-    /*while (gameIsActive())
+    while (gameIsActive())
     {
-        if (currentPlayer == 1)
+        qDebug() << numRounds;
+        for (int r = 0; r <4; r++)
         {
-            for (int r = 0; r < 3; r++)
-            {
-               //round.startNewRound();
-            }
-            currentPlayer++;
-            //player1turn
+            round.startNewRound();
+            //player1
+            qDebug() << "player1";
         }
-        else if (currentPlayer == 2)
+        for (int r = 0; r <4; r++)
         {
-            for (int r = 0; r < 3; r++)
-            {
-               //round.startNewRound();
-            }
-            currentPlayer++;
-            //player2Turn
+            round.startNewRound();
+            //player2
+            qDebug() << "player2";
         }
-        else if (currentPlayer == 3)
-        {
-            numRounds++;
-            currentPlayer = 1;
-            //roundEnd
-        }
-    }*/
+    }
 }
 
 bool Game::gameIsActive()
@@ -40,11 +29,25 @@ bool Game::gameIsActive()
     if (numRounds == 13)
     {
         //utnämn vinnaren
+        if (player1 > player2)
+        {
+            qDebug() << "The Winner is player one";
+        }
+        else if (player1 < player2)
+        {
+            qDebug() << "The Winner is player two";
+        }
+        else if (player1 == player2)
+        {
+            qDebug() << "Its a tie";
+        }
         //avsluta spelet
         return false;
     }
     else
     {
+
+        numRounds++;
         return true;
     }
 }
