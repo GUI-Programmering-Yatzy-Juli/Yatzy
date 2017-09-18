@@ -12,6 +12,8 @@ public:
     Game();
     int numRounds;
     bool gameIsActive();
+
+    int currentPlayer;
 };
 
 #endif // GAME_H

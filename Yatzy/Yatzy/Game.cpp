@@ -1,30 +1,50 @@
 #include "Game.h"
-
 #include <qdebug.h>
 
 Game::Game()
 {
-    Round round1;
+    Round round;
     qDebug() << "Första rundan startar";
-    while (gameIsActive())
+
+    /*while (gameIsActive())
     {
-        //player1Turn
-
-        //player2Turn
-    }
+        if (currentPlayer == 1)
+        {
+            for (int r = 0; r < 3; r++)
+            {
+               //round.startNewRound();
+            }
+            currentPlayer++;
+            //player1turn
+        }
+        else if (currentPlayer == 2)
+        {
+            for (int r = 0; r < 3; r++)
+            {
+               //round.startNewRound();
+            }
+            currentPlayer++;
+            //player2Turn
+        }
+        else if (currentPlayer == 3)
+        {
+            numRounds++;
+            currentPlayer = 1;
+            //roundEnd
+        }
+    }*/
 }
-
 
 bool Game::gameIsActive()
 {
-    if (this->numRounds = 13)
+    if (numRounds == 13)
     {
         //utnämn vinnaren
         //avsluta spelet
-        return 0;
+        return false;
     }
     else
     {
-        return 1;
+        return true;
     }
 }

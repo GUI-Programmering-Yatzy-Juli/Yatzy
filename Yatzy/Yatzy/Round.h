@@ -12,23 +12,18 @@ public:
     void startNewRound();
     void newRound(Dice dice);
 
-    int checkOnes(Dice dice);
-    int checkTwos(Dice dice);
-    int checkThrees(Dice dice);
-    int checkFours(Dice dice);
-    int checkFives(Dice dice);
-    int checkSixes(Dice dice);
+    int checkNum(Dice dice, int n);
 
     void checkResult(Dice dice);
-    bool checkPair(Dice dice);
-    bool checkThreeOfAKind(Dice dice);
-    bool checkFourOfAKind(Dice dice);
-    bool checkTwoPairs(Dice dice);
-    bool checkYatzy(Dice dice);
-    bool checkSmallLadder(Dice dice);
-    bool checkBigLadder(Dice dice);
-    bool checkFullHouse(Dice dice);
-    bool checkChance(Dice dice);
+    int checkPair(Dice dice);
+    int checkThreeOfAKind(Dice dice);
+    int checkFourOfAKind(Dice dice);
+    int checkTwoPairs(Dice dice);
+    int checkYatzy(Dice dice);
+    int checkSmallLadder(Dice dice);
+    int checkBigLadder(Dice dice);
+    int checkFullHouse(Dice dice);
+    int checkChance(Dice dice);
 
     Dice dice;
 

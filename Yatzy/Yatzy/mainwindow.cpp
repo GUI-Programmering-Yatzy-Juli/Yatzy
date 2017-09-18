@@ -37,3 +37,8 @@ void MainWindow::on_btn_roll_clicked()
     Round round;
     round.startNewRound();
 }
+
+void MainWindow::on_pushButton_2_clicked()
+{
+
+}

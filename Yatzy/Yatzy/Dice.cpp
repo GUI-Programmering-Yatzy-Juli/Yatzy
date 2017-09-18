@@ -4,7 +4,7 @@
 
 Dice::Dice()
 {
-    qDebug() << "Tärningarna har skapats";
+    qDebug() << "Nya tärningar har skapats";
 }
 
 void Dice::roll()
