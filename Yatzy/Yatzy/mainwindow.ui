@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1307</width>
-    <height>791</height>
+    <width>1124</width>
+    <height>716</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+   <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -19,298 +19,552 @@
   <property name="maximumSize">
    <size>
     <width>1920</width>
-    <height>1080</height>
+    <height>1280</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="btn_roll">
-    <property name="geometry">
-     <rect>
-      <x>1030</x>
-      <y>600</y>
-      <width>151</width>
-      <height>101</height>
-     </rect>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetDefaultConstraint</enum>
     </property>
-    <property name="styleSheet">
-     <string notr="true">font: 22pt &quot;Adobe Fangsong Std R&quot;;background: blue;</string>
-    </property>
-    <property name="text">
-     <string>Roll</string>
-    </property>
-   </widget>
-   <widget class="QTableWidget" name="tableWidget">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>70</y>
-      <width>321</width>
-      <height>601</height>
-     </rect>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>1920</width>
-      <height>1080</height>
-     </size>
-    </property>
-    <row>
-     <property name="text">
-      <string/>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Ettor</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Tvåor</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Treor</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Fyror</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Femmor</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Sexor</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Poäng till bonus</string>
-     </property>
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="background">
-      <color>
-       <red>226</red>
-       <green>226</green>
-       <blue>226</blue>
-      </color>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Bonus</string>
-     </property>
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="background">
-      <color>
-       <red>226</red>
-       <green>226</green>
-       <blue>226</blue>
-      </color>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Ett par</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Två par</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Triss</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Fyrtal</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Liten stege</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Stor stege</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Kåk</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Chans</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Yatzy</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>Totalt</string>
-     </property>
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="background">
-      <color>
-       <red>226</red>
-       <green>226</green>
-       <blue>226</blue>
-      </color>
-     </property>
-    </row>
-    <column>
-     <property name="text">
-      <string>Spelare 1</string>
-     </property>
-     <property name="font">
-      <font>
-       <underline>false</underline>
-      </font>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Spelare 2</string>
-     </property>
-    </column>
-    <item row="1" column="0">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="foreground">
-      <brush brushstyle="NoBrush">
-       <color alpha="255">
-        <red>0</red>
-        <green>0</green>
-        <blue>0</blue>
-       </color>
-      </brush>
-     </property>
+    <item row="2" column="3">
+     <widget class="QPushButton" name="btn_roll_2">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>44</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>190</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 22pt &quot;Adobe Fangsong Std R&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Start</string>
+      </property>
+     </widget>
     </item>
-    <item row="3" column="0">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="foreground">
-      <brush brushstyle="NoBrush">
-       <color alpha="255">
-        <red>226</red>
-        <green>226</green>
-        <blue>226</blue>
-       </color>
-      </brush>
-     </property>
+    <item row="0" column="4">
+     <widget class="QSplitter" name="splitter">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>595</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>200</width>
+        <height>870</height>
+       </size>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QPushButton" name="pushButton_8">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>115</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>170</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Spara</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>115</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>170</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Spara</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_9">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>115</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>170</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Spara</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_6">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>115</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>170</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Spara</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>115</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>170</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Spara</string>
+       </property>
+      </widget>
+     </widget>
     </item>
-    <item row="7" column="0">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="background">
-      <brush brushstyle="SolidPattern">
-       <color alpha="255">
-        <red>226</red>
-        <green>226</green>
-        <blue>226</blue>
-       </color>
-      </brush>
-     </property>
-     <property name="foreground">
-      <brush brushstyle="NoBrush">
-       <color alpha="255">
-        <red>226</red>
-        <green>226</green>
-        <blue>226</blue>
-       </color>
-      </brush>
-     </property>
+    <item row="2" column="2">
+     <widget class="QPushButton" name="btn_roll">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>300</width>
+        <height>44</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>450</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::RightToLeft</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 22pt &quot;Adobe Fangsong Std R&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Roll</string>
+      </property>
+     </widget>
     </item>
-    <item row="7" column="1">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="background">
-      <brush brushstyle="SolidPattern">
-       <color alpha="255">
-        <red>226</red>
-        <green>226</green>
-        <blue>226</blue>
-       </color>
-      </brush>
-     </property>
+    <item row="0" column="1">
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>298</width>
+        <height>595</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>500</width>
+        <height>595</height>
+       </size>
+      </property>
+      <property name="sizeIncrement">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <italic>false</italic>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+       </font>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>CrossCursor</cursorShape>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="tabletTracking">
+       <bool>false</bool>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="acceptDrops">
+       <bool>false</bool>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">gridline-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(255, 255, 255, 255), stop:0.373979 rgba(255, 255, 255, 255), stop:0.373991 rgba(33, 30, 255, 255), stop:0.624018 rgba(33, 30, 255, 255), stop:0.624043 rgba(255, 0, 0, 255), stop:1 rgba(255, 0, 0, 255));</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhNone</set>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContents</enum>
+      </property>
+      <property name="autoScroll">
+       <bool>true</bool>
+      </property>
+      <property name="tabKeyNavigation">
+       <bool>true</bool>
+      </property>
+      <property name="showDropIndicator" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>false</bool>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectItems</enum>
+      </property>
+      <property name="textElideMode">
+       <enum>Qt::ElideRight</enum>
+      </property>
+      <property name="verticalScrollMode">
+       <enum>QAbstractItemView::ScrollPerItem</enum>
+      </property>
+      <property name="horizontalScrollMode">
+       <enum>QAbstractItemView::ScrollPerItem</enum>
+      </property>
+      <property name="showGrid">
+       <bool>true</bool>
+      </property>
+      <property name="sortingEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+      <property name="cornerButtonEnabled">
+       <bool>true</bool>
+      </property>
+      <property name="columnCount">
+       <number>2</number>
+      </property>
+      <attribute name="horizontalHeaderVisible">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="horizontalHeaderCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>175</number>
+      </attribute>
+      <attribute name="horizontalHeaderHighlightSections">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderCascadingSectionResizes">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderHighlightSections">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderStretchLastSection">
+       <bool>false</bool>
+      </attribute>
+      <row>
+       <property name="text">
+        <string/>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Ettor</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Tvåor</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Treor</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Fyror</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Femmor</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Sexor</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Poäng till bonus</string>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="background">
+        <color>
+         <red>226</red>
+         <green>226</green>
+         <blue>226</blue>
+        </color>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Bonus</string>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="background">
+        <color>
+         <red>226</red>
+         <green>226</green>
+         <blue>226</blue>
+        </color>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Ett par</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Två par</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Triss</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Fyrtal</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Liten stege</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Stor stege</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Kåk</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Chans</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Yatzy</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Totalt</string>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="background">
+        <color>
+         <red>226</red>
+         <green>226</green>
+         <blue>226</blue>
+        </color>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>Spelare 1</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Spelare 2</string>
+       </property>
+      </column>
+      <item row="0" column="0">
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+      <item row="2" column="0">
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+      <item row="7" column="0">
+       <property name="background">
+        <brush brushstyle="NoBrush">
+         <color alpha="255">
+          <red>172</red>
+          <green>172</green>
+          <blue>172</blue>
+         </color>
+        </brush>
+       </property>
+      </item>
+     </widget>
     </item>
-    <item row="8" column="0">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="background">
-      <brush brushstyle="SolidPattern">
-       <color alpha="255">
-        <red>226</red>
-        <green>226</green>
-        <blue>226</blue>
-       </color>
-      </brush>
-     </property>
-     <property name="foreground">
-      <brush brushstyle="NoBrush">
-       <color alpha="255">
-        <red>226</red>
-        <green>226</green>
-        <blue>226</blue>
-       </color>
-      </brush>
-     </property>
-    </item>
-    <item row="8" column="1">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="background">
-      <brush brushstyle="SolidPattern">
-       <color alpha="255">
-        <red>226</red>
-        <green>226</green>
-        <blue>226</blue>
-       </color>
-      </brush>
-     </property>
-    </item>
+<<<<<<< HEAD
     <item row="18" column="0">
      <property name="text">
       <string/>
@@ -425,14 +679,17 @@
      </item>
     </layout>
    </widget>
+=======
+   </layout>
+>>>>>>> master
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1307</width>
-     <height>20</height>
+     <width>1124</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -446,6 +703,16 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>tableWidget</tabstop>
+  <tabstop>pushButton_6</tabstop>
+  <tabstop>pushButton_7</tabstop>
+  <tabstop>pushButton_8</tabstop>
+  <tabstop>pushButton_9</tabstop>
+  <tabstop>btn_roll_2</tabstop>
+  <tabstop>btn_roll</tabstop>
+  <tabstop>pushButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

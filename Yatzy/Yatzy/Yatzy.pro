@@ -39,3 +39,6 @@ HEADERS  += mainwindow.h \
     Player.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES += \
+    image.qrc

@@ -46,3 +46,4 @@ void MainWindow::textChange()
     ui->tableWidget->setItem(1, 0, new QTableWidgetItem("Hello"));          //Detta skriver på raden 1, kolumnen 2, "Hello"
     ui->tableWidget->item(1,0)->setBackgroundColor(Qt::red);                //Detta skriver gör raden1, kolumnen 2 röd
 }
+
