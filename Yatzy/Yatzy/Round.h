@@ -4,13 +4,24 @@
 #include "Dice.h"
 #include "Game.h"
 #include <qdebug.h>
+#include "Player.h"
+#include <QMainWindow>
 
 class Round
 {
 public:
     Round();
-    void startNewRound();
-    void newRound(Dice dice);
+    void startNewRound(Player *currentP);
+    void newRound(Dice dice, Player *currentP);
+
+
+
+    Dice dice;
+
+    int player1Turn = 0;
+    int player2Turn = 0;
+
+private:
 
     int checkNum(Dice dice, int n);
 
@@ -24,10 +35,6 @@ public:
     int checkBigLadder(Dice dice);
     int checkFullHouse(Dice dice);
     int checkChance(Dice dice);
-
-    Dice dice;
-
-private:
 
 };
 

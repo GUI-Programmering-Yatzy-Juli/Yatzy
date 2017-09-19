@@ -9,8 +9,6 @@ public:
     Dice();
     void roll();
     int valueDice[4];
-    int savedDice[4];
-
 private:
 
 };
