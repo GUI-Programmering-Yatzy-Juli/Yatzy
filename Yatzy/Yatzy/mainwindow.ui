@@ -45,6 +45,37 @@
     <property name="sizeConstraint">
      <enum>QLayout::SetDefaultConstraint</enum>
     </property>
+    <item row="2" column="2">
+     <widget class="QPushButton" name="btn_roll">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>300</width>
+        <height>44</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>450</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::RightToLeft</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 22pt &quot;Adobe Fangsong Std R&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Roll</string>
+      </property>
+     </widget>
+    </item>
     <item row="2" column="3">
      <widget class="QPushButton" name="btn_roll_2">
       <property name="sizePolicy">
@@ -213,37 +244,6 @@
       </widget>
      </widget>
     </item>
-    <item row="2" column="2">
-     <widget class="QPushButton" name="btn_roll">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>300</width>
-        <height>44</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>450</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="layoutDirection">
-       <enum>Qt::RightToLeft</enum>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 22pt &quot;Adobe Fangsong Std R&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Roll</string>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="1">
      <widget class="QTableWidget" name="tableWidget">
       <property name="enabled">
@@ -263,7 +263,7 @@
       </property>
       <property name="maximumSize">
        <size>
-        <width>500</width>
+        <width>800</width>
         <height>595</height>
        </size>
       </property>
@@ -320,7 +320,7 @@
        <enum>Qt::ScrollBarAlwaysOff</enum>
       </property>
       <property name="sizeAdjustPolicy">
-       <enum>QAbstractScrollArea::AdjustToContents</enum>
+       <enum>QAbstractScrollArea::AdjustIgnored</enum>
       </property>
       <property name="autoScroll">
        <bool>true</bool>
@@ -371,7 +371,7 @@
        <bool>false</bool>
       </attribute>
       <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>175</number>
+       <number>100</number>
       </attribute>
       <attribute name="horizontalHeaderHighlightSections">
        <bool>true</bool>
