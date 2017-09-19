@@ -37,3 +37,6 @@ HEADERS  += mainwindow.h \
     gamemanager.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES += \
+    image.qrc

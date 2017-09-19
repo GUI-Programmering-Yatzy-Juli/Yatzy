@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< HEAD
 <!-- Written by QtCreator 4.3.1, 2017-09-19T15:41:16. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
   <value type="QByteArray">{04e9eeaf-684d-42d4-b9e1-ddd3ea9f851c}</value>
+=======
+<!-- Written by QtCreator 4.3.1, 2017-09-19T15:40:34. -->
+<qtcreator>
+ <data>
+  <variable>EnvironmentId</variable>
+  <value type="QByteArray">{5a37aa8a-7a11-4b97-9bf1-c55e6f816156}</value>
+>>>>>>> 6abcb723026595b7fe51e0544ff1f0bc78976436
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -286,7 +294,11 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Yatzy</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
+<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/hjal1600/Documents/GitHub/Yatzy/Yatzy/Yatzy/Yatzy.pro</value>
+=======
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/vijo1613/Documents/GitHub/Yatzy/Yatzy/Yatzy/Yatzy.pro</value>
+>>>>>>> 6abcb723026595b7fe51e0544ff1f0bc78976436
     <value type="bool" key="QmakeProjectManager.QmakeRunConfiguration.UseLibrarySearchPath">true</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">Yatzy.pro</value>
