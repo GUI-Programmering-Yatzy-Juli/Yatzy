@@ -5,25 +5,22 @@ Round::Round()
 
 }
 
-void Round::startNewRound()
+void Round::startNewRound(Player *currentP)
 {
-    newRound(dice);
+    Dice dice;
+
+    newRound(dice, currentP);
 }
 
-void Round::newRound(Dice dice)
+void Round::newRound(Dice dice, Player *currentP)
 {
     qDebug() << "Rullar tärningar";
     dice.roll();
-    checkResult(dice);
-
+    //checkResult(dice);
 }
 
 void Round::checkResult(Dice dice)
 {
-
-    //kanske får ändra bool till int och returna antalet poäng man får
-    //och ändra if till t.ex              if (checkFunction(dice) > 0)
-
     //Om funktionen är true ska tillhörande ruta i tabellen bli någon ljusgrön ca #c2ffaf
 
     for (int i = 1; i < 7; i++)
@@ -83,9 +80,12 @@ int Round::checkPair(Dice dice)                        //Nästan Klar
 {
     //här är par
     //Den kollar bara ifall ett par finns, den måste kolla ifall det finns flera par.
+<<<<<<< HEAD
 
     int thirdDice = 0, fourthDice = 0, fifthDice = 0, sixthDice = 0;
 
+=======
+>>>>>>> player-class-test
     for (int firstDice = 0; firstDice < 5; firstDice++)
     {
        for (int secondDice = firstDice+1; secondDice < 5; secondDice++)
@@ -180,8 +180,13 @@ int Round::checkTwoPairs(Dice dice)                    //Nästan Klar
            {
                 for(int fourthDice= thirdDice + 1; fourthDice < 5; fourthDice++)
                 {
+<<<<<<< HEAD
                     if(    (dice.valueDice[firstDice] == dice.valueDice[secondDice]   && //1+2 och
                             dice.valueDice[thirdDice] == dice.valueDice[fourthDice])
+=======
+                    if(    (dice.valueDice[firstDice] == dice.valueDice[secondDice]   &&
+                                dice.valueDice[thirdDice] == dice.valueDice[fourthDice])
+>>>>>>> player-class-test
 
                                                         ||
 

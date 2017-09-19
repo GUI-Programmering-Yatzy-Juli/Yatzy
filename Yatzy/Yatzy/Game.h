@@ -4,17 +4,17 @@
 #include "Dice.h"
 #include "Round.h"
 #include "gamemanager.h"
+#include "Player.h"
 
 
 class Game
 {
 public:
     Game();
-    int numRounds = 0;
-    bool gameIsActive();
+    int numRounds = 1;
 
-    int player1 = 0;
-    int player2 = 0;
+    bool gameIsActive(Player p1, Player p2);
+
 };
 
 #endif // GAME_H

@@ -18,6 +18,10 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void startNewGame();
+    void textChange();
+
+public slots:
+
 
 private slots:
     void on_btn_roll_clicked();
@@ -25,6 +29,8 @@ private slots:
     void on_btn_roll_2_clicked();
 
     void on_pushButton_2_clicked();
+
+
 
 private:
     Ui::MainWindow *ui;
