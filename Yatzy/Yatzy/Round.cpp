@@ -76,7 +76,7 @@ void Round::checkResult(Dice dice)
     }
 }
 
-int Round::checkPair(Dice dice)                        //Nästan Klar
+int Round::checkPair(Dice dice)                        //Klar
 {
     //här är par
     //Den kollar bara ifall ett par finns, den måste kolla ifall det finns flera par.

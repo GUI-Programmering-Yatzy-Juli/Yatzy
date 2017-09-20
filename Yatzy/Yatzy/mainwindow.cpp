@@ -6,6 +6,8 @@
 #include "gamemanager.h"
 #include <QTableWidgetItem>
 #include <QWidget>
+#include <QPushButton>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -36,12 +38,43 @@ void MainWindow::startNewGame()
 
 void MainWindow::on_btn_roll_clicked()
 {
-
+ textChange();
 }
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    textChange();
+QMessageBox::information(
+            this,
+            tr("Yahtzee"),
+            tr("Yatzy är ett tärningsspel för en eller flera spelare där det gäller att samla poäng genom att med fem tärningar och tre kast per omgång försöka få in kombinationer enligt följande tabell:\n"
+               "Villkor |Max|kommentar \n"
+               "Ettor   |5	|Så många som möjligt\n"
+               "tvåor   |10	|Så många som möjligt\n"
+               "treor   |15	|Så många som möjligt\n"
+               "fyror   |20	|Så många som möjligt\n"
+               "femmor  |25	|Så många som möjligt\n"
+               "sexor   |30	|Så många som möjligt\n"
+               "summa:  |105|totalsumma ettor till sexor\n"
+               "bonus:  |50	|snitt med tre av varje\n"
+               "1 par   |12	|Så högt som möjligt\n"
+               "2 par   |22	|Så högt som möjligt\n"
+               "triss   |18	|Så högt som möjligt\n"
+               "fyrtal  |24	|Så högt som möjligt\n"
+               "L.stege |15	|ett till fem\n"
+               "S.stege |20	|två till sex\n"
+               "kåk	    |28 |tre av en sort, två av en annan\n"
+               "chans   |30	|Så högt som möjligt\n"
+               "Yatzy   |50	|fem lika\n"
+               "summa   |374|totalt\n"
+               "_______________________________________________________________________________________________________________________________________________________\n"
+               "bonus - Bonus på 50 poäng utdelas till de spelare som fått minst 63 poäng sammanlagt på ettor till sexor. Det motsvarar tre av varje på den övre delen.\n"
+               "två par - Ett resultat som kan klassificeras som ett fyrtal godkänns inte som ett två par.\n"
+               "liten stege - En etta, en tvåa, en trea, en fyra och en femma.\n"
+               "stor stege - En tvåa, en trea, en fyra, en femma, och en sexa.\n"
+               "kåk - Tre av en sort och två av en annan. En resultat som kan klassificeras som en Yatzy godkänns inte som en kåk.\n"
+               "chans - Summan av resultatet.\n"
+               "Yatzy - Femtal.\n"
+               "summa\n") );
 }
 
 void MainWindow::textChange()
