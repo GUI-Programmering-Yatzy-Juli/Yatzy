@@ -80,12 +80,9 @@ int Round::checkPair(Dice dice)                        //Nästan Klar
 {
     //här är par
     //Den kollar bara ifall ett par finns, den måste kolla ifall det finns flera par.
-<<<<<<< HEAD
 
     int thirdDice = 0, fourthDice = 0, fifthDice = 0, sixthDice = 0;
 
-=======
->>>>>>> player-class-test
     for (int firstDice = 0; firstDice < 5; firstDice++)
     {
        for (int secondDice = firstDice+1; secondDice < 5; secondDice++)
@@ -180,13 +177,8 @@ int Round::checkTwoPairs(Dice dice)                    //Nästan Klar
            {
                 for(int fourthDice= thirdDice + 1; fourthDice < 5; fourthDice++)
                 {
-<<<<<<< HEAD
                     if(    (dice.valueDice[firstDice] == dice.valueDice[secondDice]   && //1+2 och
                             dice.valueDice[thirdDice] == dice.valueDice[fourthDice])
-=======
-                    if(    (dice.valueDice[firstDice] == dice.valueDice[secondDice]   &&
-                                dice.valueDice[thirdDice] == dice.valueDice[fourthDice])
->>>>>>> player-class-test
 
                                                         ||
 

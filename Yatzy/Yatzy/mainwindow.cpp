@@ -5,7 +5,7 @@
 #include <qdebug.h>
 #include "gamemanager.h"
 #include <QTableWidgetItem>
-
+#include <QWidget>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
 }
 
 MainWindow::~MainWindow()
@@ -45,7 +46,27 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::textChange()
 {
-    ui->tableWidget->setItem(1, 0, new QTableWidgetItem("Hello"));          //Detta skriver på raden 1, kolumnen 2, "Hello"
-    ui->tableWidget->item(1,0)->setBackgroundColor(Qt::red);                //Detta skriver gör raden1, kolumnen 2 röd
-}
 
+    if(ui->tableWidget->item(1,0) == 0)
+    {
+    ui->tableWidget->setItem(1, 0, new QTableWidgetItem("Summa"));          //Detta skriver på raden 1, kolumnen 2, "Summa"
+    ui->tableWidget->item(1,0)->setBackgroundColor(Qt::green);                //Detta skriver gör raden1, kolumnen 2 green
+    }
+    else
+    {
+        ui->tableWidget->setItem(1, 0, new QTableWidgetItem("Icke Tillgänglig"));          //Detta skriver på raden 1, kolumnen 2, "Icke tillgänglig"
+        ui->tableWidget->item(1,0)->setBackgroundColor(Qt::red);                //Detta skriver gör raden1, kolumnen 2 red
+    }
+}
+/*
+if ui->tableWidget->item(x,x) == 0)
+{
+ui->tableWidget->setItem(x, x, new QTableWidgetItem("Summa"));          //Detta skriver på raden 1, kolumnen 2, "Summa"
+ui->tableWidget->item(x,x)->setBackgroundColor(Qt::green);                //Detta skriver gör raden1, kolumnen 2 green
+}
+else
+{
+    ui->tableWidget->setItem(x, x, new QTableWidgetItem("Icke Tillgänglig"));          //Detta skriver på raden 1, kolumnen 2, "Icke tillgänglig"
+    ui->tableWidget->item(x,x)->setBackgroundColor(Qt::red);                //Detta skriver gör raden1, kolumnen 2 red
+}
+*/
