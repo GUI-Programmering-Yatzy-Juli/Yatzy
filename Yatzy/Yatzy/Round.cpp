@@ -1,8 +1,8 @@
 #include "Round.h"
 
-Round::Round()
+Round::Round(Ui::MainWindow *ui)
 {
-
+ui->tableWidget->setItem(1, 1, new QTableWidgetItem("test"));
 }
 
 void Round::startNewRound(Player *currentP)

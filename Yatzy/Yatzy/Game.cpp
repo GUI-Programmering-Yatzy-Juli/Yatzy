@@ -1,9 +1,9 @@
 #include "Game.h"
 #include <qdebug.h>
 
-Game::Game()
+Game::Game(Ui::MainWindow *ui)
 {
-    Round round;
+    Round round(ui);
     qDebug() << "Första rundan startar";
 
     Player player1;
@@ -18,14 +18,12 @@ Game::Game()
             round.startNewRound(&player1);
             player1.rollsLeft--;
             qDebug() << "player1";
-            system("pause");                    //En pausare
         }
         else if (player2.rollsLeft != 0)
         {
             round.startNewRound(&player2);
             player2.rollsLeft--;
             qDebug() << "player2";
-            system("pause");                    //En pausare
         }
         else
         {

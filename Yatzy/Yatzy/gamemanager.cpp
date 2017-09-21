@@ -1,10 +1,10 @@
 #include "gamemanager.h"
 #include <qdebug.h>
 
-gameManager::gameManager()
+gameManager::gameManager(Ui::MainWindow *ui)
 {
     qDebug() << "game-objektet skapas";
-    Game game;
+    Game game(ui);
     game.numRounds = 0;
 }
 

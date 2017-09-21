@@ -16,24 +16,25 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-
 }
 
 MainWindow::~MainWindow()
 {
+
     delete ui;
 }
 
 void MainWindow::on_btn_roll_2_clicked()
 {
     //startNewGame();
-    gameManager createGame;
+    gameManager createGame(ui);
 }
 
 void MainWindow::startNewGame()
 {
     //Om game objektet inte finns ska den säga ifrån
-    Round round;
+    qDebug() << "Test";
+    Round round(ui);
 }
 
 void MainWindow::on_btn_roll_clicked()

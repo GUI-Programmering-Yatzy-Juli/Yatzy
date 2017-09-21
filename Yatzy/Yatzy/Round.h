@@ -5,16 +5,15 @@
 #include "Game.h"
 #include <qdebug.h>
 #include "Player.h"
-#include <QMainWindow>
+#include "mainwindow.h"
+#include <ui_mainwindow.h>
 
 class Round
 {
 public:
-    Round();
+    Round(Ui::MainWindow *ui);
     void startNewRound(Player *currentP);
     void newRound(Dice dice, Player *currentP);
-
-
 
     Dice dice;
 

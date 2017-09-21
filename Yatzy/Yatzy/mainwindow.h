@@ -20,6 +20,7 @@ public:
     void startNewGame();
     void textChange();
 
+    Ui::MainWindow *ui;
 public slots:
 
 
@@ -33,7 +34,7 @@ private slots:
 
 
 private:
-    Ui::MainWindow *ui;
+
 
 };
 
