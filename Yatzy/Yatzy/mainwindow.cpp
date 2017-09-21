@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    QMainWindow::centralWidget()->layout()->setContentsMargins(0,0,0,0);
 
 }
 
@@ -36,9 +37,34 @@ void MainWindow::startNewGame()
     Round round;
 }
 
+
 void MainWindow::on_btn_roll_clicked()
 {
  textChange();
+ diceChange();
+}
+void MainWindow::diceChange()
+{
+    if(ui->pushButton_7->styleSheet() == "")
+    {
+    ui->pushButton_7->setStyleSheet("background-image: url(:/new/prefix1/G:/green.jpg);"); //Ska ändras till vad dice1 är. t.ex  dice 1 blir en 2a så ska en bild på en 2a komma upp.
+    }
+    else
+    {
+         ui->pushButton_7->setStyleSheet("");
+    }
+}
+void MainWindow::on_pushButton_7_clicked()
+{
+    saveDice();
+}
+
+void MainWindow::saveDice()
+{
+     if(ui->pushButton_7->styleSheet() != 0)
+     {
+         ui->pushButton_7->setStyleSheet(ui->pushButton_7->styleSheet());
+     }
 }
 
 void MainWindow::on_pushButton_2_clicked()
