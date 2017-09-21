@@ -35,6 +35,8 @@ private:
     int checkFullHouse(Dice dice);
     int checkChance(Dice dice);
 
+     Ui::MainWindow *table;
+
 };
 
 #endif // ROUND_H
