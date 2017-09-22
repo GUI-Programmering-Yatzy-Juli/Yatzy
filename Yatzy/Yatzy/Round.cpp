@@ -2,7 +2,7 @@
 
 Round::Round(Ui::MainWindow *ui)
 {
-ui->tableWidget->setItem(1, 1, new QTableWidgetItem("test"));
+    table = ui;
 }
 
 void Round::startNewRound(Player *currentP)
@@ -16,7 +16,8 @@ void Round::newRound(Dice dice, Player *currentP)
 {
     qDebug() << "Rullar tärningar";
     dice.roll();
-    //checkResult(dice);
+
+    checkResult(dice);
 }
 
 void Round::checkResult(Dice dice)
@@ -33,47 +34,61 @@ void Round::checkResult(Dice dice)
     }
     if (checkPair(dice) > 0)
     {
+        isPossibleChangeColour(9, 0, checkPair(dice));
         qDebug() << "Par";
     }
 
     if ( checkThreeOfAKind(dice) > 0)
     {
+        isPossibleChangeColour(10, 0, checkThreeOfAKind(dice));
         qDebug() << "Triss";
     }
 
     if ( checkFourOfAKind(dice) > 0)
     {
+        isPossibleChangeColour(11, 0, checkFourOfAKind(dice));
         qDebug() << "Fyrtal";
     }
 
     if ( checkTwoPairs(dice) > 0)
     {
+        isPossibleChangeColour(12, 0, checkTwoPairs(dice));
         qDebug() << "Två Par";
     }
 
     if ( checkYatzy(dice) > 0)
     {
+        isPossibleChangeColour(13, 0, checkYatzy(dice));
         qDebug() << "Yatzy!";
     }
 
     if ( checkSmallLadder(dice) > 0)
     {
+        isPossibleChangeColour(14, 0, checkSmallLadder(dice));
         qDebug() << "Liten Stege";
     }
 
     if ( checkBigLadder(dice) > 0)
     {
+        isPossibleChangeColour(15, 0, checkBigLadder(dice));
         qDebug() << "Stor Stege";
     }
 
     if (checkFullHouse(dice) > 0)
     {
+        isPossibleChangeColour(16, 0, checkFullHouse(dice));
         qDebug() << "Kåk";
     }
     if (checkChance(dice) > 0)
     {
+        isPossibleChangeColour(17, 0, checkChance(dice));
         qDebug() << "Chans";
     }
+    //Man ska välja vilken alternativ man vill köra på
+    //void makeChoice()
+
+    //alla färger som blev gröna förutom den som man valde
+    //ska bli vita igen
 }
 
 int Round::checkPair(Dice dice)                        //Klar
@@ -406,4 +421,16 @@ int Round::checkNum(Dice dice, int n)                   //Klar
         if (dice.valueDice[i] == n)
             sum += dice.valueDice[i];
     return sum;
+}
+
+void Round::isPossibleChangeColour (int y, int x, int score)
+{
+    x = 0; //temporärt
+    /*
+     *  y är beroende på villkoret dvs t.ex. par eller triss eller yatzy
+     *  x är beroende på vilken spelare det är. spelare 1 = 0 spelare 2 = 1
+     *  score är antalet poäng villkoret är värt
+     */
+    table->tableWidget->setItem(y, x, new QTableWidgetItem(score));
+    table->tableWidget->item(y, x)->setBackgroundColor(Qt::green);
 }

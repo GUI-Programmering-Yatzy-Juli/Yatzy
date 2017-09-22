@@ -16,6 +16,11 @@ public:
 
     bool gameIsActive(Player p1, Player p2);
 
+    void initiateRound(Player *currentP);
+
+public slots:
+    //connect(Ui::MainWindow->btn_roll, SIGNAL (click()), this, SLOT (initiateRound(currentP)));
+
 };
 
 #endif // GAME_H

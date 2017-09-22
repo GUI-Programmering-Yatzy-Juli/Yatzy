@@ -14,6 +14,7 @@ public:
     Round(Ui::MainWindow *ui);
     void startNewRound(Player *currentP);
     void newRound(Dice dice, Player *currentP);
+    void isPossibleChangeColour (int y, int x, int score);
 
     Dice dice;
 

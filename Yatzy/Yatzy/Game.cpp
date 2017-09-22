@@ -15,14 +15,12 @@ Game::Game(Ui::MainWindow *ui)
 
         if (player1.rollsLeft != 0)
         {
-            round.startNewRound(&player1);
-            player1.rollsLeft--;
+            initiateRound(player1);
             qDebug() << "player1";
         }
         else if (player2.rollsLeft != 0)
         {
-            round.startNewRound(&player2);
-            player2.rollsLeft--;
+            initiateRound(player2);
             qDebug() << "player2";
         }
         else
@@ -60,6 +58,11 @@ bool Game::gameIsActive(Player p1, Player p2)
     }
 }
 
+void Game::initiateRound(Player *currentP)
+{
+    round.startNewRound(&currentP);
+    currentP.rollsLeft--;
+}
 
 
 
