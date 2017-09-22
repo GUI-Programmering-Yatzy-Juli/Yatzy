@@ -33,6 +33,10 @@ void MainWindow::on_btn_roll_2_clicked()
     gameManager createGame(ui);
     ui->btn_roll_2->setEnabled(false);
 }
+void MainWindow::on_pushButton_3_clicked()
+{
+QCoreApplication::quit();
+}
 
 void MainWindow::startNewGame()
 {
