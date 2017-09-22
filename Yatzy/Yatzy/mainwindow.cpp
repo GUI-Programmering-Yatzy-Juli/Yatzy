@@ -30,6 +30,11 @@ void MainWindow::on_btn_roll_2_clicked()
 {
     //startNewGame();
     gameManager createGame(ui);
+    ui->btn_roll_2->setEnabled(false);
+}
+void MainWindow::on_pushButton_3_clicked()
+{
+QCoreApplication::quit();
 }
 
 void MainWindow::startNewGame()
@@ -56,7 +61,7 @@ void MainWindow::diceChange()
          ui->pushButton_7->setStyleSheet("");
     }
 }
-void MainWindow::on_pushButton_7_clicked()
+/*void MainWindow::on_pushButton_7_clicked()
 {
     saveDice();
 }
@@ -68,7 +73,7 @@ void MainWindow::saveDice()
          ui->pushButton_7->setStyleSheet(ui->pushButton_7->styleSheet());
      }
 }
-
+*/
 void MainWindow::on_pushButton_2_clicked()
 {
 QMessageBox::information(
