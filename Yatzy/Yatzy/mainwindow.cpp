@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-=======
+
     QMainWindow::centralWidget()->layout()->setContentsMargins(0,0,0,0);
 
 }
@@ -31,6 +31,7 @@ void MainWindow::on_btn_roll_2_clicked()
 {
     //startNewGame();
     gameManager createGame(ui);
+    ui->btn_roll_2->setEnabled(false);
 }
 
 void MainWindow::startNewGame()
@@ -57,7 +58,7 @@ void MainWindow::diceChange()
          ui->pushButton_7->setStyleSheet("");
     }
 }
-void MainWindow::on_pushButton_7_clicked()
+/*void MainWindow::on_pushButton_7_clicked()
 {
     saveDice();
 }
@@ -69,7 +70,7 @@ void MainWindow::saveDice()
          ui->pushButton_7->setStyleSheet(ui->pushButton_7->styleSheet());
      }
 }
-
+*/
 void MainWindow::on_pushButton_2_clicked()
 {
 QMessageBox::information(
