@@ -28,37 +28,39 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btn_roll_2_clicked()
 {
-    //startNewGame();
+
     gameManager createGame(ui);
-    ui->btn_roll_2->setEnabled(false);
+    //ui->btn_roll_2->setEnabled(false);
 }
 void MainWindow::on_pushButton_3_clicked()
 {
-QCoreApplication::quit();
+    QCoreApplication::quit();
 }
 
 void MainWindow::startNewGame()
 {
     //Om game objektet inte finns ska den säga ifrån
     qDebug() << "Test";
-    Round round(ui);
+    //Round round(ui);
 }
 
 
 void MainWindow::on_btn_roll_clicked()
 {
- textChange();
- diceChange();
+    startNewGame();
+    //textChange();
+    //diceChange();
 }
+
 void MainWindow::diceChange()
 {
-    if(ui->pushButton_7->styleSheet() == "")
+    if(ui->btn_save0->styleSheet() == "")
     {
-    ui->pushButton_7->setStyleSheet("background-image: url(:/new/prefix1/G:/green.jpg);"); //Ska ändras till vad dice1 är. t.ex  dice 1 blir en 2a så ska en bild på en 2a komma upp.
+    ui->btn_save0->setStyleSheet("background-image: url(:/new/prefix1/G:/green.jpg);"); //Ska ändras till vad dice1 är. t.ex  dice 1 blir en 2a så ska en bild på en 2a komma upp.
     }
     else
     {
-         ui->pushButton_7->setStyleSheet("");
+         ui->btn_save0->setStyleSheet("");
     }
 }
 /*void MainWindow::on_pushButton_7_clicked()
@@ -74,9 +76,10 @@ void MainWindow::saveDice()
      }
 }
 */
+
 void MainWindow::on_pushButton_2_clicked()
 {
-QMessageBox::information(
+    QMessageBox::information(
             this,
             tr("Yahtzee"),
             tr("Yatzy är ett tärningsspel för en eller flera spelare där det gäller att samla poäng genom att med fem tärningar och tre kast per omgång försöka få in kombinationer enligt följande tabell:\n"
@@ -93,7 +96,7 @@ QMessageBox::information(
                "2 par   |22	|Så högt som möjligt\n"
                "triss   |18	|Så högt som möjligt\n"
                "fyrtal  |24	|Så högt som möjligt\n"
-               "L.stege |15	|ett till fem\n"
+               "L.stege |15 |ett till fem\n"
                "S.stege |20	|två till sex\n"
                "kåk	    |28 |tre av en sort, två av en annan\n"
                "chans   |30	|Så högt som möjligt\n"

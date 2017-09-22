@@ -3,27 +3,20 @@
 Round::Round(Ui::MainWindow *ui)
 {
     table = ui;
+    on_btn_roll_clicked();
 }
 
-void Round::startNewRound(Player *currentP)
+void Round::newRound(Player *currentP)
 {
     Dice dice;
-
-    newRound(dice, currentP);
-}
-
-void Round::newRound(Dice dice, Player *currentP)
-{
     qDebug() << "Rullar tärningar";
-    dice.roll();
-
     checkResult(dice);
+    currentP->rollsLeft--;
 }
 
 void Round::checkResult(Dice dice)
 {
     //Om funktionen är true ska tillhörande ruta i tabellen bli någon ljusgrön ca #c2ffaf
-
     for (int i = 1; i < 7; i++)
     {
         int sum = checkNum(dice, i);
@@ -433,4 +426,12 @@ void Round::isPossibleChangeColour (int y, int x, int score)
      */
     table->tableWidget->setItem(y, x, new QTableWidgetItem(score));
     table->tableWidget->item(y, x)->setBackgroundColor(Qt::green);
+}
+
+void Round::on_btn_roll_clicked()
+{
+    qDebug() << "hit kommer detn";
+    Dice dice;
+
+   // newRound(dice, player);
 }

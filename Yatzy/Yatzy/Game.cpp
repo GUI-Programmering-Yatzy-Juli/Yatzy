@@ -3,25 +3,30 @@
 
 Game::Game(Ui::MainWindow *ui)
 {
-    Round round(ui);
     qDebug() << "Första rundan startar";
+    play(ui);
+}
+
+void Game::play(Ui::MainWindow *ui)
+{
+    Round round(ui);
 
     Player player1;
     Player player2;
 
-    while (gameIsActive(player1, player2))
+    if (gameIsActive(player1, player2))
     {
         qDebug() << numRounds;
 
         if (player1.rollsLeft != 0)
         {
-            initiateRound(player1);
-            qDebug() << "player1";
+            round.newRound(&player1);
+            /*qDebug() << "player1";*/
         }
         else if (player2.rollsLeft != 0)
         {
-            initiateRound(player2);
-            qDebug() << "player2";
+            round.newRound(&player1);
+            /*qDebug() << "player2";*/
         }
         else
         {
@@ -57,12 +62,4 @@ bool Game::gameIsActive(Player p1, Player p2)
         return true;
     }
 }
-
-void Game::initiateRound(Player *currentP)
-{
-    round.startNewRound(&currentP);
-    currentP.rollsLeft--;
-}
-
-
 

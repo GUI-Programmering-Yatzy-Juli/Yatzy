@@ -2,6 +2,9 @@
 #define DICE_H
 
 #include <time.h>
+#include <random>
+#include <qdebug.h>
+
 
 class Dice
 {

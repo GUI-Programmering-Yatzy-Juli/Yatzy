@@ -136,7 +136,7 @@ background-color: rgb(255, 255, 255);</string>
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
-      <widget class="QPushButton" name="pushButton_7">
+      <widget class="QPushButton" name="btn_save0">
        <property name="sizePolicy">
         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -165,7 +165,7 @@ background-color: rgb(255, 255, 255);</string>
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="btn_save1">
        <property name="sizePolicy">
         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -194,7 +194,7 @@ background-color: rgb(255, 255, 255);</string>
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_9">
+      <widget class="QPushButton" name="btn_save2">
        <property name="sizePolicy">
         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -223,7 +223,7 @@ background-color: rgb(255, 255, 255);</string>
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_8">
+      <widget class="QPushButton" name="btn_save3">
        <property name="sizePolicy">
         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -252,7 +252,7 @@ background-color: rgb(255, 255, 255);</string>
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_6">
+      <widget class="QPushButton" name="btn_save4">
        <property name="sizePolicy">
         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
@@ -813,12 +813,12 @@ font: 75 28pt &quot;MS Shell Dlg 2&quot;;</string>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
-  <tabstop>pushButton_6</tabstop>
-  <tabstop>pushButton_7</tabstop>
-  <tabstop>pushButton_8</tabstop>
-  <tabstop>pushButton_9</tabstop>
+  <tabstop>btn_save4</tabstop>
+  <tabstop>btn_save0</tabstop>
+  <tabstop>btn_save3</tabstop>
+  <tabstop>btn_save2</tabstop>
   <tabstop>btn_roll</tabstop>
-  <tabstop>pushButton</tabstop>
+  <tabstop>btn_save1</tabstop>
  </tabstops>
  <resources/>
  <connections/>

@@ -12,8 +12,8 @@ class Round
 {
 public:
     Round(Ui::MainWindow *ui);
-    void startNewRound(Player *currentP);
-    void newRound(Dice dice, Player *currentP);
+
+    void newRound(Player *currentP);
     void isPossibleChangeColour (int y, int x, int score);
 
     Dice dice;
@@ -22,7 +22,6 @@ public:
     int player2Turn = 0;
 
 private:
-
     int checkNum(Dice dice, int n);
 
     void checkResult(Dice dice);
@@ -38,6 +37,11 @@ private:
 
      Ui::MainWindow *table;
 
+public slots:
+    void startNewRound(Player *currentP);
+
+private slots:
+    void on_btn_roll_clicked();
 };
 
 #endif // ROUND_H

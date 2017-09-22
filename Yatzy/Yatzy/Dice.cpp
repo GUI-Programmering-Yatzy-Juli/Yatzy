@@ -1,10 +1,9 @@
 #include "Dice.h"
-#include <random>
-#include <qdebug.h>
 
 Dice::Dice()
 {
     qDebug() << "Nya tärningar har skapats";
+    roll();
 }
 
 void Dice::roll()

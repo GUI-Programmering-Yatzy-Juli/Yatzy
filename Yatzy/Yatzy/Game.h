@@ -14,12 +14,12 @@ public:
     Game(Ui::MainWindow *ui);
     int numRounds = 1;
 
+    void play(Ui::MainWindow *ui);
+
     bool gameIsActive(Player p1, Player p2);
 
-    void initiateRound(Player *currentP);
-
 public slots:
-    //connect(Ui::MainWindow->btn_roll, SIGNAL (click()), this, SLOT (initiateRound(currentP)));
+
 
 };
 
