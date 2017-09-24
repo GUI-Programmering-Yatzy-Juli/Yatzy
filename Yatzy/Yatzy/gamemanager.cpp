@@ -4,7 +4,9 @@
 gameManager::gameManager(Ui::MainWindow *ui)
 {
     qDebug() << "game-objektet skapas";
-    Game game(ui);
+    Player player1;
+    Player player2;
+    Game game(ui, player1, player2);
     game.numRounds = 0;
 }
 

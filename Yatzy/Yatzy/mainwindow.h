@@ -17,7 +17,6 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    void startNewGame();
     void textChange();
     void diceChange();
  //   void saveDice();
@@ -31,9 +30,9 @@ private slots:
 
     void on_btn_roll_2_clicked();
 
-    void on_pushButton_3_clicked();
+    void on_btn_exit_clicked();
 
-    void on_pushButton_2_clicked();
+    void on_btn_rules_clicked();
 
    // void on_pushButton_7_clicked();
 

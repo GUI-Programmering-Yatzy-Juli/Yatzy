@@ -1,43 +1,46 @@
 #include "Game.h"
 #include <qdebug.h>
 
-Game::Game(Ui::MainWindow *ui)
+Game::Game(Ui::MainWindow *ui, Player player1, Player player2)
 {
     qDebug() << "Första rundan startar";
-    play(ui);
+
+    p1 = player1;
+    p2 = player2;
+
+    connect(ui->btn_roll, &QPushButton::clicked, this, &Game::on_btn_roll_click);
 }
 
-void Game::play(Ui::MainWindow *ui)
+void Game::update(Ui::MainWindow *ui)
 {
     Round round(ui);
 
-    Player player1;
-    Player player2;
-
-    if (gameIsActive(player1, player2))
+    if (gameIsActive())
     {
-        qDebug() << numRounds;
+        qDebug() << "Runda: " << numRounds;
 
-        if (player1.rollsLeft != 0)
+        if (p1.rollsLeft != 0)
         {
-            round.newRound(&player1);
-            /*qDebug() << "player1";*/
+            //round.newRound(&player1);
+            /*qDebug() << "p1";*/
+            qDebug() << "Slag kvar för spelare 1: " << p1.rollsLeft;
         }
-        else if (player2.rollsLeft != 0)
+        else if (p2.rollsLeft != 0)
         {
-            round.newRound(&player1);
-            /*qDebug() << "player2";*/
+            //round.newRound(&player1);
+            /*qDebug() << "p2";*/
+            qDebug() << "Slag kvar för spelare 2: " << p2.rollsLeft;
         }
         else
         {
-            player1.rollsLeft = 3;
-            player2.rollsLeft = 3;
+            p1.rollsLeft = 3;
+            p2.rollsLeft = 3;
             numRounds++;
         }
     }
 }
 
-bool Game::gameIsActive(Player p1, Player p2)
+bool Game::gameIsActive()
 {
     if (numRounds > 13)
     {
@@ -63,3 +66,7 @@ bool Game::gameIsActive(Player p1, Player p2)
     }
 }
 
+void Game::on_btn_roll_click()
+{
+    qDebug() << "Det funkar faktiskt!";
+}

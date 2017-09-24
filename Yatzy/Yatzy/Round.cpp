@@ -3,12 +3,10 @@
 Round::Round(Ui::MainWindow *ui)
 {
     table = ui;
-    on_btn_roll_clicked();
 }
 
 void Round::newRound(Player *currentP)
 {
-    Dice dice;
     qDebug() << "Rullar tärningar";
     checkResult(dice);
     currentP->rollsLeft--;
