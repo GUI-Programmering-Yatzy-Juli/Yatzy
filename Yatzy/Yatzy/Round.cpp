@@ -87,36 +87,56 @@ int Round::checkPair(Dice dice)                        //Klar
     //här är par
     //Den kollar bara ifall ett par finns, den måste kolla ifall det finns flera par.
 
-    int thirdDice = 0, fourthDice = 0, fifthDice = 0, sixthDice = 0;
-
     for (int firstDice = 0; firstDice < 5; firstDice++)
     {
        for (int secondDice = firstDice+1; secondDice < 5; secondDice++)
        {
-           if (dice.valueDice[firstDice] == dice.valueDice[secondDice]  ||
-               dice.valueDice[firstDice] == dice.valueDice[thirdDice]   ||
-               dice.valueDice[firstDice] == dice.valueDice[fourthDice]  ||
-               dice.valueDice[firstDice] == dice.valueDice[fifthDice]   ||
-               dice.valueDice[firstDice] == dice.valueDice[sixthDice]   ||
-               dice.valueDice[secondDice] == dice.valueDice[thirdDice]  ||
-               dice.valueDice[secondDice] == dice.valueDice[fourthDice] ||
-               dice.valueDice[secondDice] == dice.valueDice[fifthDice]  ||
-               dice.valueDice[secondDice] == dice.valueDice[sixthDice]  ||
-               dice.valueDice[thirdDice] == dice.valueDice[fourthDice]  ||
-               dice.valueDice[thirdDice] == dice.valueDice[fifthDice]   ||
-               dice.valueDice[thirdDice] == dice.valueDice[sixthDice]   ||
-               dice.valueDice[fourthDice] == dice.valueDice[fifthDice]  ||
-               dice.valueDice[fourthDice] == dice.valueDice[sixthDice]  ||
-               dice.valueDice[fifthDice] == dice.valueDice[sixthDice])
-
-
+           if (dice.valueDice[firstDice] == dice.valueDice[secondDice])
            {
-
                 //här blir det par
                 //glöm inte att värdet på paret måste sparas
-               return dice.valueDice[firstDice] + dice.valueDice[secondDice];
+                return dice.valueDice[firstDice] * 2;
            }
        }
+    }
+    return 0;
+}
+
+int Round::checkTwoPairs(Dice dice)                    //Nästan Klar
+{
+
+    //här är två par
+    //Den ska returna antalet poäng det ger
+    for (int firstDice = 0; firstDice < 5; firstDice++)
+    {
+       for (int secondDice = firstDice + 1; secondDice < 5; secondDice++)
+       {
+           for(int thirdDice = secondDice + 1; thirdDice < 5; thirdDice++)
+           {
+                for(int fourthDice= thirdDice + 1; fourthDice < 5; fourthDice++)
+                {
+                    if(    (dice.valueDice[firstDice] == dice.valueDice[secondDice]   && //1+2 och 3+4
+                            dice.valueDice[thirdDice] == dice.valueDice[fourthDice])
+
+                                                        ||
+
+                           (dice.valueDice[firstDice] == dice.valueDice[thirdDice]    && //1+3 och 2+4
+                            dice.valueDice[secondDice] == dice.valueDice[fourthDice])
+
+                                                        ||
+
+                           (dice.valueDice[firstDice] == dice.valueDice[fourthDice]   && //1+4 och 2+3
+                            dice.valueDice[secondDice] == dice.valueDice[thirdDice]))
+
+                    {
+                         //här blir det två par
+                         //glöm inte att värdet på två paren måste sparas
+
+                        return (dice.valueDice[firstDice] * 2) + (dice.valueDice[secondDice] * 2);
+                    }
+                }
+            }
+         }
     }
     return 0;
 }
@@ -170,55 +190,7 @@ int Round::checkFourOfAKind(Dice dice)                 //Klar
     return 0;
 }
 
-int Round::checkTwoPairs(Dice dice)                    //Nästan Klar
-{
 
-    //här är två par
-    //Den ska returna antalet poäng det ger
-    for (int firstDice = 0; firstDice < 5; firstDice++)
-    {
-       for (int secondDice = firstDice + 1; secondDice < 5; secondDice++)
-       {
-           for(int thirdDice = secondDice + 1; thirdDice < 5; thirdDice++)
-           {
-                for(int fourthDice= thirdDice + 1; fourthDice < 5; fourthDice++)
-                {
-                    if(    (dice.valueDice[firstDice] == dice.valueDice[secondDice]   && //1+2 och
-                            dice.valueDice[thirdDice] == dice.valueDice[fourthDice])
-
-                                                        ||
-
-                           (dice.valueDice[firstDice] == dice.valueDice[thirdDice]    &&
-                            dice.valueDice[secondDice] == dice.valueDice[fourthDice])
-
-                                                        ||
-
-                           (dice.valueDice[firstDice] == dice.valueDice[fourthDice]   &&
-                            dice.valueDice[secondDice] == dice.valueDice[thirdDice]))
-
-
-
-
-
-
-
-
-
-
-
-
-                    {
-                         //här blir det två par
-                         //glöm inte att värdet på två paren måste sparas
-
-                        return (dice.valueDice[firstDice] * 2) + (dice.valueDice[secondDice] * 2);
-                    }
-                }
-            }
-         }
-    }
-    return 0;
-}
 
 int Round::checkYatzy(Dice dice)                       //Klar
 {
