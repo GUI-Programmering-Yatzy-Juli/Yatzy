@@ -10,6 +10,8 @@ class gameManager
 public:
     gameManager(Ui::MainWindow *ui);
 
+
+
 private:
 
 };

@@ -417,6 +417,8 @@ int Round::checkNum(Dice dice, int n)                   //Klar
 void Round::isPossibleChangeColour (int y, int x, int score)
 {
     x = 0; //temporärt
+    QString myStr;
+    myStr.number(score);
     /*
      *  y är beroende på villkoret dvs t.ex. par eller triss eller yatzy
      *  x är beroende på vilken spelare det är. spelare 1 = 0 spelare 2 = 1
@@ -426,10 +428,3 @@ void Round::isPossibleChangeColour (int y, int x, int score)
     table->tableWidget->item(y, x)->setBackgroundColor(Qt::green);
 }
 
-void Round::on_btn_roll_clicked()
-{
-    qDebug() << "hit kommer detn";
-    Dice dice;
-
-   // newRound(dice, player);
-}

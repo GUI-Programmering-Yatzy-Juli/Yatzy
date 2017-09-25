@@ -39,9 +39,6 @@ private:
 
 public slots:
     void startNewRound(Player *currentP);
-
-private slots:
-    void on_btn_roll_clicked();
 };
 
 #endif // ROUND_H

@@ -8,7 +8,7 @@
 #include "mainwindow.h"
 
 
-class Game : public QObject
+class Game : public QMainWindow
 {
     Q_OBJECT
 
@@ -27,6 +27,7 @@ public slots:
 
 private slots:
     void on_btn_roll_click();
+
 
 };
 
