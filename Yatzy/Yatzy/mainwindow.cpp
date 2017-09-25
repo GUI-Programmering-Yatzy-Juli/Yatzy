@@ -17,6 +17,25 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     QMainWindow::centralWidget()->layout()->setContentsMargins(0,0,0,0);
+      ui->btn_save0->setEnabled(false);
+      ui->btn_save1->setEnabled(false);
+      ui->btn_save2->setEnabled(false);
+      ui->btn_save3->setEnabled(false);
+      ui->btn_save4->setEnabled(false);
+      QPixmap img2(":/new/prefix1/Dices/2.png");
+      QIcon ButtonIcon(img2);
+      ui->btn_save0->setIcon(ButtonIcon);
+      ui->btn_save0->setIconSize(QSize(200,200));
+      /*
+      QImage img1(":/new/prefix1/Dices/1.png");
+      QImage img2(":/new/prefix1/Dices/2.png");
+      QImage img3(":/new/prefix1/Dices/3.png");
+      QImage img4(":/new/prefix1/Dices/4.png");
+      QImage img5(":/new/prefix1/Dices/5.png");
+      QImage img6(":/new/prefix1/Dices/6.png");
+
+      ui->btn_save0->setStyleSheet("background-image: url(:/new/prefix1/Dices/1.png);");
+*/
 }
 
 MainWindow::~MainWindow()
@@ -27,20 +46,63 @@ MainWindow::~MainWindow()
 void MainWindow::on_btn_roll_clicked()
 {
     qDebug() << "Detta är Rollknappen";
+    //ChangeImage();
     //textChange();
     //diceChange();
 }
 
 void MainWindow::on_btn_roll_2_clicked()
 {
+      ui->btn_save0->setEnabled(true);
+      ui->btn_save1->setEnabled(true);
+      ui->btn_save2->setEnabled(true);
+      ui->btn_save3->setEnabled(true);
+      ui->btn_save4->setEnabled(true);
     gameManager createGame(ui);
     //ui->btn_roll_2->setEnabled(false);
 }
-
+/* prototyp för ändra bild.
+void MainWindow::ChangeImage(Dice)
+{
+if(valueDice[0] == 1)
+{
+ui->btn_save0->setStyleSheet("background-image: url(:/new/prefix1/Dices/1.png)");
+}
+else if(valueDice[0] == 2)
+{
+ui->btn_save0->setStyleSheet("background-image: url(:/new/prefix1/Dices/2.png)");
+}
+else if(valueDice[0] == 3)
+{
+ui->btn_save0->setStyleSheet("background-image: url(:/new/prefix1/Dices/3.png)");
+}
+else if(valueDice[0] == 4)
+{
+ui->btn_save0->setStyleSheet("background-image: url(:/new/prefix1/Dices/4.png)");
+}
+else if(valueDice[0] == 5)
+{
+ui->btn_save0->setStyleSheet("background-image: url(:/new/prefix1/Dices/5.png)");
+}
+else if(valueDice[0] == 6)
+{
+ui->btn_save0->setStyleSheet("background-image: url(:/new/prefix1/Dices/6.png)");
+}
+}
+  */
 void MainWindow::on_btn_exit_clicked()
 {
-    QCoreApplication::quit();
-}
+    QMessageBox::StandardButton reply;
+     reply = QMessageBox::question(this, "Yahtzee", "Do you really wanna exit?",
+                                   QMessageBox::Yes|QMessageBox::No);
+     if (reply == QMessageBox::Yes) {
+       qDebug() << "I did not want you to play eitherway :(";
+       QApplication::quit();
+     } else {
+       qDebug() << "Thank you for staying :)";
+     }
+   }
+
 
 void MainWindow::on_btn_rules_clicked()
 {

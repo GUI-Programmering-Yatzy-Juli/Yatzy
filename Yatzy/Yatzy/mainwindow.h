@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "Game.h"
 #include "Round.h"
+#include "Dice.h"
 #include "QTableWidget"
 
 namespace Ui {
