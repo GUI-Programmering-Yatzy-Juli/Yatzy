@@ -159,7 +159,7 @@ background-color: rgb(255, 255, 255);</string>
         <string notr="true">border-color: rgb(0, 0, 0);</string>
        </property>
        <property name="text">
-        <string>Spara</string>
+        <string/>
        </property>
        <property name="checkable">
         <bool>true</bool>
@@ -188,7 +188,7 @@ background-color: rgb(255, 255, 255);</string>
         <string notr="true">border-color: rgb(0, 0, 0);</string>
        </property>
        <property name="text">
-        <string>Spara</string>
+        <string/>
        </property>
        <property name="checkable">
         <bool>true</bool>

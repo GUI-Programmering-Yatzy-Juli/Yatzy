@@ -9,11 +9,11 @@ void Round::newRound(Player *currentP)
 {
     qDebug() << "Rullar tärningar";
     currentP->checkSavedDice(&dice, currentP);
-    checkResult();
+    checkResult(dice);
     currentP->rollsLeft--;
 }
 
-void Round::checkResult()
+void Round::checkResult(Dice dice)
 {
     //Om funktionen är true ska tillhörande ruta i tabellen bli någon ljusgrön ca #c2ffaf
     for (int i = 1; i < 7; i++)
@@ -190,8 +190,6 @@ int Round::checkFourOfAKind(Dice dice)                 //Klar
     }
     return 0;
 }
-
-
 
 int Round::checkYatzy(Dice dice)                       //Klar
 {
@@ -389,15 +387,17 @@ int Round::checkNum(Dice dice, int n)                   //Klar
 
 void Round::isPossibleChangeColour (int y, int x, int score)
 {
-    x = 0; //temporärt
-    QString myStr;
-    myStr.number(score);
     /*
      *  y är beroende på villkoret dvs t.ex. par eller triss eller yatzy
      *  x är beroende på vilken spelare det är. spelare 1 = 0 spelare 2 = 1
      *  score är antalet poäng villkoret är värt
      */
-    table->tableWidget->setItem(y, x, new QTableWidgetItem(score));
+    x = 0; //temporärt
+    QString myStr = QString::number(score);
+    qDebug() << "poäng: "<< myStr;
+
+
+    table->tableWidget->setItem(y, x, new QTableWidgetItem(myStr));
     table->tableWidget->item(y, x)->setBackgroundColor(Qt::green);
 }
 

@@ -22,10 +22,15 @@ MainWindow::MainWindow(QWidget *parent) :
       ui->btn_save2->setEnabled(false);
       ui->btn_save3->setEnabled(false);
       ui->btn_save4->setEnabled(false);
+      QPixmap img1(":/new/prefix1/Dices/1.png");
       QPixmap img2(":/new/prefix1/Dices/2.png");
-      QIcon ButtonIcon(img2);
-      ui->btn_save0->setIcon(ButtonIcon);
+      QIcon ButtonIcon1(img1);
+      QIcon ButtonIcon2(img2);
+      ui->btn_save0->setIcon(ButtonIcon1);
       ui->btn_save0->setIconSize(QSize(200,200));
+
+      ui->btn_save1->setIcon(ButtonIcon2);
+      ui->btn_save2->setIconSize(QSize(200,200));
       /*
       QImage img1(":/new/prefix1/Dices/1.png");
       QImage img2(":/new/prefix1/Dices/2.png");

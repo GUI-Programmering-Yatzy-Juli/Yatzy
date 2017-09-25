@@ -3,14 +3,13 @@
 
 #include "Dice.h"
 #include "Round.h"
-#include "gamemanager.h"
 #include "Player.h"
 #include "mainwindow.h"
 #include <QPushButton>
 #include <QObject>
 
 
-class Game : public QObject
+    class Game : public QObject
 {
 
     Q_OBJECT
@@ -18,8 +17,6 @@ class Game : public QObject
 public:
     Game(Ui::MainWindow *ui, Player player1, Player player2);
     int numRounds = 1;
-
-
 
     bool gameIsActive();
 

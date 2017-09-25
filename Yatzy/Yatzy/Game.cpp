@@ -8,7 +8,8 @@ Game::Game(Ui::MainWindow *ui, Player player1, Player player2)
     p1 = player1;
     p2 = player2;
 
-    connect(ui->btn_roll, &QPushButton::clicked, this, &Game::on_btn_roll_click);
+    connect(ui->btn_roll, SIGNAL(clicked(bool)), this, SLOT(on_btn_roll_click()));
+    update(ui);
 }
 
 void Game::update(Ui::MainWindow *ui)
@@ -73,6 +74,6 @@ bool Game::gameIsActive()
 
 void Game::on_btn_roll_click()
 {
-    qDebug() << "Det funkar faktiskt!";
+    qDebug() << "Det funkar faktiskt123123123!";
 }
 
