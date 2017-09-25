@@ -10,7 +10,7 @@ class gameManager
 public:
     gameManager(Ui::MainWindow *ui);
 
-
+    void startRound(Ui::MainWindow *ui);
 
 private:
 

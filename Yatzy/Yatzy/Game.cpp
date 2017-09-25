@@ -8,13 +8,14 @@ Game::Game(Ui::MainWindow *ui, Player player1, Player player2)
     p1 = player1;
     p2 = player2;
 
-    connect(ui->btn_roll, SIGNAL(clicked(bool)), this, SLOT(on_btn_roll_click()));
-    update(ui);
-
+    connect(ui->btn_roll, &QPushButton::clicked, this, &Game::on_btn_roll_click);
 }
 
 void Game::update(Ui::MainWindow *ui)
 {
+
+    qDebug() << "funktion";
+
     Round round(ui);
 
     if (gameIsActive())
@@ -23,13 +24,14 @@ void Game::update(Ui::MainWindow *ui)
 
         if (p1.rollsLeft != 0)
         {
-            //round.newRound(&player1);
+            round.newRound(&p1);
             //qDebug() << "p1";
             qDebug() << "Slag kvar för spelare 1: " << p1.rollsLeft;
+            system("pause");
         }
         else if (p2.rollsLeft != 0)
         {
-            //round.newRound(&player1);
+            //round.newRound(&p2);
             //qDebug() << "p2";
             qDebug() << "Slag kvar för spelare 2: " << p2.rollsLeft;
         }
@@ -73,3 +75,4 @@ void Game::on_btn_roll_click()
 {
     qDebug() << "Det funkar faktiskt!";
 }
+

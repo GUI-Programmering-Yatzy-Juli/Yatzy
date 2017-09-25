@@ -3,7 +3,6 @@
 Round::Round(Ui::MainWindow *ui)
 {
     table = ui;
-
 }
 
 void Round::newRound(Player *currentP)

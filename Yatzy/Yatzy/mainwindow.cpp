@@ -17,7 +17,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     QMainWindow::centralWidget()->layout()->setContentsMargins(0,0,0,0);
-    //connect(ui->btn_roll, SIGNAL(clicked(bool)), this, SLOT(close()));
       ui->btn_save0->setEnabled(false);
       ui->btn_save1->setEnabled(false);
       ui->btn_save2->setEnabled(false);
@@ -47,6 +46,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_btn_roll_clicked()
 {
     qDebug() << "Detta är Rollknappen";
+
     //ChangeImage();
     //textChange();
     //diceChange();
@@ -54,12 +54,12 @@ void MainWindow::on_btn_roll_clicked()
 
 void MainWindow::on_btn_roll_2_clicked()
 {
+      gameManager createGame(ui);
       ui->btn_save0->setEnabled(true);
       ui->btn_save1->setEnabled(true);
       ui->btn_save2->setEnabled(true);
       ui->btn_save3->setEnabled(true);
       ui->btn_save4->setEnabled(true);
-    gameManager createGame(ui);
     //ui->btn_roll_2->setEnabled(false);
 }
 /* prototyp för ändra bild.

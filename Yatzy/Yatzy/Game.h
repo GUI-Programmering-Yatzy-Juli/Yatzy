@@ -6,17 +6,20 @@
 #include "gamemanager.h"
 #include "Player.h"
 #include "mainwindow.h"
+#include <QPushButton>
+#include <QObject>
 
 
-class Game : public QMainWindow
+class Game : public QObject
 {
+
     Q_OBJECT
 
 public:
     Game(Ui::MainWindow *ui, Player player1, Player player2);
     int numRounds = 1;
 
-    void update(Ui::MainWindow *ui);
+
 
     bool gameIsActive();
 
@@ -24,6 +27,7 @@ public:
     Player p2;
 
 public slots:
+     void update(Ui::MainWindow *ui);
 
 private slots:
     void on_btn_roll_click();

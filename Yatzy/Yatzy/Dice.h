@@ -11,7 +11,9 @@ class Dice
 public:
     Dice();
     void roll();
-    int valueDice[4];
+
+    int valueDice[5];
+
 private:
 
 };
