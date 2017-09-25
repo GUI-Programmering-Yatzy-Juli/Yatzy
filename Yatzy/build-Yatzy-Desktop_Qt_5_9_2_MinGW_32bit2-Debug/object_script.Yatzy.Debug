@@ -1,0 +1,12 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\Dice.o
+./debug\Game.o
+./debug\Round.o
+./debug\gamemanager.o
+./debug\Player.o
+./debug\qrc_image.o
+./debug\moc_mainwindow.o
+./debug\moc_Game.o
+);

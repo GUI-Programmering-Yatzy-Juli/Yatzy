@@ -24,7 +24,7 @@ public:
 private:
     int checkNum(Dice dice, int n);
 
-    void checkResult(Dice dice);
+    void checkResult();
     int checkPair(Dice dice);
     int checkThreeOfAKind(Dice dice);
     int checkFourOfAKind(Dice dice);

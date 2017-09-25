@@ -9,12 +9,13 @@ Game::Game(Ui::MainWindow *ui, Player player1, Player player2)
     p2 = player2;
 
     connect(ui->btn_roll, SIGNAL(clicked(bool)), this, SLOT(on_btn_roll_click()));
+    update(ui);
 
 }
 
 void Game::update(Ui::MainWindow *ui)
 {
-    //Round round(ui);
+    Round round(ui);
 
     if (gameIsActive())
     {

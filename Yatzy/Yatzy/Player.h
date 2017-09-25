@@ -15,9 +15,9 @@ public:
 
     bool isCurrentPlayer = false;
 
-    //int savedDice[5] = {0, 0, 0, 0, 0};
+    int savedDice[5] = {1, 0, 5, 3, 0};
 
-    //void checkSavedDice(Dice *dice, Player *currentP);
+    void checkSavedDice(Dice *dice, Player *currentP);
 };
 
 #endif // PLAYER_H

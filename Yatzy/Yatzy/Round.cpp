@@ -3,16 +3,18 @@
 Round::Round(Ui::MainWindow *ui)
 {
     table = ui;
+
 }
 
 void Round::newRound(Player *currentP)
 {
     qDebug() << "Rullar tärningar";
-    checkResult(dice);
+    currentP->checkSavedDice(&dice, currentP);
+    checkResult();
     currentP->rollsLeft--;
 }
 
-void Round::checkResult(Dice dice)
+void Round::checkResult()
 {
     //Om funktionen är true ska tillhörande ruta i tabellen bli någon ljusgrön ca #c2ffaf
     for (int i = 1; i < 7; i++)

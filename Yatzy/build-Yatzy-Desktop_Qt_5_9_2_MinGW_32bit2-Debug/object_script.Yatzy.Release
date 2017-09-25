@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\Dice.o
+./release\Game.o
+./release\Round.o
+./release\gamemanager.o
+./release\Player.o
+./release\qrc_image.o
+./release\moc_mainwindow.o
+./release\moc_Game.o
+);

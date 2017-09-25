@@ -17,15 +17,19 @@ void Dice::roll()
     qDebug() << valueDice[0] << valueDice[1]<< valueDice[2]<< valueDice[3]<< valueDice[4];
 }
 //tanke för en keep
-/* if(savetoggle1 == true)
- * {
- * valueDice[0] == valueDice[0]
- * }
- * else
- * {
- * valueDice[0] =! valueDice[0]
- * }
- * */
+/*
+    if(savetoggle1 == true)
+    {
+        valueDice[0] == valueDice[0]
+    }
+    else
+    {
+        valueDice[0] =! valueDice[0]
+    }
+    */
+
+
+
 
 /* while(valueDice[i] == 0)
  * {
