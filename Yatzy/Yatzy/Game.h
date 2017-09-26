@@ -15,7 +15,7 @@
     Q_OBJECT
 
 public:
-    Game(Ui::MainWindow *ui, Player player1, Player player2);
+    Game(Ui::MainWindow *ui);
     int numRounds = 1;
 
     bool gameIsActive();
@@ -23,13 +23,13 @@ public:
     Player p1;
     Player p2;
 
+    int score[2][19];
+
 public slots:
      void update(Ui::MainWindow *ui);
 
 private slots:
     void on_btn_roll_click();
-
-
 };
 
 #endif // GAME_H

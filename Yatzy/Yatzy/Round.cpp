@@ -15,8 +15,24 @@ void Round::newRound(Player *currentP)
 
 void Round::checkResult(Dice dice)
 {
+    int roundScore[19];
+    for (int i = 0; i < 19; i++)        //Sätter 0 som värde på alla platser
+    {
+        roundScore[i] = 0;
+    }
     //Om funktionen är true ska tillhörande ruta i tabellen bli någon ljusgrön ca #c2ffaf
-    for (int i = 1; i < 7; i++)
+
+    roundScore[9] = checkPair(dice);
+    roundScore[10] = checkTwoPairs(dice);
+    roundScore[11] = checkThreeOfAKind(dice);
+    roundScore[12] = checkFourOfAKind(dice);
+    roundScore[13] = checkSmallLadder(dice);
+    roundScore[14] = checkBigLadder(dice);
+    roundScore[15] = checkFullHouse(dice);
+    roundScore[16] = checkChance(dice);
+    roundScore[17] = checkYatzy(dice);
+
+    /*for (int i = 1; i < 7; i++)
     {
         int sum = checkNum(dice, i);
         if (sum > 0)
@@ -24,58 +40,71 @@ void Round::checkResult(Dice dice)
             qDebug() << i << " = " << sum;
         }
     }
-    if (checkPair(dice) > 0)
+    if (roundScore[9] > 0)
     {
-        isPossibleChangeColour(9, 0, checkPair(dice));
+        isPossibleChangeColour(9, 0, roundScore[9]);
         qDebug() << "Par";
     }
 
-    if ( checkThreeOfAKind(dice) > 0)
+    if (roundScore[10] > 0)
     {
-        isPossibleChangeColour(10, 0, checkThreeOfAKind(dice));
-        qDebug() << "Triss";
-    }
-
-    if ( checkFourOfAKind(dice) > 0)
-    {
-        isPossibleChangeColour(11, 0, checkFourOfAKind(dice));
-        qDebug() << "Fyrtal";
-    }
-
-    if ( checkTwoPairs(dice) > 0)
-    {
-        isPossibleChangeColour(12, 0, checkTwoPairs(dice));
+        isPossibleChangeColour(10, 0, roundScore[10]);
         qDebug() << "Två Par";
     }
 
-    if ( checkYatzy(dice) > 0)
+    if (roundScore[11] > 0)
     {
-        isPossibleChangeColour(13, 0, checkYatzy(dice));
-        qDebug() << "Yatzy!";
+        isPossibleChangeColour(11, 0, roundScore[11]);
+        qDebug() << "Triss";
     }
 
-    if ( checkSmallLadder(dice) > 0)
+    if (roundScore[12] > 0)
     {
-        isPossibleChangeColour(14, 0, checkSmallLadder(dice));
+        isPossibleChangeColour(12, 0, roundScore[12]);
+        qDebug() << "Fyrtal";
+    }
+
+    if (roundScore[13] > 0)
+    {
+        isPossibleChangeColour(13, 0, roundScore[13]);
         qDebug() << "Liten Stege";
     }
 
-    if ( checkBigLadder(dice) > 0)
+    if (roundScore[14] > 0)
     {
-        isPossibleChangeColour(15, 0, checkBigLadder(dice));
+        isPossibleChangeColour(14, 0, roundScore[14]);
         qDebug() << "Stor Stege";
     }
 
-    if (checkFullHouse(dice) > 0)
+    if (roundScore[15] > 0)
     {
-        isPossibleChangeColour(16, 0, checkFullHouse(dice));
+        isPossibleChangeColour(15, 0, roundScore[15]);
         qDebug() << "Kåk";
     }
-    if (checkChance(dice) > 0)
+    if (roundScore[16] > 0)
     {
-        isPossibleChangeColour(17, 0, checkChance(dice));
+        isPossibleChangeColour(16, 0, roundScore[16]);
         qDebug() << "Chans";
     }
+
+    if (roundScore[17] > 0)
+    {
+        isPossibleChangeColour(17, 0, roundScore[17]);
+        qDebug() << "Yatzy!";
+    }*/
+
+
+
+    for (int i = 0; i < 18; i++)
+    {
+        if (roundScore[i] > 0)
+        {
+            isPossibleChangeColour(i, 0, roundScore[i]);
+        }
+    }
+
+
+
     //Man ska välja vilken alternativ man vill köra på
     //void makeChoice()
 
@@ -195,15 +224,13 @@ int Round::checkYatzy(Dice dice)                       //Klar
 {
     //Denna fungerar
     //Här är yahtzee
-
     if (    dice.valueDice[0] == dice.valueDice[1] &&
             dice.valueDice[0] == dice.valueDice[2] &&
             dice.valueDice[0] == dice.valueDice[3] &&
             dice.valueDice[0] == dice.valueDice[4])
-    {
-        //här blir det yahtzee
+        {
         return 50;
-    }
+        }
     return 0;
 }
 

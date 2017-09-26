@@ -18,9 +18,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    void textChange();
-    void diceChange();
- //   void saveDice();
+
+    void start();
 
     Ui::MainWindow *ui;
 public slots:
@@ -37,13 +36,10 @@ private slots:
 
    // void on_pushButton_7_clicked();
 
-
-
-
     void on_tableWidget_cellClicked(int row, int column);
 
 private:
-
+    void enableSaveBtn();
 };
 
 #endif // MAINWINDOW_H

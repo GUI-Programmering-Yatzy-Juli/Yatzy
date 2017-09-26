@@ -1,14 +1,16 @@
 #include "Game.h"
 #include <qdebug.h>
 
-Game::Game(Ui::MainWindow *ui, Player player1, Player player2)
+Game::Game(Ui::MainWindow *ui)
 {
     qDebug() << "Första rundan startar";
 
-    p1 = player1;
-    p2 = player2;
-
     connect(ui->btn_roll, SIGNAL(clicked(bool)), this, SLOT(on_btn_roll_click()));
+
+    /*while (ui->btn_roll->hasFocus())
+    {
+        update(ui);
+    }*/
     update(ui);
 }
 
@@ -76,4 +78,3 @@ void Game::on_btn_roll_click()
 {
     qDebug() << "Det funkar faktiskt123123123!";
 }
-

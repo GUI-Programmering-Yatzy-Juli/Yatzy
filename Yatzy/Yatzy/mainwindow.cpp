@@ -3,7 +3,6 @@
 
 #include "Game.h"
 #include <qdebug.h>
-#include "gamemanager.h"
 #include <QTableWidgetItem>
 #include <QWidget>
 #include <QPushButton>
@@ -55,13 +54,8 @@ void MainWindow::on_btn_roll_clicked()
 
 void MainWindow::on_btn_roll_2_clicked()
 {
-      gameManager createGame(ui);
-      ui->btn_save0->setEnabled(true);
-      ui->btn_save1->setEnabled(true);
-      ui->btn_save2->setEnabled(true);
-      ui->btn_save3->setEnabled(true);
-      ui->btn_save4->setEnabled(true);
-    //ui->btn_roll_2->setEnabled(false);
+    Game game(ui);
+    enableSaveBtn();
 }
 /* prototyp för ändra bild.
 void MainWindow::ChangeImage(Dice)
@@ -92,6 +86,7 @@ ui->btn_save0->setStyleSheet("background-image: url(:/new/prefix1/Dices/6.png)")
 }
 }
   */
+
 void MainWindow::on_btn_exit_clicked()
 {
     QMessageBox::StandardButton reply;
@@ -104,7 +99,6 @@ void MainWindow::on_btn_exit_clicked()
        qDebug() << "Thank you for staying :)";
      }
    }
-
 
 void MainWindow::on_btn_rules_clicked()
 {
@@ -145,4 +139,18 @@ void MainWindow::on_btn_rules_clicked()
 void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
     qDebug() << "Du tryckte:" << row << column;
+}
+
+void MainWindow::enableSaveBtn()
+{
+    ui->btn_save0->setEnabled(true);
+    ui->btn_save1->setEnabled(true);
+    ui->btn_save2->setEnabled(true);
+    ui->btn_save3->setEnabled(true);
+    ui->btn_save4->setEnabled(true);
+}
+
+void MainWindow::start()
+{
+
 }
