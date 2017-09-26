@@ -131,7 +131,7 @@ int Round::checkPair(Dice dice)                        //Klar
     }
     return 0;
 }
-
+/* Gammal version av tvåpar
 int Round::checkTwoPairs(Dice dice)                    //Nästan Klar
 {
 
@@ -168,6 +168,11 @@ int Round::checkTwoPairs(Dice dice)                    //Nästan Klar
             }
          }
     }
+    return 0;
+}
+*/
+int Round::checkTwoPairs(Dice dice)
+{
     return 0;
 }
 
@@ -391,7 +396,7 @@ int Round::checkFullHouse(Dice dice)                   //Klar
 
 int Round::checkChance(Dice dice)                      //Klar
 {
-    int sum;
+    int sum = 0;
 
     for (int i = 0; i < 5; i++)
     {
