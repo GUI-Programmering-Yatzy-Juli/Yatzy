@@ -51,10 +51,6 @@ MainWindow::~MainWindow()
 void MainWindow::on_btn_roll_clicked()
 {
     qDebug() << "Detta är Rollknappen";
-
-    //ChangeImage();
-    //textChange();
-    //diceChange();
 }
 
 void MainWindow::on_btn_roll_2_clicked()
@@ -146,56 +142,7 @@ void MainWindow::on_btn_rules_clicked()
                "summa\n") );
 }
 
-/*void MainWindow::on_pushButton_7_clicked()
+void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
-    saveDice();
+    qDebug() << "Du tryckte:" << row << column;
 }
-
-void MainWindow::saveDice()
-{
-     if(ui->pushButton_7->styleSheet() != 0)
-     {
-         ui->pushButton_7->setStyleSheet(ui->pushButton_7->styleSheet());
-     }
-}
-*/
-
-void MainWindow::textChange()
-{
-
-    if(ui->tableWidget->item(1,0) == 0)
-    {
-    ui->tableWidget->setItem(1, 0, new QTableWidgetItem("Summa"));          //Detta skriver på raden 1, kolumnen 2, "Summa"
-    ui->tableWidget->item(1,0)->setBackgroundColor(Qt::green);                //Detta skriver gör raden1, kolumnen 2 green
-    }
-    else
-    {
-        ui->tableWidget->setItem(1, 0, new QTableWidgetItem("Icke Tillgänglig"));          //Detta skriver på raden 1, kolumnen 2, "Icke tillgänglig"
-        ui->tableWidget->item(1,0)->setBackgroundColor(Qt::red);                //Detta skriver gör raden1, kolumnen 2 red
-    }
-}
-
-void MainWindow::diceChange()
-{
-    if(ui->btn_save0->styleSheet() == "")
-    {
-    ui->btn_save0->setStyleSheet("background-image: url(:/new/prefix1/G:/green.jpg);"); //Ska ändras till vad dice1 är. t.ex  dice 1 blir en 2a så ska en bild på en 2a komma upp.
-    }
-    else
-    {
-         ui->btn_save0->setStyleSheet("");
-    }
-}
-
-/*
-if ui->tableWidget->item(x,x) == 0)
-{
-ui->tableWidget->setItem(x, x, new QTableWidgetItem("Summa"));          //Detta skriver på raden 1, kolumnen 2, "Summa"
-ui->tableWidget->item(x,x)->setBackgroundColor(Qt::green);                //Detta skriver gör raden1, kolumnen 2 green
-}
-else
-{
-    ui->tableWidget->setItem(x, x, new QTableWidgetItem("Icke Tillgänglig"));          //Detta skriver på raden 1, kolumnen 2, "Icke tillgänglig"
-    ui->tableWidget->item(x,x)->setBackgroundColor(Qt::red);                //Detta skriver gör raden1, kolumnen 2 red
-}
-*/

@@ -14,9 +14,12 @@ public:
 
     void test();
 
-    void startRound(Ui::MainWindow *ui);
+   void addScore(Player *currentP, int r, int s);
+
+   int score[2][19];
 
 private:
+
 
 };
 

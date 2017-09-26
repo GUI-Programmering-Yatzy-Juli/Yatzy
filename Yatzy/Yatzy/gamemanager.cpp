@@ -14,5 +14,10 @@ void gameManager::test()
 
 }
 
+void gameManager::addScore(Player *currentP, int r, int s)
+{
+    //score[currentP][r] = s;
+}
+
 
 //scores ska vara en vektor, det är som en 2d array
