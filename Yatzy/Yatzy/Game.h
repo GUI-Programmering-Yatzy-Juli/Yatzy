@@ -9,10 +9,8 @@
 #include <QObject>
 
 
-    class Game : public QObject
+    class Game
 {
-
-    Q_OBJECT
 
 public:
     Game(Ui::MainWindow *ui);
@@ -25,11 +23,13 @@ public:
 
     int score[2][19];
 
+    void calcScore(int pCol);
+    int calcPointsTillBonus(int pCol);
+    int calcTotal(int pCol);
+    void makeChoice();
+
 public slots:
      void update(Ui::MainWindow *ui);
-
-private slots:
-    void on_btn_roll_click();
 };
 
 #endif // GAME_H

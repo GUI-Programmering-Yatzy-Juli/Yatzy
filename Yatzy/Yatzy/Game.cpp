@@ -4,7 +4,8 @@
 Game::Game(Ui::MainWindow *ui)
 {
     qDebug() << "Första rundan startar";
-
+    p1.pNum = 0;
+    p2.pNum = 1;
 }
 
 void Game::update(Ui::MainWindow *ui)
@@ -23,7 +24,6 @@ void Game::update(Ui::MainWindow *ui)
             round.newRound(&p1);
             //qDebug() << "p1";
             qDebug() << "Slag kvar för spelare 1: " << p1.rollsLeft;
-            system("pause");
         }
         else if (p2.rollsLeft != 0)
         {
@@ -67,7 +67,40 @@ bool Game::gameIsActive()
     }
 }
 
-void Game::on_btn_roll_click()
+void Game::calcScore(int pCol)
 {
-    qDebug() << "Det funkar faktiskt123123123!";
+
+    score[6][pCol] = calcPointsTillBonus(pCol);     //Poäng till bonus col 6
+    if (score[6][pCol] >= 63)                       //Bonus col 7
+    {
+        score[7][pCol] = 50;
+    }
+    score[17][pCol] = calcTotal(pCol);
+    qDebug() << score[17][pCol];
+}
+
+int Game::calcPointsTillBonus(int pCol)
+{
+    //points till bonus row 6
+    int sum = 0;
+    for (int i = 0; i < 6; i++)
+    {
+        sum = score[i][pCol];
+    }
+    return sum;
+}
+
+int Game::calcTotal(int pCol)
+{
+    int sum = 0;
+    for (int i = 0; i < 17; i++)
+    {
+        score[i][pCol] += sum;
+    }
+    return sum;
+}
+
+void Game::makeChoice()
+{
+
 }

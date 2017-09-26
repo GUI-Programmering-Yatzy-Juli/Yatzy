@@ -8,12 +8,12 @@ class Player
 public:
     Player();
 
-    int score = 0;
+    int score;
 
     int rollsLeft = 3;
     int roundsLeft = 13;
 
-    bool isCurrentPlayer = false;
+    int pNum;
 
     int savedDice[5] = {0, 0, 0, 0, 0};
 

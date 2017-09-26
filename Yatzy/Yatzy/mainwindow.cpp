@@ -13,9 +13,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    Game game(ui); //Skapar Game-obj
-
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     QMainWindow::centralWidget()->layout()->setContentsMargins(0,0,0,0);
@@ -58,6 +55,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
       ui->btn_save0->setStyleSheet("background-image: url(:/new/prefix1/Dices/1.png);");
 */
+
+
+
 }
 
 MainWindow::~MainWindow()
@@ -67,8 +67,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btn_roll_clicked()
 {
-
-    qDebug() << "Detta är Rollknappen";
+    Game game(ui); //Skapar Game-obj
+    game.update(ui);
 }
 
 void MainWindow::on_btn_roll_2_clicked()
@@ -157,6 +157,8 @@ void MainWindow::on_btn_rules_clicked()
 void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
     qDebug() << "Du tryckte:" << row << column;
+    //en funktion kan skicka iväg och köra en annan funktion t.ex.
+    //isPossibleChoice(int row, int column
 }
 
 void MainWindow::enableSaveBtn()

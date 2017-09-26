@@ -1,12 +1,10 @@
 #ifndef ROUND_H
 #define ROUND_H
 
-#include "Dice.h"
+
 #include "Game.h"
-#include <qdebug.h>
-#include "Player.h"
-#include "mainwindow.h"
 #include <ui_mainwindow.h>
+#include "Player.h"
 
 class Round
 {
@@ -24,7 +22,7 @@ public:
 private:
     int checkNum(Dice dice, int n);
 
-    void checkResult(Dice dice);
+    void checkResult(Dice dice, int column);
     int checkPair(Dice dice);
     int checkThreeOfAKind(Dice dice);
     int checkFourOfAKind(Dice dice);

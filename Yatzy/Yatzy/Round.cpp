@@ -1,4 +1,6 @@
 #include "Round.h"
+#include <qdebug.h>
+
 
 Round::Round(Ui::MainWindow *ui)
 {
@@ -9,44 +11,42 @@ void Round::newRound(Player *currentP)
 {
     qDebug() << "Rullar tärningar";
     currentP->checkSavedDice(&dice, currentP);
-    checkResult(dice);
+    checkResult(dice, currentP->pNum);
     currentP->rollsLeft--;
 }
 
-void Round::checkResult(Dice dice)
+void Round::checkResult(Dice dice, int column)
 {
-    int roundScore[19];
-    for (int i = 0; i < 19; i++)        //Sätter 0 som värde på alla platser
+    int roundScore[18];
+    for (int i = 0; i < 18; i++)        //Sätter 0 som värde på alla platser
     {
         roundScore[i] = 0;
     }
-    //Om funktionen är true ska tillhörande ruta i tabellen bli någon ljusgrön ca #c2ffaf
 
-    roundScore[9] = checkPair(dice);
-    roundScore[10] = checkTwoPairs(dice);
-    roundScore[11] = checkThreeOfAKind(dice);
-    roundScore[12] = checkFourOfAKind(dice);
-    roundScore[13] = checkSmallLadder(dice);
-    roundScore[14] = checkBigLadder(dice);
-    roundScore[15] = checkFullHouse(dice);
-    roundScore[16] = checkChance(dice);
-    roundScore[17] = checkYatzy(dice);
+    roundScore[8] = checkPair(dice);
+    roundScore[9] = checkTwoPairs(dice);
+    roundScore[10] = checkThreeOfAKind(dice);
+    roundScore[11] = checkFourOfAKind(dice);
+    roundScore[12] = checkSmallLadder(dice);
+    roundScore[13] = checkBigLadder(dice);
+    roundScore[14] = checkFullHouse(dice);
+    roundScore[15] = checkChance(dice);
+    roundScore[16] = checkYatzy(dice);
 
     for (int i = 1; i < 7; i++)
     {
         int sum = checkNum(dice, i);
         if (sum > 0)
         {
-            qDebug() << i << " = " << sum;
+            roundScore[i - 1] = sum;
         }
     }
-
 
     for (int i = 0; i < 18; i++)
     {
         if (roundScore[i] > 0)
         {
-            isPossibleChangeColour(i, 0, roundScore[i]);
+            isPossibleChangeColour(i, column, roundScore[i]);
         }
     }
 
@@ -78,6 +78,7 @@ int Round::checkPair(Dice dice)                        //Klar
     }
     return 0;
 }
+
 /* Gammal version av tvåpar
 int Round::checkTwoPairs(Dice dice)                    //Nästan Klar
 {
@@ -118,6 +119,7 @@ int Round::checkTwoPairs(Dice dice)                    //Nästan Klar
     return 0;
 }
 */
+
 int Round::checkTwoPairs(Dice dice)
 {
     return 0;
@@ -361,7 +363,7 @@ int Round::checkNum(Dice dice, int n)                   //Klar
     for (int i = 0; i < 6; i++)
         if (dice.valueDice[i] == n)
             sum += dice.valueDice[i];
-    return sum;
+    return sum - n;
 }
 
 void Round::isPossibleChangeColour (int y, int x, int score)
@@ -371,10 +373,7 @@ void Round::isPossibleChangeColour (int y, int x, int score)
      *  x är beroende på vilken spelare det är. spelare 1 = 0 spelare 2 = 1
      *  score är antalet poäng villkoret är värt
      */
-    x = 0; //temporärt
     QString myStr = QString::number(score);
-    qDebug() << "poäng: "<< myStr;
-
 
     table->tableWidget->setItem(y, x, new QTableWidgetItem(myStr));
     table->tableWidget->item(y, x)->setBackgroundColor(Qt::green);

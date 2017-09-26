@@ -39,6 +39,7 @@ private slots:
 
 private:
     void enableSaveBtn();
+
 };
 
 #endif // MAINWINDOW_H
