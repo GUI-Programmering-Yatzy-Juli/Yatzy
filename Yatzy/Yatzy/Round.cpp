@@ -32,7 +32,7 @@ void Round::checkResult(Dice dice)
     roundScore[16] = checkChance(dice);
     roundScore[17] = checkYatzy(dice);
 
-    /*for (int i = 1; i < 7; i++)
+    for (int i = 1; i < 7; i++)
     {
         int sum = checkNum(dice, i);
         if (sum > 0)
@@ -40,59 +40,6 @@ void Round::checkResult(Dice dice)
             qDebug() << i << " = " << sum;
         }
     }
-    if (roundScore[9] > 0)
-    {
-        isPossibleChangeColour(9, 0, roundScore[9]);
-        qDebug() << "Par";
-    }
-
-    if (roundScore[10] > 0)
-    {
-        isPossibleChangeColour(10, 0, roundScore[10]);
-        qDebug() << "Två Par";
-    }
-
-    if (roundScore[11] > 0)
-    {
-        isPossibleChangeColour(11, 0, roundScore[11]);
-        qDebug() << "Triss";
-    }
-
-    if (roundScore[12] > 0)
-    {
-        isPossibleChangeColour(12, 0, roundScore[12]);
-        qDebug() << "Fyrtal";
-    }
-
-    if (roundScore[13] > 0)
-    {
-        isPossibleChangeColour(13, 0, roundScore[13]);
-        qDebug() << "Liten Stege";
-    }
-
-    if (roundScore[14] > 0)
-    {
-        isPossibleChangeColour(14, 0, roundScore[14]);
-        qDebug() << "Stor Stege";
-    }
-
-    if (roundScore[15] > 0)
-    {
-        isPossibleChangeColour(15, 0, roundScore[15]);
-        qDebug() << "Kåk";
-    }
-    if (roundScore[16] > 0)
-    {
-        isPossibleChangeColour(16, 0, roundScore[16]);
-        qDebug() << "Chans";
-    }
-
-    if (roundScore[17] > 0)
-    {
-        isPossibleChangeColour(17, 0, roundScore[17]);
-        qDebug() << "Yatzy!";
-    }*/
-
 
 
     for (int i = 0; i < 18; i++)

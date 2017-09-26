@@ -5,13 +5,6 @@ Game::Game(Ui::MainWindow *ui)
 {
     qDebug() << "Första rundan startar";
 
-    connect(ui->btn_roll, SIGNAL(clicked(bool)), this, SLOT(on_btn_roll_click()));
-
-    /*while (ui->btn_roll->hasFocus())
-    {
-        update(ui);
-    }*/
-    update(ui);
 }
 
 void Game::update(Ui::MainWindow *ui)

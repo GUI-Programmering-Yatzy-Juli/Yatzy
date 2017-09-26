@@ -7,6 +7,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
+
     w.show();
 
 
@@ -23,6 +24,6 @@ int main(int argc, char *argv[])
  *  Kanske byta plats på Rules och Exit btn
  *  Kanske ha starttexten Start på Roll och sen byta efter ett klick
  *  checkTwoPairs måste returna värdet på båda paren
- *  Den verkar räkna för många tärningar
+ *  Skriv ut vems tur det är någonstans
  *
  * ---------------------------------------*/

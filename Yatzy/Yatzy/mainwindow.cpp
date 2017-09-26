@@ -13,6 +13,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    Game game(ui); //Skapar Game-obj
+
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     QMainWindow::centralWidget()->layout()->setContentsMargins(0,0,0,0);
@@ -49,12 +52,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btn_roll_clicked()
 {
+
     qDebug() << "Detta är Rollknappen";
 }
 
 void MainWindow::on_btn_roll_2_clicked()
 {
-    Game game(ui);
     enableSaveBtn();
 }
 /* prototyp för ändra bild.
@@ -148,9 +151,4 @@ void MainWindow::enableSaveBtn()
     ui->btn_save2->setEnabled(true);
     ui->btn_save3->setEnabled(true);
     ui->btn_save4->setEnabled(true);
-}
-
-void MainWindow::start()
-{
-
 }
