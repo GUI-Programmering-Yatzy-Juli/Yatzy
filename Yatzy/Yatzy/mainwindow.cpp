@@ -26,13 +26,28 @@ MainWindow::MainWindow(QWidget *parent) :
       ui->btn_save4->setEnabled(false);
       QPixmap img1(":/new/prefix1/Dices/1.png");
       QPixmap img2(":/new/prefix1/Dices/2.png");
+      QPixmap img3(":/new/prefix1/Dices/3.png");
+      QPixmap img4(":/new/prefix1/Dices/4.png");
+      QPixmap img5(":/new/prefix1/Dices/5.png");
       QIcon ButtonIcon1(img1);
       QIcon ButtonIcon2(img2);
+      QIcon ButtonIcon3(img3);
+      QIcon ButtonIcon4(img4);
+      QIcon ButtonIcon5(img5);
       ui->btn_save0->setIcon(ButtonIcon1);
-      ui->btn_save0->setIconSize(QSize(200,200));
+      ui->btn_save0->setIconSize(QSize(100,100));
 
       ui->btn_save1->setIcon(ButtonIcon2);
-      ui->btn_save2->setIconSize(QSize(200,200));
+      ui->btn_save1->setIconSize(QSize(100,100));
+
+      ui->btn_save2->setIcon(ButtonIcon3);
+      ui->btn_save2->setIconSize(QSize(100,100));
+
+      ui->btn_save3->setIcon(ButtonIcon4);
+      ui->btn_save3->setIconSize(QSize(100,100));
+
+      ui->btn_save4->setIcon(ButtonIcon5);
+      ui->btn_save4->setIconSize(QSize(100,100));
       /*
       QImage img1(":/new/prefix1/Dices/1.png");
       QImage img2(":/new/prefix1/Dices/2.png");
