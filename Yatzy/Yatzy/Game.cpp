@@ -3,10 +3,7 @@
 #include <QMessageBox>
 #include <QApplication>
 #include <QProcess>
-#include <QLineEdit>
 #include <QTextEdit>
-#include <QDialog>
-
 Game::Game(Ui::MainWindow *ui)
 {
     qDebug() << "Första rundan startar";
@@ -62,8 +59,13 @@ bool Game::gameIsActive()
         {
             qDebug() << "The Winner is player one";
             QTextEdit *txt = new QTextEdit();
+            txt->setMaximumHeight(400);
+            txt->setMaximumWidth(400);
+            txt->setMinimumHeight(400);
+            txt->setMinimumWidth(400);
+
                     txt->setText("The winner is player one");
-                     txt->setStyleSheet("font: 15pt ;");
+                     txt->setStyleSheet("font: 15pt ; background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
                     txt->show();
 
                     txt->setEnabled(false);
@@ -73,8 +75,13 @@ bool Game::gameIsActive()
         {
             qDebug() << "The Winner is player two";
             QTextEdit *txt = new QTextEdit();
+            txt->setMaximumHeight(400);
+            txt->setMaximumWidth(400);
+            txt->setMinimumHeight(400);
+            txt->setMinimumWidth(400);
+
                     txt->setText("The winner is player two");
-                     txt->setStyleSheet("font: 15pt ;");
+                  txt->setStyleSheet("font: 15pt ; background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
                     txt->show();
 
                     txt->setEnabled(false);
@@ -83,8 +90,12 @@ bool Game::gameIsActive()
         {
             qDebug() << "Its a tie";
             QTextEdit *txt = new QTextEdit();
+            txt->setMaximumHeight(400);
+            txt->setMaximumWidth(400);
+            txt->setMinimumHeight(400);
+            txt->setMinimumWidth(400);
                     txt->setText("It's a tie stand down, we'll get them another day lads.");
-                     txt->setStyleSheet("font: 15pt ;");
+                  txt->setStyleSheet("font: 15pt ; background-image: url(:/new/prefix1/fire/tie.png); background-repeat: no-repeat;");
                     txt->show();
 
                     txt->setEnabled(false);

@@ -6,5 +6,8 @@
         <file>Dices/4.png</file>
         <file>Dices/5.png</file>
         <file>Dices/6.png</file>
+        <file>fire/fireworks_12.gif</file>
+        <file>fire/firew.png</file>
+        <file>fire/tie.png</file>
     </qresource>
 </RCC>
