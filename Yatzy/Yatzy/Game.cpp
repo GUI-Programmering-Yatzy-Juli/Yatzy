@@ -1,5 +1,11 @@
 #include "Game.h"
 #include <qdebug.h>
+#include <QMessageBox>
+#include <QApplication>
+#include <QProcess>
+#include <QLineEdit>
+#include <QTextEdit>
+#include <QDialog>
 
 Game::Game(Ui::MainWindow *ui)
 {
@@ -49,21 +55,42 @@ void Game::update(Ui::MainWindow *ui)
 
 bool Game::gameIsActive()
 {
-    if (numRounds > 13)
+    if (numRounds > 16)
     {
         //utnämn vinnaren
         if (p1.score > p2.score)
         {
             qDebug() << "The Winner is player one";
+            QTextEdit *txt = new QTextEdit();
+                    txt->setText("The winner is player one");
+                     txt->setStyleSheet("font: 15pt ;");
+                    txt->show();
+
+                    txt->setEnabled(false);
+
         }
         else if (p1.score < p2.score)
         {
             qDebug() << "The Winner is player two";
+            QTextEdit *txt = new QTextEdit();
+                    txt->setText("The winner is player two");
+                     txt->setStyleSheet("font: 15pt ;");
+                    txt->show();
+
+                    txt->setEnabled(false);
         }
         else if (p1.score == p2.score)
         {
             qDebug() << "Its a tie";
+            QTextEdit *txt = new QTextEdit();
+                    txt->setText("It's a tie stand down, we'll get them another day lads.");
+                     txt->setStyleSheet("font: 15pt ;");
+                    txt->show();
+
+                    txt->setEnabled(false);
+
         }
+
         //avsluta spelet
         return false;
     }
