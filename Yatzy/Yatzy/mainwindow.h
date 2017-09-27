@@ -7,19 +7,25 @@
 #include "Dice.h"
 #include "QTableWidget"
 
+class Game;
 namespace Ui {
 class MainWindow;
 }
 
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-
+private:
+    Game *g;
 public:
+
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
     Ui::MainWindow *ui;
+
+
 
 public slots:
 
@@ -39,6 +45,7 @@ private slots:
 
 private:
     void enableSaveBtn();
+
 
 };
 

@@ -10,7 +10,7 @@ public:
 
     int score;
 
-    int rollsLeft = 3;
+    int rollsLeft = 0;
     int roundsLeft = 13;
 
     int pNum;

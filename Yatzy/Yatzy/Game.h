@@ -9,7 +9,7 @@
 #include <QObject>
 
 
-    class Game
+class Game
 {
 
 public:
