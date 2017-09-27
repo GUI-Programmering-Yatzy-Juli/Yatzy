@@ -27,6 +27,7 @@ public:
     int calcPointsTillBonus(int pCol);
     int calcTotal(int pCol);
     void makeChoice();
+    void saveDice(int d);
 
 public slots:
      void update(Ui::MainWindow *ui);

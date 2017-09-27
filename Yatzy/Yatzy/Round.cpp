@@ -14,6 +14,7 @@ void Round::newRound(Player *currentP)
     checkResult(dice, currentP->pNum);
     currentP->rollsLeft--;
     Image();
+
 }
 void Round::Image()
 {
@@ -245,49 +246,34 @@ int Round::checkPair(Dice dice)                        //Klar
     return 0;
 }
 
-/* Gammal version av tvåpar
-int Round::checkTwoPairs(Dice dice)                    //Nästan Klar
+int Round::checkTwoPairs(Dice dice)                    //Klar
 {
 
-    //här är två par
-    //Den ska returna antalet poäng det ger
+    int firstPairValue = 0;
+    int secondPairValue = 0;
+
     for (int firstDice = 0; firstDice < 5; firstDice++)
     {
-       for (int secondDice = firstDice + 1; secondDice < 5; secondDice++)
+       for (int secondDice = firstDice+1; secondDice < 5; secondDice++)
        {
-           for(int thirdDice = secondDice + 1; thirdDice < 5; thirdDice++)
+           if (dice.valueDice[firstDice] == dice.valueDice[secondDice] && dice.valueDice[firstDice] != 0)
            {
-                for(int fourthDice= thirdDice + 1; fourthDice < 5; fourthDice++)
+                if (firstPairValue != 0)
+                    secondPairValue = dice.valueDice[firstDice] * 2;
+
+                if (secondPairValue == 0)
+                    firstPairValue = dice.valueDice[firstDice] * 2;
+
+                dice.valueDice[firstDice] = 0;
+                dice.valueDice[secondDice] = 0;
+
+                if (firstPairValue != 0 && secondPairValue != 0)
                 {
-                    if(    (dice.valueDice[firstDice] == dice.valueDice[secondDice]   && //1+2 och 3+4
-                            dice.valueDice[thirdDice] == dice.valueDice[fourthDice])
-
-                                                        ||
-
-                           (dice.valueDice[firstDice] == dice.valueDice[thirdDice]    && //1+3 och 2+4
-                            dice.valueDice[secondDice] == dice.valueDice[fourthDice])
-
-                                                        ||
-
-                           (dice.valueDice[firstDice] == dice.valueDice[fourthDice]   && //1+4 och 2+3
-                            dice.valueDice[secondDice] == dice.valueDice[thirdDice]))
-
-                    {
-                         //här blir det två par
-                         //glöm inte att värdet på två paren måste sparas
-
-                        return (dice.valueDice[firstDice] * 2) + (dice.valueDice[secondDice] * 2);
-                    }
+                    return secondPairValue + firstPairValue;
                 }
-            }
-         }
+           }
+       }
     }
-    return 0;
-}
-*/
-
-int Round::checkTwoPairs(Dice dice)
-{
     return 0;
 }
 
@@ -523,7 +509,7 @@ int Round::checkChance(Dice dice)                      //Klar
     return sum;
 }
 
-int Round::checkNum(Dice dice, int n)                   //Klar
+int Round::checkNum(Dice dice, int n)                  //Klar
 {
     //Denna fungerar
     int sum = 0;

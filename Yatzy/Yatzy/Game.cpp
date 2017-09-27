@@ -108,3 +108,8 @@ void Game::makeChoice()
 {
 
 }
+
+void Game::saveDice(int d)
+{
+
+}

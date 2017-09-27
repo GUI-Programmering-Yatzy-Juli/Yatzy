@@ -43,6 +43,16 @@ private slots:
 
 
 
+    void on_btn_save0_clicked();
+
+    void on_btn_save1_clicked();
+
+    void on_btn_save2_clicked();
+
+    void on_btn_save3_clicked();
+
+    void on_btn_save4_clicked();
+
 private:
     void enableSaveBtn();
 

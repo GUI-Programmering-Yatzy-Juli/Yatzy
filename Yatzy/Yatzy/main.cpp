@@ -10,8 +10,6 @@ int main(int argc, char *argv[])
 
     w.show();
 
-
-
     return a.exec();
 }
 
@@ -25,7 +23,6 @@ int main(int argc, char *argv[])
  * Har börjat på dessa men är ej klar                                              |
  *----------------------------------------------------------------------------------
  *  Göra användning av score arrayen i Game.cpp                                    |
- *  checkTwoPairs måste returna värdet på båda paren                               |
- *                                                                                 |
+ *  Spara tärningar                                                                |
  *                                                                                 |
  * --------------------------------------------------------------------------------*/

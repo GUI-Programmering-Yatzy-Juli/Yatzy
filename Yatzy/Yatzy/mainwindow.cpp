@@ -146,3 +146,28 @@ void MainWindow::enableSaveBtn()
     ui->btn_save3->setEnabled(true);
     ui->btn_save4->setEnabled(true);
 }
+
+void MainWindow::on_btn_save0_clicked()
+{
+    g->saveDice(0);
+}
+
+void MainWindow::on_btn_save1_clicked()
+{
+    g->saveDice(1);
+}
+
+void MainWindow::on_btn_save2_clicked()
+{
+    g->saveDice(2);
+}
+
+void MainWindow::on_btn_save3_clicked()
+{
+    g->saveDice(3);
+}
+
+void MainWindow::on_btn_save4_clicked()
+{
+    g->saveDice(4);
+}
