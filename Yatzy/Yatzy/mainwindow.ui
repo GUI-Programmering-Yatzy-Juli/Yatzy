@@ -807,7 +807,7 @@ font: 75 28pt &quot;MS Shell Dlg 2&quot;;</string>
        <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
       </property>
       <property name="text">
-       <string>Player1</string>
+       <string>Player 1</string>
       </property>
      </widget>
     </item>

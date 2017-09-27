@@ -26,6 +26,7 @@ void Game::update(Ui::MainWindow *ui)
             round.newRound(&p1);
             //qDebug() << "p1";
             ui->label->setText("Player 1");                                 // Skulle kunna bli en while(p1.rollsLeft >= 1)   ui->label->setText("Player 1"); //
+            ui->label->setStyleSheet("font: 75 14pt");
             qDebug() << "Slag kvar för spelare 1: " << p1.rollsLeft;
         }
         else if (p2.rollsLeft != 0)
@@ -33,6 +34,7 @@ void Game::update(Ui::MainWindow *ui)
             //round.newRound(&p2);
             //qDebug() << "p2";
             ui->label->setText("Player 2");
+            ui->label->setStyleSheet("font: 75 14pt");
             qDebug() << "Slag kvar för spelare 2: " << p2.rollsLeft;
         }
         else
