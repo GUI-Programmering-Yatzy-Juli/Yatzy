@@ -1,4 +1,7 @@
 #include "Dice.h"
+#include <cstdlib>
+#include <ctime>
+using namespace std;
 
 Dice::Dice()
 {
@@ -8,7 +11,7 @@ Dice::Dice()
 
 void Dice::roll()
 {
-    srand(time(NULL));
+
     for (int i = 0; i < 5; i++)
     {
         valueDice[i] = rand() % 6 + 1;
