@@ -6,14 +6,17 @@
 #include <ui_mainwindow.h>
 #include "Player.h"
 
+class Game;
 class Round
 {
 public:
-    Round(Ui::MainWindow *ui);
+    Round(Ui::MainWindow *ui, Game *g);
+
+
 
     void newRound(Player *currentP);
 
-    void isPossibleChangeColour (int y, int x, int score);
+    void isPossibleChangeColour (int r, int pCol, int score);
 
     Dice dice;
 
@@ -21,7 +24,8 @@ public:
     int player2Turn = 0;
 
 private:
-    void Image();
+    void showImage();
+    void changeImage(QPushButton *btn, int pic);
     int checkNum(Dice dice, int n);
 
     void checkResult(Dice dice, int column);
@@ -35,7 +39,8 @@ private:
     int checkFullHouse(Dice dice);
     int checkChance(Dice dice);
 
-     Ui::MainWindow *table;
+    Game *game;
+    Ui::MainWindow *table;
 
 public slots:
     void startNewRound(Player *currentP);

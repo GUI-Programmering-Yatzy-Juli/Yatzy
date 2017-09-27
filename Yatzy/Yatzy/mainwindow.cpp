@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     g = new Game(ui);
+    g->populateArray();
     ui->setupUi(this);
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -89,7 +90,8 @@ void MainWindow::on_btn_rules_clicked()
     QMessageBox::information(
             this,
             tr("Yahtzee"),
-            tr("Yatzy är ett tärningsspel för en eller flera spelare där det gäller att samla poäng genom att med fem tärningar och tre kast per omgång försöka få in kombinationer enligt följande tabell:\n"
+            tr("Yatzy är ett tärningsspel för en eller flera spelare där det gäller att"
+               " samla poäng genom att med fem tärningar och tre kast under 15 omgångar, försöka få in kombinationer enligt följande tabell:\n"
                "Villkor \t\t|Max|\tkommentar \n"
                "Ettor   \t\t|5|\tSå många som möjligt\n"
                "tvåor   \t\t|10|\tSå många som möjligt\n"
@@ -123,12 +125,13 @@ void MainWindow::on_btn_rules_clicked()
 void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
     qDebug() << "Du tryckte:" << row << column;
+
     if(ui->tableWidget->item(row, column) != 0)
     {
-   ui->tableWidget->clearContents();
+        ui->tableWidget->clearContents();
     }
-   ui->tableWidget->setItem(row, column, new QTableWidgetItem(""));
-   ui->tableWidget->item(row, column)->setBackgroundColor(Qt::red);
+
+    g->makeChoice(row, column);
 
     /*Använd typ denna för att välja skit fast den blir ju implementerad i rounds med str o green
  Sedan för att reseta så kan man använda clearcontents men då måste vi ha kunnat implementerat funktionen för att spara tärningar. eller så gör vi en array med en while loop

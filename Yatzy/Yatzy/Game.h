@@ -21,13 +21,18 @@ public:
     Player p1;
     Player p2;
 
-    int score[2][19];
+    int score[19][2];
 
     void calcScore(int pCol);
     int calcPointsTillBonus(int pCol);
     int calcTotal(int pCol);
-    void makeChoice();
+    void showScore(Ui::MainWindow *ui);
+
+    void makeChoice(int row, int column);
     void saveDice(int d);
+    void populateArray();
+
+private:
 
 public slots:
      void update(Ui::MainWindow *ui);

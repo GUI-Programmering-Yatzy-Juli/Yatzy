@@ -1,5 +1,6 @@
 #include "Game.h"
 #include <qdebug.h>
+#include <QString>
 
 Game::Game(Ui::MainWindow *ui)
 {
@@ -7,15 +8,14 @@ Game::Game(Ui::MainWindow *ui)
     p1.pNum = 0;
     p2.pNum = 1;
 
-    p1.rollsLeft = 3;
-    p2.rollsLeft = 3;
+    populateArray();
 }
 
 void Game::update(Ui::MainWindow *ui)
 {
     qDebug() << "funktion";
 
-    Round round(ui);
+    Round round(ui, this);
 
     if (gameIsActive())
     {
@@ -28,6 +28,8 @@ void Game::update(Ui::MainWindow *ui)
             ui->label->setText("Player 1");                                 // Skulle kunna bli en while(p1.rollsLeft >= 1)   ui->label->setText("Player 1"); //
             ui->label->setStyleSheet("font: 75 14pt");
             qDebug() << "Slag kvar för spelare 1: " << p1.rollsLeft;
+            calcScore(p1.pNum);
+            showScore(ui);
         }
         else if (p2.rollsLeft != 0)
         {
@@ -36,12 +38,14 @@ void Game::update(Ui::MainWindow *ui)
             ui->label->setText("Player 2");
             ui->label->setStyleSheet("font: 75 14pt");
             qDebug() << "Slag kvar för spelare 2: " << p2.rollsLeft;
+            calcScore(p1.pNum);
         }
         else
         {
             p1.rollsLeft = 3;
             p2.rollsLeft = 3;
             numRounds++;
+            update(ui);
         }
     }
 
@@ -106,7 +110,23 @@ int Game::calcTotal(int pCol)
     return sum;
 }
 
-void Game::makeChoice()
+void Game::showScore(Ui::MainWindow *ui)
+{
+    for (int pCol = 0; pCol < 2; pCol++)
+    {
+        for (int r = 0; r < 17; r++)
+        {
+            if (score[r][pCol] > 0)
+            {
+                QString myStr = QString::number(score[r][pCol]);
+                ui->tableWidget->setItem(r, pCol, new QTableWidgetItem(myStr));
+                ui->tableWidget->item(r, pCol)->setBackgroundColor(Qt::yellow);
+            }
+        }
+    }
+}
+
+void Game::makeChoice(int row, int column)
 {
 
 }
@@ -115,3 +135,16 @@ void Game::saveDice(int d)
 {
 
 }
+
+void Game::populateArray()
+
+{
+    for (int p = 0; p > 2; p++)
+    {
+        for (int r = 0; r > 19; r++)
+        {
+            score[r][p] = 0;
+        }
+    }
+}
+
