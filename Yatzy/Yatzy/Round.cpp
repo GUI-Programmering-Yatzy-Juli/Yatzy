@@ -325,10 +325,11 @@ int Round::checkFourOfAKind(Dice dice)                 //Klar
            {
                 for(int fourthDice= thirdDice + 1; fourthDice < 5; fourthDice++)
                 {
-                    if (dice.valueDice[firstDice] == dice.valueDice[secondDice] &&
+                    if (dice.valueDice[firstDice] == dice.valueDice[secondDice] && dice.valueDice[firstDice] != 0&&
                             dice.valueDice[firstDice] == dice.valueDice[thirdDice] &&
                             dice.valueDice[firstDice] == dice.valueDice[fourthDice])
                     {
+                        dice.valueDice[firstDice] = 0;
                         //här blir det fyrtal
                         //glöm inte att värdet på fyrtalet måste sparas
                         return dice.valueDice[firstDice] * 4;

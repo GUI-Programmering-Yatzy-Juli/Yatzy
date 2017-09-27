@@ -11,7 +11,6 @@ Dice::Dice()
 
 void Dice::roll()
 {
-
     for (int i = 0; i < 5; i++)
     {
         valueDice[i] = rand() % 6 + 1;

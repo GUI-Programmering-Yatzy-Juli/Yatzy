@@ -20,12 +20,12 @@ int main(int argc, char *argv[])
  *                                                                                 |
  *  Välja vilket alternativ man vill köra på (se Round.cpp)                        |
  *  återställa färgerna efter valet är gjort (se Round.cpp)                        |
+ *  om man väljer att lägga in ett t.ex. par på första draget sätt roundsLeft = 0  |
  *----------------------------------------------------------------------------------
  * Har börjat på dessa men är ej klar                                              |
  *----------------------------------------------------------------------------------
- *  En runda ska spelas när man trycker på roll (se Round.cpp eller Game.cpp)      |
  *  Göra användning av score arrayen i Game.cpp                                    |
  *  checkTwoPairs måste returna värdet på båda paren                               |
- *                                 |
+ *                                                                                 |
  *                                                                                 |
  * --------------------------------------------------------------------------------*/

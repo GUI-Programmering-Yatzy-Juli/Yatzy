@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include "Game.h"
 #include <qdebug.h>
 #include <QTableWidgetItem>
 #include <QWidget>
@@ -12,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    g = new Game(ui);
     ui->setupUi(this);
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -60,9 +60,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btn_roll_clicked()
 {
-    Game game(ui); //Skapar Game-obj
-    game.update(ui);
-
+    g->update(ui);
 }
 
 void MainWindow::on_btn_roll_2_clicked()
