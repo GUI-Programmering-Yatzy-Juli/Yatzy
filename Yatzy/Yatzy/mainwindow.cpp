@@ -123,7 +123,10 @@ void MainWindow::on_btn_rules_clicked()
 void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
     qDebug() << "Du tryckte:" << row << column;
+    if(ui->tableWidget->item(row, column) != 0)
+    {
    ui->tableWidget->clearContents();
+    }
    ui->tableWidget->setItem(row, column, new QTableWidgetItem(""));
    ui->tableWidget->item(row, column)->setBackgroundColor(Qt::red);
 
