@@ -12,6 +12,7 @@ public:
     Round(Ui::MainWindow *ui);
 
     void newRound(Player *currentP);
+
     void isPossibleChangeColour (int y, int x, int score);
 
     Dice dice;
@@ -20,6 +21,7 @@ public:
     int player2Turn = 0;
 
 private:
+    void Image();
     int checkNum(Dice dice, int n);
 
     void checkResult(Dice dice, int column);

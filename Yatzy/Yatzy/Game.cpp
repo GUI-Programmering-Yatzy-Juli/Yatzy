@@ -6,6 +6,7 @@ Game::Game(Ui::MainWindow *ui)
     qDebug() << "Första rundan startar";
     p1.pNum = 0;
     p2.pNum = 1;
+
 }
 
 void Game::update(Ui::MainWindow *ui)
@@ -21,14 +22,17 @@ void Game::update(Ui::MainWindow *ui)
 
         if (p1.rollsLeft != 0)
         {
+
             round.newRound(&p1);
             //qDebug() << "p1";
+            ui->label->setText("Player 1");                                 // Skulle kunna bli en while(p1.rollsLeft >= 1)   ui->label->setText("Player 1"); //
             qDebug() << "Slag kvar för spelare 1: " << p1.rollsLeft;
         }
         else if (p2.rollsLeft != 0)
         {
             //round.newRound(&p2);
             //qDebug() << "p2";
+            ui->label->setText("Player 2");
             qDebug() << "Slag kvar för spelare 2: " << p2.rollsLeft;
         }
         else

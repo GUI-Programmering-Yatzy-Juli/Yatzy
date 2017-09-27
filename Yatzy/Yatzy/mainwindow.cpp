@@ -15,25 +15,30 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     QMainWindow::centralWidget()->layout()->setContentsMargins(0,0,0,0);
-      ui->btn_save0->setEnabled(false);
+    ui->label->setVisible(false);
+    ui->btn_roll->setVisible(false);
+      ui->btn_save0->setEnabled(false);     // Ska bli kopplat med dice.valueDice så ifall valueDice inte har något värde så är setEnabled(false)
       ui->btn_save1->setEnabled(false);
       ui->btn_save2->setEnabled(false);
       ui->btn_save3->setEnabled(false);
-      ui->btn_save4->setEnabled(false);
+      ui->btn_save4->setEnabled(false);     //
       QPixmap img1(":/new/prefix1/Dices/1.png");
       QPixmap img2(":/new/prefix1/Dices/2.png");
       QPixmap img3(":/new/prefix1/Dices/3.png");
       QPixmap img4(":/new/prefix1/Dices/4.png");
       QPixmap img5(":/new/prefix1/Dices/5.png");
+      QPixmap img6(":/new/prefix1/Dices/6.png");
       QIcon ButtonIcon1(img1);
       QIcon ButtonIcon2(img2);
       QIcon ButtonIcon3(img3);
       QIcon ButtonIcon4(img4);
       QIcon ButtonIcon5(img5);
+      QIcon ButtonIcon6(img6);
+
       ui->btn_save0->setIcon(ButtonIcon1);
       ui->btn_save0->setIconSize(QSize(100,100));
-
       ui->btn_save1->setIcon(ButtonIcon2);
       ui->btn_save1->setIconSize(QSize(100,100));
 
@@ -45,18 +50,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
       ui->btn_save4->setIcon(ButtonIcon5);
       ui->btn_save4->setIconSize(QSize(100,100));
-      /*
-      QImage img1(":/new/prefix1/Dices/1.png");
-      QImage img2(":/new/prefix1/Dices/2.png");
-      QImage img3(":/new/prefix1/Dices/3.png");
-      QImage img4(":/new/prefix1/Dices/4.png");
-      QImage img5(":/new/prefix1/Dices/5.png");
-      QImage img6(":/new/prefix1/Dices/6.png");
-
-      ui->btn_save0->setStyleSheet("background-image: url(:/new/prefix1/Dices/1.png);");
-*/
-
-
 
 }
 
@@ -69,41 +62,16 @@ void MainWindow::on_btn_roll_clicked()
 {
     Game game(ui); //Skapar Game-obj
     game.update(ui);
+
 }
 
 void MainWindow::on_btn_roll_2_clicked()
 {
     enableSaveBtn();
+    ui->label->setVisible(true);
+    ui->btn_roll->setVisible(true);
+    ui->btn_roll_2->setVisible(false);
 }
-/* prototyp för ändra bild.
-void MainWindow::ChangeImage(Dice)
-{
-if(valueDice[0] == 1)
-{
-ui->btn_save0->setStyleSheet("background-image: url(:/new/prefix1/Dices/1.png)");
-}
-else if(valueDice[0] == 2)
-{
-ui->btn_save0->setStyleSheet("background-image: url(:/new/prefix1/Dices/2.png)");
-}
-else if(valueDice[0] == 3)
-{
-ui->btn_save0->setStyleSheet("background-image: url(:/new/prefix1/Dices/3.png)");
-}
-else if(valueDice[0] == 4)
-{
-ui->btn_save0->setStyleSheet("background-image: url(:/new/prefix1/Dices/4.png)");
-}
-else if(valueDice[0] == 5)
-{
-ui->btn_save0->setStyleSheet("background-image: url(:/new/prefix1/Dices/5.png)");
-}
-else if(valueDice[0] == 6)
-{
-ui->btn_save0->setStyleSheet("background-image: url(:/new/prefix1/Dices/6.png)");
-}
-}
-  */
 
 void MainWindow::on_btn_exit_clicked()
 {
@@ -157,6 +125,17 @@ void MainWindow::on_btn_rules_clicked()
 void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
     qDebug() << "Du tryckte:" << row << column;
+   ui->tableWidget->clearContents();
+   ui->tableWidget->setItem(row, column, new QTableWidgetItem(""));
+   ui->tableWidget->item(row, column)->setBackgroundColor(Qt::red);
+
+    /*Använd typ denna för att välja skit fast den blir ju implementerad i rounds med str o green
+ Sedan för att reseta så kan man använda clearcontents men då måste vi ha kunnat implementerat funktionen för att spara tärningar. eller så gör vi en array med en while loop
+ och varje gång vi använder vår click för att markera alternativ så blir det en hardsave typ(Asså vi får på något sätt göra så att row och column får det grund värdet(mystr)
+ på det sättet så skulle det kanske inte blir clearat
+ kan vara bättre att lägga clearcontents på Roll knappen och kanske kolla ifall man kan göra exceptions på den
+   */
+
     //en funktion kan skicka iväg och köra en annan funktion t.ex.
     //isPossibleChoice(int row, int column
 }

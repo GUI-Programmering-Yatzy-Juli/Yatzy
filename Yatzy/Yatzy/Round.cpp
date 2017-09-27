@@ -13,6 +13,172 @@ void Round::newRound(Player *currentP)
     currentP->checkSavedDice(&dice, currentP);
     checkResult(dice, currentP->pNum);
     currentP->rollsLeft--;
+    Image();
+}
+void Round::Image()
+{
+    QPixmap img1(":/new/prefix1/Dices/1.png");
+    QPixmap img2(":/new/prefix1/Dices/2.png");
+    QPixmap img3(":/new/prefix1/Dices/3.png");
+    QPixmap img4(":/new/prefix1/Dices/4.png");
+    QPixmap img5(":/new/prefix1/Dices/5.png");
+    QPixmap img6(":/new/prefix1/Dices/6.png");
+    QIcon ButtonIcon1(img1);
+    QIcon ButtonIcon2(img2);
+    QIcon ButtonIcon3(img3);
+    QIcon ButtonIcon4(img4);
+    QIcon ButtonIcon5(img5);
+    QIcon ButtonIcon6(img6);
+        if(dice.valueDice[0] == 1)
+     {
+      table->btn_save0->setIcon(ButtonIcon1);
+      table->btn_save0->setIconSize(QSize(100,100));
+     }                                                //Något sånt här för bild för tärnings value förmodeligen bättre att göra en for loop på den
+        else if(dice.valueDice[0] == 2)               //fast här behöver vi koppla dice.valueDice till denna klass så vi kan hämta ut värdet
+     {
+            table->btn_save0->setIcon(ButtonIcon2);
+            table->btn_save0->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[0] == 3)
+     {
+            table->btn_save0->setIcon(ButtonIcon3);
+            table->btn_save0->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[0] == 4)
+     {
+            table->btn_save0->setIcon(ButtonIcon4);
+            table->btn_save0->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[0] == 5)
+     {
+            table->btn_save0->setIcon(ButtonIcon5);
+            table->btn_save0->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[0] == 6)
+     {
+            table->btn_save0->setIcon(ButtonIcon6);
+            table->btn_save0->setIconSize(QSize(100,100));
+     }
+        if(dice.valueDice[1] == 1)
+     {
+      table->btn_save1->setIcon(ButtonIcon1);
+      table->btn_save1->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[1] == 2)
+     {
+            table->btn_save1->setIcon(ButtonIcon2);
+            table->btn_save1->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[1] == 3)
+     {
+            table->btn_save1->setIcon(ButtonIcon3);
+            table->btn_save1->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[1] == 4)
+     {
+            table->btn_save1->setIcon(ButtonIcon4);
+            table->btn_save1->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[1] == 5)
+     {
+            table->btn_save1->setIcon(ButtonIcon5);
+            table->btn_save1->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[1] == 6)
+     {
+            table->btn_save1->setIcon(ButtonIcon6);
+            table->btn_save1->setIconSize(QSize(100,100));
+     }
+        if(dice.valueDice[2] == 1)
+     {
+      table->btn_save2->setIcon(ButtonIcon1);
+      table->btn_save2->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[2] == 2)
+     {
+            table->btn_save2->setIcon(ButtonIcon2);
+            table->btn_save2->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[2] == 3)
+     {
+            table->btn_save2->setIcon(ButtonIcon3);
+            table->btn_save2->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[2] == 4)
+     {
+            table->btn_save2->setIcon(ButtonIcon4);
+            table->btn_save2->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[2] == 5)
+     {
+            table->btn_save2->setIcon(ButtonIcon5);
+            table->btn_save2->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[2] == 6)
+     {
+            table->btn_save2->setIcon(ButtonIcon6);
+            table->btn_save2->setIconSize(QSize(100,100));
+     }
+        if(dice.valueDice[3] == 1)
+     {
+      table->btn_save3->setIcon(ButtonIcon1);
+      table->btn_save3->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[3] == 2)
+     {
+            table->btn_save3->setIcon(ButtonIcon2);
+            table->btn_save3->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[3] == 3)
+     {
+            table->btn_save3->setIcon(ButtonIcon3);
+            table->btn_save3->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[3] == 4)
+     {
+            table->btn_save3->setIcon(ButtonIcon4);
+            table->btn_save3->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[3] == 5)
+     {
+            table->btn_save3->setIcon(ButtonIcon5);
+            table->btn_save3->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[3] == 6)
+     {
+            table->btn_save3->setIcon(ButtonIcon6);
+            table->btn_save3->setIconSize(QSize(100,100));
+     }
+        if(dice.valueDice[4] == 1)
+     {
+      table->btn_save4->setIcon(ButtonIcon1);
+      table->btn_save4->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[4] == 2)
+     {
+            table->btn_save4->setIcon(ButtonIcon2);
+            table->btn_save4->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[4] == 3)
+     {
+            table->btn_save4->setIcon(ButtonIcon3);
+            table->btn_save4->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[4] == 4)
+     {
+            table->btn_save4->setIcon(ButtonIcon4);
+            table->btn_save4->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[4] == 5)
+     {
+            table->btn_save4->setIcon(ButtonIcon5);
+            table->btn_save4->setIconSize(QSize(100,100));
+     }
+        else if(dice.valueDice[4] == 6)
+     {
+            table->btn_save4->setIcon(ButtonIcon6);
+            table->btn_save4->setIconSize(QSize(100,100));
+     }
 }
 
 void Round::checkResult(Dice dice, int column)

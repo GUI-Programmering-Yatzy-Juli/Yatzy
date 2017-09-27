@@ -33,9 +33,9 @@ private slots:
 
     void on_btn_rules_clicked();
 
-   // void on_pushButton_7_clicked();
-
     void on_tableWidget_cellClicked(int row, int column);
+
+
 
 private:
     void enableSaveBtn();

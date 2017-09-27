@@ -14,7 +14,9 @@ void Dice::roll()
         valueDice[i] = rand() % 6 + 1;
     }
     qDebug() << valueDice[0] << valueDice[1]<< valueDice[2]<< valueDice[3]<< valueDice[4];
+
 }
+
 
 /* while(valueDice[i] == 0)
  * {
