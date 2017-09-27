@@ -62,11 +62,12 @@ MainWindow::~MainWindow()
 void MainWindow::on_btn_roll_clicked()
 {
     g->update(ui);
+    enableSaveBtn();
 }
 
 void MainWindow::on_btn_roll_2_clicked()
 {
-    enableSaveBtn();
+
     ui->label->setVisible(true);
     ui->btn_roll->setVisible(true);
     ui->btn_roll_2->setVisible(false);
@@ -177,3 +178,4 @@ void MainWindow::on_btn_save4_clicked()
 {
     g->saveDice(4);
 }
+
