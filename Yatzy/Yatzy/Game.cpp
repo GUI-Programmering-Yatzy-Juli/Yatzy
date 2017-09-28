@@ -6,6 +6,9 @@
 #include <QApplication>
 #include <QProcess>
 #include <QTextEdit>
+#include <QMediaPlayer>
+
+
 Game::Game(Ui::MainWindow *ui)
 {
     qDebug() << "Första rundan startar";
@@ -51,7 +54,8 @@ void Game::update(Ui::MainWindow *ui)
 
 bool Game::gameIsActive()
 {
-    if (numRounds > 16)
+
+    if (numRounds > 15)
     {
         //utnämn vinnaren
         if (p1.score > p2.score)
@@ -63,8 +67,13 @@ bool Game::gameIsActive()
             txt->setMinimumHeight(400);
             txt->setMinimumWidth(400);
 
+            QMediaPlayer * music = new QMediaPlayer();
+            music->setMedia(QUrl("qrc:/new/prefix1/Dices/YOU WIN.mp3"));
+            music->play();
+
+
                     txt->setText("The winner is player one");
-                     txt->setStyleSheet("font: 15pt ; background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
+                    txt->setStyleSheet("font: 15pt ; background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
                     txt->show();
 
                     txt->setEnabled(false);
@@ -79,8 +88,12 @@ bool Game::gameIsActive()
             txt->setMinimumHeight(400);
             txt->setMinimumWidth(400);
 
+            QMediaPlayer * music = new QMediaPlayer();
+            music->setMedia(QUrl("qrc:/new/prefix1/Dices/YOU WIN.mp3"));
+            music->play();
+
                     txt->setText("The winner is player two");
-                  txt->setStyleSheet("font: 15pt ; background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
+                    txt->setStyleSheet("font: 15pt ; background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
                     txt->show();
 
                     txt->setEnabled(false);
@@ -93,8 +106,13 @@ bool Game::gameIsActive()
             txt->setMaximumWidth(400);
             txt->setMinimumHeight(400);
             txt->setMinimumWidth(400);
+
+            QMediaPlayer * music = new QMediaPlayer();
+            music->setMedia(QUrl("qrc:/new/prefix1/Dices/Tie.mp3"));
+            music->play();
+
                     txt->setText("It's a tie stand down, we'll get them another day lads.");
-                  txt->setStyleSheet("font: 15pt ; background-image: url(:/new/prefix1/fire/tie.png); background-repeat: no-repeat;");
+                    txt->setStyleSheet("font: 15pt ; background-image: url(:/new/prefix1/fire/tie.png); background-repeat: no-repeat;");
                     txt->show();
 
                     txt->setEnabled(false);

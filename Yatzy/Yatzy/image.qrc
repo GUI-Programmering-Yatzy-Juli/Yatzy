@@ -9,5 +9,7 @@
         <file>fire/fireworks_12.gif</file>
         <file>fire/firew.png</file>
         <file>fire/tie.png</file>
+        <file>Dices/YOU WIN.mp3</file>
+        <file>Dices/Tie.mp3</file>
     </qresource>
 </RCC>

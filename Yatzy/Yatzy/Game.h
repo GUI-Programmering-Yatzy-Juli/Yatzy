@@ -34,6 +34,7 @@ public:
     void saveDice(int d);
     void populateArray();
 
+
 private:
 
     void btnAndLabelChange(Ui::MainWindow *ui, Player p);
