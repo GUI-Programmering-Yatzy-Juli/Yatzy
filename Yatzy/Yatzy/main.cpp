@@ -13,16 +13,21 @@ int main(int argc, char *argv[])
     return a.exec();
 }
 
+
+                                   //SAKER ATT GÖRA IDAG
+
 /*----------------------------------------------------------------------------------
- *              TODO                                                               |
- *                                                                                 |
- *  Välja vilket alternativ man vill köra på (se Round.cpp)                        |
- *  återställa färgerna efter valet är gjort (se Round.cpp)                        |
- *  om man väljer att lägga in ett t.ex. par på första draget sätt roundsLeft = 0  |
- *----------------------------------------------------------------------------------
- * Har börjat på dessa men är ej klar                                              |
- *----------------------------------------------------------------------------------
- *  Göra användning av score arrayen i Game.cpp                                    |
- *  Spara tärningar                                                                |
- *                                                                                 |
- * --------------------------------------------------------------------------------*/
+ *
+ *
+ *
+ *
+ *                                      Spara dice
+ *
+ *                                      Kunna göra ett val
+ *
+ *                                      återställa fägerna
+ *
+ *                                      Score
+ *
+ *
+ * --------------------------------------------------------------------------------------*/
