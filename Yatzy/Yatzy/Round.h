@@ -18,7 +18,13 @@ public:
 
     void isPossibleChangeColour (int r, int pCol, int score);
 
+    void makeChoice(int row, int column);
+
+    void resetColour();
+
     Dice dice;
+
+    int roundScore[18];
 
     int player1Turn = 0;
     int player2Turn = 0;
@@ -28,6 +34,8 @@ private:
     void showImage();
     void changeImage(QPushButton *btn, int pic);
     int checkNum(Dice dice, int n);
+
+
 
     void checkResult(Dice dice, int column);
     int checkPair(Dice dice);

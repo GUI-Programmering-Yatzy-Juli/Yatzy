@@ -128,12 +128,13 @@ void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
     qDebug() << "Du tryckte:" << row << column;
 
-    if(ui->tableWidget->item(row, column) != 0)
+    /*if(ui->tableWidget->item(row, column) != 0)
     {
         ui->tableWidget->clearContents();
     }
+    */
 
-    g->makeChoice(row, column);
+    g->round->makeChoice(row, column);
 
     /*Använd typ denna för att välja skit fast den blir ju implementerad i rounds med str o green
  Sedan för att reseta så kan man använda clearcontents men då måste vi ha kunnat implementerat funktionen för att spara tärningar. eller så gör vi en array med en while loop

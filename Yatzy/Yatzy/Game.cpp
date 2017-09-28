@@ -11,8 +11,6 @@ Game::Game(Ui::MainWindow *ui)
     qDebug() << "Första rundan startar";
     p1.pNum = 0;
     p2.pNum = 1;
-
-    populateArray();
 }
 
 void Game::update(Ui::MainWindow *ui)
@@ -29,14 +27,14 @@ void Game::update(Ui::MainWindow *ui)
         {
              round->newRound(&p1);
              btnAndLabelChange(ui, p1);
-             calcScore(p1.pNum);
+             //calcScore(p1.pNum);
              showScore(ui);
         }
         else if (p2.rollsLeft != 0)
         {
             round->newRound(&p2);
             btnAndLabelChange(ui, p2);
-            calcScore(p2.pNum);
+            //calcScore(p2.pNum);
             showScore(ui);
         }
         else
@@ -157,11 +155,10 @@ void Game::showScore(Ui::MainWindow *ui)
             }
         }
     }
-}
-
-void Game::makeChoice(int row, int column)
-{
-
+    qDebug() << score[0][0] << score[1][0] << score[2][0] << score[3][0] << score[4][0] << score[5][0] << score[6][0] << score[7][0] << score[8][0]
+             << score[9][0] << score[10][0] << score[11][0] << score[12][0] << score[13][0] << score[14][0] << score[15][0] << score[16][0] << score[17][0];
+    qDebug() << score[0][1] << score[1][1] << score[2][1] << score[3][1] << score[4][1] << score[5][1] << score[6][1] << score[7][1] << score[8][1]
+             << score[9][1] << score[10][1] << score[11][1] << score[12][1] << score[13][1] << score[14][1] << score[15][1] << score[16][1] << score[17][0];
 }
 
 void Game::saveDice(int dLoc)
@@ -182,18 +179,19 @@ void Game::saveDice(int dLoc)
 
 void Game::populateArray()
 {
-    for (int p = 0; p > 2; p++)
+
+    for (int pCol = 0; pCol < 2; pCol++)
     {
-        for (int r = 0; r > 19; r++)
+        for (int r = 0; r < 18; r++)
         {
-            score[r][p] = 0;
+            score[r][pCol] = 0;
         }
     }
 }
 
 void Game::btnAndLabelChange(Ui::MainWindow *ui, Player p)
 {
-    ui->btn_roll->setText("Roll " + QString::number(p.rollsLeft + 1) + " /3");
+    ui->btn_roll->setText("Roll " + QString::number(p.rollsLeft) + " /3");
     ui->label->setText("Player " + QString::number(p.pNum + 1) + "    Runda " + QString::number(numRounds));
 }
 
