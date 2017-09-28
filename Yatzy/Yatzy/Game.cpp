@@ -6,6 +6,7 @@
 #include <QApplication>
 #include <QProcess>
 #include <QTextEdit>
+#include <QThread>
 Game::Game(Ui::MainWindow *ui)
 {
     qDebug() << "Första rundan startar";
@@ -31,14 +32,58 @@ void Game::update(Ui::MainWindow *ui)
              btnAndLabelChange(ui, p1);
              calcScore(p1.pNum);
              showScore(ui);
+             ui->btn_save0->setEnabled(true);
+             ui->btn_save1->setEnabled(true);
+             ui->btn_save2->setEnabled(true);
+             ui->btn_save3->setEnabled(true);
+             ui->btn_save4->setEnabled(true);
+
+             if(p1.rollsLeft == 0)
+             {
+                  ui->btn_save0->setEnabled(false);
+                  ui->btn_save1->setEnabled(false);
+                  ui->btn_save2->setEnabled(false);
+                  ui->btn_save3->setEnabled(false);
+                  ui->btn_save4->setEnabled(false);
+                  ui->btn_save0->setChecked(false);
+                  ui->btn_save1->setChecked(false);
+                  ui->btn_save2->setChecked(false);
+                  ui->btn_save3->setChecked(false);
+                  ui->btn_save4->setChecked(false);
+
+
+             }
+
         }
+
+
         else if (p2.rollsLeft != 0)
         {
             round->newRound(&p2);
             btnAndLabelChange(ui, p2);
             calcScore(p2.pNum);
             showScore(ui);
+            ui->btn_save0->setEnabled(true);
+            ui->btn_save1->setEnabled(true);
+            ui->btn_save2->setEnabled(true);
+            ui->btn_save3->setEnabled(true);
+            ui->btn_save4->setEnabled(true);
+            if(p2.rollsLeft == 0)
+            {
+                 ui->btn_save0->setEnabled(false);
+                 ui->btn_save1->setEnabled(false);
+                 ui->btn_save2->setEnabled(false);
+                 ui->btn_save3->setEnabled(false);
+                 ui->btn_save4->setEnabled(false);
+                 ui->btn_save0->setChecked(false);
+                 ui->btn_save1->setChecked(false);
+                 ui->btn_save2->setChecked(false);
+                 ui->btn_save3->setChecked(false);
+                 ui->btn_save4->setChecked(false);
+            }
+
         }
+
         else
         {
              p1.rollsLeft = 3;
@@ -46,13 +91,22 @@ void Game::update(Ui::MainWindow *ui)
              numRounds++;
              update(ui);
         }
+
+
+    if(numRounds > 3)
+    {
+        ui->btn_roll->setEnabled(false);
      }
+
+    }
 }
 
 bool Game::gameIsActive()
 {
-    if (numRounds > 16)
+
+    if (numRounds > 3)
     {
+
         //utnämn vinnaren
         if (p1.score > p2.score)
         {
@@ -62,13 +116,10 @@ bool Game::gameIsActive()
             txt->setMaximumWidth(400);
             txt->setMinimumHeight(400);
             txt->setMinimumWidth(400);
-
-                    txt->setText("The winner is player one");
-                     txt->setStyleSheet("font: 15pt ; background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
-                    txt->show();
-
-                    txt->setEnabled(false);
-
+            txt->setText("The winner is player one");
+            txt->setStyleSheet("font: 19pt; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; color: black;  position: relative; bottom: 50; background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
+            txt->show();
+            txt->setEnabled(false);
         }
         else if (p1.score < p2.score)
         {
@@ -78,12 +129,10 @@ bool Game::gameIsActive()
             txt->setMaximumWidth(400);
             txt->setMinimumHeight(400);
             txt->setMinimumWidth(400);
-
-                    txt->setText("The winner is player two");
-                  txt->setStyleSheet("font: 15pt ; background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
-                    txt->show();
-
-                    txt->setEnabled(false);
+            txt->setText("The winner is player two");
+            txt->setStyleSheet("font: 19pt; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; color: black;position: relative; bottom: 50;background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
+            txt->show();
+            txt->setEnabled(false);
         }
         else if (p1.score == p2.score)
         {
@@ -93,12 +142,10 @@ bool Game::gameIsActive()
             txt->setMaximumWidth(400);
             txt->setMinimumHeight(400);
             txt->setMinimumWidth(400);
-                    txt->setText("It's a tie stand down, we'll get them another day lads.");
-                  txt->setStyleSheet("font: 15pt ; background-image: url(:/new/prefix1/fire/tie.png); background-repeat: no-repeat;");
-                    txt->show();
-
-                    txt->setEnabled(false);
-
+            txt->setText("It's a tie stand down, we'll get them another day lads.");
+            txt->setStyleSheet("font: 19pt;text-border: 12px 12px yellow;  color: black; position: relative; bottom: 50; background-image: url(:/new/prefix1/fire/tie.png); background-repeat: no-repeat;");
+            txt->show();
+            txt->setEnabled(false);
         }
 
         //avsluta spelet
@@ -193,7 +240,8 @@ void Game::populateArray()
 
 void Game::btnAndLabelChange(Ui::MainWindow *ui, Player p)
 {
-    ui->btn_roll->setText("Roll " + QString::number(p.rollsLeft + 1) + " /3");
-    ui->label->setText("Player " + QString::number(p.pNum + 1) + "    Runda " + QString::number(numRounds));
+    ui->btn_roll->setText("Rolls left " + QString::number(p.rollsLeft ) + " /3");
+    ui->label->setText("Player " + QString::number(p.pNum  + 1) + "    Runda " + QString::number(numRounds));
 }
+
 

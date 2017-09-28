@@ -20,9 +20,6 @@ void Round::newRound(Player *currentP)
 
 void Round::showImage()
 {
-    //Något sånt här för bild för tärnings value förmodeligen bättre att göra en for loop på den
-    //fast här behöver vi koppla dice.valueDice till denna klass så vi kan hämta ut värdet
-
     changeImage(table->btn_save0, dice.valueDice[0]);
     changeImage(table->btn_save1, dice.valueDice[1]);
     changeImage(table->btn_save2, dice.valueDice[2]);
@@ -112,7 +109,7 @@ void Round::checkResult(Dice dice, int column)
     //ska bli vita igen
 }
 
-int Round::checkPair(Dice dice)                        //Klar
+int Round::checkPair(Dice dice)
 {
     //här är par
     //Den kollar bara ifall ett par finns, den måste kolla ifall det finns flera par.
@@ -124,7 +121,7 @@ int Round::checkPair(Dice dice)                        //Klar
            if (dice.valueDice[firstDice] == dice.valueDice[secondDice])
            {
                 //här blir det par
-                //glöm inte att värdet på paret måste sparas
+
                 return dice.valueDice[firstDice] * 2;
            }
        }
@@ -132,7 +129,7 @@ int Round::checkPair(Dice dice)                        //Klar
     return 0;
 }
 
-int Round::checkTwoPairs(Dice dice)                    //Klar
+int Round::checkTwoPairs(Dice dice)
 {
 
     int firstPairValue = 0;
@@ -163,10 +160,10 @@ int Round::checkTwoPairs(Dice dice)                    //Klar
     return 0;
 }
 
-int Round::checkThreeOfAKind(Dice dice)                //Klar
+int Round::checkThreeOfAKind(Dice dice)
 {
     //Här är triss
-    //Denna fungerar
+
     for (int firstDice = 0; firstDice < 5; firstDice++)
     {
        for (int secondDice = firstDice + 1; secondDice < 5; secondDice++)
@@ -176,7 +173,6 @@ int Round::checkThreeOfAKind(Dice dice)                //Klar
                if (dice.valueDice[firstDice] == dice.valueDice[secondDice] && dice.valueDice[secondDice] == dice.valueDice[thirdDice])
                {
                     //här blir det triss
-                    //glöm inte att värdet på trissen måste sparas
                     return dice.valueDice[firstDice] * 3;
                }
            }
@@ -185,9 +181,8 @@ int Round::checkThreeOfAKind(Dice dice)                //Klar
     return 0;
 }
 
-int Round::checkFourOfAKind(Dice dice)                 //Klar
+int Round::checkFourOfAKind(Dice dice)
 {
-    //Denna fungerar
     //Här är fyrtal
     for (int firstDice = 0; firstDice < 5; firstDice++)
     {
@@ -203,7 +198,6 @@ int Round::checkFourOfAKind(Dice dice)                 //Klar
                     {
                         dice.valueDice[firstDice] = 0;
                         //här blir det fyrtal
-                        //glöm inte att värdet på fyrtalet måste sparas
                         return dice.valueDice[firstDice] * 4;
                     }
                 }
@@ -213,9 +207,9 @@ int Round::checkFourOfAKind(Dice dice)                 //Klar
     return 0;
 }
 
-int Round::checkYatzy(Dice dice)                       //Klar
+int Round::checkYatzy(Dice dice)
 {
-    //Denna fungerar
+
     //Här är yahtzee
     if (    dice.valueDice[0] == dice.valueDice[1] &&
             dice.valueDice[0] == dice.valueDice[2] &&
@@ -227,9 +221,8 @@ int Round::checkYatzy(Dice dice)                       //Klar
     return 0;
 }
 
-int Round::checkSmallLadder(Dice dice)                 //Klar
+int Round::checkSmallLadder(Dice dice)
 {
-    //Denna fungerar
     //liten stege
 
     bool one = false;
@@ -271,16 +264,14 @@ int Round::checkSmallLadder(Dice dice)                 //Klar
     if (one && two && three && four && five)
     {
         //här blir det liten stege
-        //glöm inte att värdet måste sparas
 
         return 15;
     }
     return 0;
 }
 
-int Round::checkBigLadder(Dice dice)                   //Klar
+int Round::checkBigLadder(Dice dice)
 {
-    //Denna fungerar
     //stor stege
 
     bool two = false;
@@ -329,7 +320,7 @@ int Round::checkBigLadder(Dice dice)                   //Klar
     return 0;
 }
 
-int Round::checkFullHouse(Dice dice)                   //Klar
+int Round::checkFullHouse(Dice dice)
 {
     bool pair = false;
     int pairNum;
@@ -382,7 +373,7 @@ int Round::checkFullHouse(Dice dice)                   //Klar
     }
 }
 
-int Round::checkChance(Dice dice)                      //Klar
+int Round::checkChance(Dice dice)
 {
     int sum = 0;
 
@@ -391,13 +382,12 @@ int Round::checkChance(Dice dice)                      //Klar
         sum +=dice.valueDice[i];
     }
     //ska returna summan av alla tärningar
-    // return sum;
     return sum;
 }
 
-int Round::checkNum(Dice dice, int n)                  //Klar
+int Round::checkNum(Dice dice, int n)
 {
-    //Denna fungerar
+
     int sum = 0;
     for (int i = 0; i < 6; i++)
         if (dice.valueDice[i] == n)

@@ -43,15 +43,17 @@ private slots:
 
 
 
-    void on_btn_save0_clicked();
 
-    void on_btn_save1_clicked();
 
-    void on_btn_save2_clicked();
+    void on_btn_save0_toggled(bool checked);
 
-    void on_btn_save3_clicked();
+    void on_btn_save1_toggled(bool checked);
 
-    void on_btn_save4_clicked();
+    void on_btn_save2_toggled(bool checked);
+
+    void on_btn_save3_toggled(bool checked);
+
+    void on_btn_save4_toggled(bool checked);
 
 private:
     void enableSaveBtn();
