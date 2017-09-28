@@ -1,17 +1,11 @@
 #include "Game.h"
-#include <qdebug.h>
 #include <QString>
-
-#include <QMessageBox>
-#include <QApplication>
-#include <QProcess>
 #include <QTextEdit>
 #include <QMediaPlayer>
 
 
 Game::Game(Ui::MainWindow *ui)
 {
-    qDebug() << "Första rundan startar";
     p1.pNum = 0;
     p2.pNum = 1;
 }
@@ -22,63 +16,17 @@ void Game::update(Ui::MainWindow *ui)
 
     if (gameIsActive(ui))
     {
-        qDebug() << "Runda: " << numRounds;
         if (p1.rollsLeft != 0)
         {
              round->newRound(&p1);
              btnAndLabelChange(ui, p1);
              showScore(ui, p1.pNum);
-             //calcScore(p1.pNum);
-             showScore(ui, p1.pNum);
-             ui->btn_save0->setEnabled(true);
-             ui->btn_save1->setEnabled(true);
-             ui->btn_save2->setEnabled(true);
-             ui->btn_save3->setEnabled(true);
-             ui->btn_save4->setEnabled(true);
-
-             if(p1.rollsLeft == 0)
-             {
-              ui->btn_save0->setEnabled(false);
-              ui->btn_save1->setEnabled(false);
-              ui->btn_save2->setEnabled(false);
-              ui->btn_save3->setEnabled(false);
-              ui->btn_save4->setEnabled(false);
-              ui->btn_save0->setChecked(false);
-              ui->btn_save1->setChecked(false);
-              ui->btn_save2->setChecked(false);
-              ui->btn_save3->setChecked(false);
-              ui->btn_save4->setChecked(false);
-
-
-             }
-
         }
         else if (p2.rollsLeft != 0)
         {
             round->newRound(&p2);
             btnAndLabelChange(ui, p2);
             showScore(ui, p2.pNum);
-            //calcScore(p2.pNum);
-            showScore(ui , p2.pNum);
-            ui->btn_save0->setEnabled(true);
-            ui->btn_save1->setEnabled(true);
-            ui->btn_save2->setEnabled(true);
-            ui->btn_save3->setEnabled(true);
-            ui->btn_save4->setEnabled(true);
-            if(p2.rollsLeft == 0)
-            {
-             ui->btn_save0->setEnabled(false);
-             ui->btn_save1->setEnabled(false);
-             ui->btn_save2->setEnabled(false);
-             ui->btn_save3->setEnabled(false);
-             ui->btn_save4->setEnabled(false);
-             ui->btn_save0->setChecked(false);
-             ui->btn_save1->setChecked(false);
-             ui->btn_save2->setChecked(false);
-             ui->btn_save3->setChecked(false);
-             ui->btn_save4->setChecked(false);
-            }
-
         }
         else
         {
@@ -99,7 +47,6 @@ bool Game::gameIsActive(Ui::MainWindow *ui)
         //utnämn vinnaren
         if (p1.score > p2.score)
         {
-            qDebug() << "The Winner is player one";
             QTextEdit *txt = new QTextEdit();
             txt->setMaximumHeight(400);
             txt->setMaximumWidth(400);
@@ -124,7 +71,6 @@ bool Game::gameIsActive(Ui::MainWindow *ui)
         }
         else if (p1.score < p2.score)
         {
-            qDebug() << "The Winner is player two";
             QTextEdit *txt = new QTextEdit();
             txt->setMaximumHeight(400);
             txt->setMaximumWidth(400);
@@ -147,7 +93,6 @@ bool Game::gameIsActive(Ui::MainWindow *ui)
         }
         else if (p1.score == p2.score)
         {
-            qDebug() << "Its a tie";
             QTextEdit *txt = new QTextEdit();
             txt->setMaximumHeight(400);
             txt->setMaximumWidth(400);
@@ -157,20 +102,14 @@ bool Game::gameIsActive(Ui::MainWindow *ui)
             txt->setStyleSheet("font: 19pt;text-border: 12px 12px yellow;  color: black; position: relative; bottom: 50; background-image: url(:/new/prefix1/fire/tie.png); background-repeat: no-repeat;");
             txt->show();
             txt->setEnabled(false);
-
             QMediaPlayer * music = new QMediaPlayer();
             music->setMedia(QUrl("qrc:/new/prefix1/Dices/Tie.mp3"));
             music->play();
-
                     txt->setText("It's a tie stand down, we'll get them another day lads.");
                     txt->setStyleSheet("font: 15pt ; background-image: url(:/new/prefix1/fire/tie.png); background-repeat: no-repeat;");
                     txt->show();
-
                     txt->setEnabled(false);
-
         }
-
-        //avsluta spelet
         return false;
     }
     else
@@ -218,7 +157,6 @@ int Game::calcTotal(int pCol)
             sum += score[i][pCol];
         }
     }
-    qDebug() << "TOTALTALTLATL SUMMAMAMAMNAMAN " << sum;
     return sum;
 }
 
@@ -241,11 +179,6 @@ void Game::showScore(Ui::MainWindow *ui, int pCol)
                 }
             }
         }
-        qDebug() << score[0][0] << score[1][0] << score[2][0] << score[3][0] << score[4][0] << score[5][0] << score[6][0] << score[7][0] << score[8][0]
-                 << score[9][0] << score[10][0] << score[11][0] << score[12][0] << score[13][0] << score[14][0] << score[15][0] << score[16][0] << score[17][0];
-        qDebug() << score[0][1] << score[1][1] << score[2][1] << score[3][1] << score[4][1] << score[5][1] << score[6][1] << score[7][1] << score[8][1]
-                 << score[9][1] << score[10][1] << score[11][1] << score[12][1] << score[13][1] << score[14][1] << score[15][1] << score[16][1] << score[17][1];
-
 }
 
 void Game::saveDice(int dLoc)
@@ -254,12 +187,10 @@ void Game::saveDice(int dLoc)
     if (round->current->savedDice[dLoc] == 0)
     {
         round->current->savedDice[dLoc] = round->dice.valueDice[dLoc];
-        qDebug() << "tärning sparad";
     }
     else if (round->current->savedDice[dLoc] != 0)
     {
         round->current->savedDice[dLoc] = 0;
-        qDebug() << "tärning osparad";
     }
 
 }
@@ -301,9 +232,6 @@ void Game::btnAndLabelChange(Ui::MainWindow *ui, Player p)
      ui->btn_save2->setChecked(false);
      ui->btn_save3->setChecked(false);
      ui->btn_save4->setChecked(false);
-
-
     }
-
 }
 

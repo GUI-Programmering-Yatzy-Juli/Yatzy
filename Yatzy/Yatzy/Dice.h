@@ -2,7 +2,6 @@
 #define DICE_H
 
 #include <random>
-#include <qdebug.h>
 
 
 class Dice

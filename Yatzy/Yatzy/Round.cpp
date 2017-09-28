@@ -1,5 +1,4 @@
 #include "Round.h"
-#include <qdebug.h>
 
 
 Round::Round(Ui::MainWindow *ui, Game *g)
@@ -11,7 +10,6 @@ Round::Round(Ui::MainWindow *ui, Game *g)
 void Round::newRound(Player *currentP)
 {
     current = currentP;
-    qDebug() << "Rullar tärningar";
     resetColour();
     currentP->checkSavedDice(&dice, currentP);
     checkResult(dice, currentP->pNum);
@@ -95,15 +93,6 @@ void Round::checkResult(Dice dice, int column)
             isPossibleChangeColour(i, column, roundScore[i]);
         }
     }
-
-    //Man ska välja vilken alternativ man vill köra på
-    //void makeChoice()
-
-    //alla färger som blev gröna förutom den som man valde
-    //ska bli vita igen
-    qDebug() << roundScore[0] << roundScore[1] << roundScore[2] << roundScore[3] << roundScore[4] << roundScore[5] << roundScore[6] << roundScore[7] << roundScore[8]
-             << roundScore[9] << roundScore[10] << roundScore[11] << roundScore[12] << roundScore[13] << roundScore[14] << roundScore[15] << roundScore[16] << roundScore[17];
-
 }
 
 int Round::checkPair(Dice dice)
@@ -111,15 +100,33 @@ int Round::checkPair(Dice dice)
     //här är par
     //Den kollar bara ifall ett par finns, den måste kolla ifall det finns flera par.
 
+
+    int firstPairValue = 0;
+    int secondPairValue = 0;
+
     for (int firstDice = 0; firstDice < 5; firstDice++)
     {
        for (int secondDice = firstDice+1; secondDice < 5; secondDice++)
        {
-           if (dice.valueDice[firstDice] == dice.valueDice[secondDice])
+           if (dice.valueDice[firstDice] == dice.valueDice[secondDice] && dice.valueDice[firstDice] != 0)
            {
-                //här blir det par
+                if (firstPairValue != 0)
+                    secondPairValue = dice.valueDice[firstDice] * 2;
 
-                return dice.valueDice[firstDice] * 2;
+                if (secondPairValue == 0)
+                    firstPairValue = dice.valueDice[firstDice] * 2;
+
+                dice.valueDice[firstDice] = 0;
+                dice.valueDice[secondDice] = 0;
+
+                if (firstPairValue > secondPairValue)
+                {
+                    return firstPairValue;
+                }
+                else
+                {
+                    return secondPairValue;
+                }
            }
        }
     }
@@ -338,7 +345,6 @@ int Round::checkFullHouse(Dice dice)
                         break;
                     threes = true;
                     threesNum = dice.valueDice[firstDice];
-                    qDebug() << threesNum;
                }
            }
        }
@@ -355,7 +361,6 @@ int Round::checkFullHouse(Dice dice)
                    break;
                pair = true;
                pairNum = dice.valueDice[firstDice];
-               qDebug() << pairNum;
            }
        }
     }
@@ -419,7 +424,6 @@ void Round::makeChoice(int row, int column)
         table->tableWidget->setEnabled(false);
         table->btn_roll->setText("Roll 0/3");
         }
-        qDebug() << "currentplayer äääääääär" << current->pNum;
         game->showScore(table, current->pNum);
         current->rollsLeft = 0;
 
@@ -427,7 +431,6 @@ void Round::makeChoice(int row, int column)
     }
     else
     {
-        qDebug() << "inte tillåtet";
     }
 }
 

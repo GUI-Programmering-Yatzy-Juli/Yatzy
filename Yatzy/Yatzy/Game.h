@@ -5,8 +5,6 @@
 #include "Round.h"
 #include "Player.h"
 #include "mainwindow.h"
-#include <QPushButton>
-#include <QObject>
 
 class Round;
 class Game

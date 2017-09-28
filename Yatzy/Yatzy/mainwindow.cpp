@@ -1,7 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
-#include <qdebug.h>
 #include <QTableWidgetItem>
 #include <QWidget>
 #include <QPushButton>
@@ -84,10 +82,8 @@ void MainWindow::on_btn_exit_clicked()
      reply = QMessageBox::question(this, "Yahtzee", "Do you really wanna exit?",
                                    QMessageBox::Yes|QMessageBox::No);
      if (reply == QMessageBox::Yes) {
-       qDebug() << "I did not want you to play eitherway :(";
        QApplication::quit();
      } else {
-       qDebug() << "Thank you for staying :)";
      }
    }
 
@@ -130,7 +126,6 @@ void MainWindow::on_btn_rules_clicked()
 
 void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
-    qDebug() << "Du tryckte:" << row << column;
     g->round->makeChoice(row, column);
           g->round->makeChoice(row, column);
 }

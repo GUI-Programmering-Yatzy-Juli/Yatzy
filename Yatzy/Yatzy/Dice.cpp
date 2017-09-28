@@ -5,7 +5,6 @@ using namespace std;
 
 Dice::Dice()
 {
-    qDebug() << "Nya tärningar har skapats";
     srand(time(NULL));
     roll();
 }
@@ -16,5 +15,4 @@ void Dice::roll()
     {
         valueDice[i] = rand() % 6 + 1;
     }
-    qDebug() << valueDice[0] << valueDice[1]<< valueDice[2]<< valueDice[3]<< valueDice[4];
 }
