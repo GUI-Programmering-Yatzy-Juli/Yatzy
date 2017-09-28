@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[14];
-    char stringdata0[238];
+    QByteArrayData data[15];
+    char stringdata0[246];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,19 +40,20 @@ QT_MOC_LITERAL(5, 74, 20), // "on_btn_rules_clicked"
 QT_MOC_LITERAL(6, 95, 26), // "on_tableWidget_cellClicked"
 QT_MOC_LITERAL(7, 122, 3), // "row"
 QT_MOC_LITERAL(8, 126, 6), // "column"
-QT_MOC_LITERAL(9, 133, 20), // "on_btn_save0_clicked"
-QT_MOC_LITERAL(10, 154, 20), // "on_btn_save1_clicked"
-QT_MOC_LITERAL(11, 175, 20), // "on_btn_save2_clicked"
-QT_MOC_LITERAL(12, 196, 20), // "on_btn_save3_clicked"
-QT_MOC_LITERAL(13, 217, 20) // "on_btn_save4_clicked"
+QT_MOC_LITERAL(9, 133, 20), // "on_btn_save0_toggled"
+QT_MOC_LITERAL(10, 154, 7), // "checked"
+QT_MOC_LITERAL(11, 162, 20), // "on_btn_save1_toggled"
+QT_MOC_LITERAL(12, 183, 20), // "on_btn_save2_toggled"
+QT_MOC_LITERAL(13, 204, 20), // "on_btn_save3_toggled"
+QT_MOC_LITERAL(14, 225, 20) // "on_btn_save4_toggled"
 
     },
     "MainWindow\0on_btn_roll_clicked\0\0"
     "on_btn_roll_2_clicked\0on_btn_exit_clicked\0"
     "on_btn_rules_clicked\0on_tableWidget_cellClicked\0"
-    "row\0column\0on_btn_save0_clicked\0"
-    "on_btn_save1_clicked\0on_btn_save2_clicked\0"
-    "on_btn_save3_clicked\0on_btn_save4_clicked"
+    "row\0column\0on_btn_save0_toggled\0checked\0"
+    "on_btn_save1_toggled\0on_btn_save2_toggled\0"
+    "on_btn_save3_toggled\0on_btn_save4_toggled"
 };
 #undef QT_MOC_LITERAL
 
@@ -75,11 +76,11 @@ static const uint qt_meta_data_MainWindow[] = {
        4,    0,   66,    2, 0x08 /* Private */,
        5,    0,   67,    2, 0x08 /* Private */,
        6,    2,   68,    2, 0x08 /* Private */,
-       9,    0,   73,    2, 0x08 /* Private */,
-      10,    0,   74,    2, 0x08 /* Private */,
-      11,    0,   75,    2, 0x08 /* Private */,
-      12,    0,   76,    2, 0x08 /* Private */,
-      13,    0,   77,    2, 0x08 /* Private */,
+       9,    1,   73,    2, 0x08 /* Private */,
+      11,    1,   76,    2, 0x08 /* Private */,
+      12,    1,   79,    2, 0x08 /* Private */,
+      13,    1,   82,    2, 0x08 /* Private */,
+      14,    1,   85,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -87,11 +88,11 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    7,    8,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Bool,   10,
+    QMetaType::Void, QMetaType::Bool,   10,
+    QMetaType::Void, QMetaType::Bool,   10,
+    QMetaType::Void, QMetaType::Bool,   10,
+    QMetaType::Void, QMetaType::Bool,   10,
 
        0        // eod
 };
@@ -107,11 +108,11 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->on_btn_exit_clicked(); break;
         case 3: _t->on_btn_rules_clicked(); break;
         case 4: _t->on_tableWidget_cellClicked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 5: _t->on_btn_save0_clicked(); break;
-        case 6: _t->on_btn_save1_clicked(); break;
-        case 7: _t->on_btn_save2_clicked(); break;
-        case 8: _t->on_btn_save3_clicked(); break;
-        case 9: _t->on_btn_save4_clicked(); break;
+        case 5: _t->on_btn_save0_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 6: _t->on_btn_save1_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 7: _t->on_btn_save2_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 8: _t->on_btn_save3_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 9: _t->on_btn_save4_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
         default: ;
         }
     }
