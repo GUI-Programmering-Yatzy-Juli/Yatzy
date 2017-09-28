@@ -41,16 +41,16 @@ void Game::update(Ui::MainWindow *ui)
 
              if(p1.rollsLeft == 0)
              {
-                  ui->btn_save0->setEnabled(false);
-                  ui->btn_save1->setEnabled(false);
-                  ui->btn_save2->setEnabled(false);
-                  ui->btn_save3->setEnabled(false);
-                  ui->btn_save4->setEnabled(false);
-                  ui->btn_save0->setChecked(false);
-                  ui->btn_save1->setChecked(false);
-                  ui->btn_save2->setChecked(false);
-                  ui->btn_save3->setChecked(false);
-                  ui->btn_save4->setChecked(false);
+              ui->btn_save0->setEnabled(false);
+              ui->btn_save1->setEnabled(false);
+              ui->btn_save2->setEnabled(false);
+              ui->btn_save3->setEnabled(false);
+              ui->btn_save4->setEnabled(false);
+              ui->btn_save0->setChecked(false);
+              ui->btn_save1->setChecked(false);
+              ui->btn_save2->setChecked(false);
+              ui->btn_save3->setChecked(false);
+              ui->btn_save4->setChecked(false);
 
 
              }
@@ -71,16 +71,16 @@ void Game::update(Ui::MainWindow *ui)
             ui->btn_save4->setEnabled(true);
             if(p2.rollsLeft == 0)
             {
-                 ui->btn_save0->setEnabled(false);
-                 ui->btn_save1->setEnabled(false);
-                 ui->btn_save2->setEnabled(false);
-                 ui->btn_save3->setEnabled(false);
-                 ui->btn_save4->setEnabled(false);
-                 ui->btn_save0->setChecked(false);
-                 ui->btn_save1->setChecked(false);
-                 ui->btn_save2->setChecked(false);
-                 ui->btn_save3->setChecked(false);
-                 ui->btn_save4->setChecked(false);
+             ui->btn_save0->setEnabled(false);
+             ui->btn_save1->setEnabled(false);
+             ui->btn_save2->setEnabled(false);
+             ui->btn_save3->setEnabled(false);
+             ui->btn_save4->setEnabled(false);
+             ui->btn_save0->setChecked(false);
+             ui->btn_save1->setChecked(false);
+             ui->btn_save2->setChecked(false);
+             ui->btn_save3->setChecked(false);
+             ui->btn_save4->setChecked(false);
             }
 
         }
@@ -94,7 +94,7 @@ void Game::update(Ui::MainWindow *ui)
         }
 
 
-    if(numRounds > 3)
+    if(numRounds > 15)
     {
         ui->btn_roll->setEnabled(false);
      }
@@ -105,7 +105,6 @@ void Game::update(Ui::MainWindow *ui)
 bool Game::gameIsActive()
 {
 
-    if (numRounds > 3)
     if (numRounds > 15)
     {
 
@@ -119,7 +118,7 @@ bool Game::gameIsActive()
             txt->setMinimumHeight(400);
             txt->setMinimumWidth(400);
             txt->setText("The winner is player one");
-            txt->setStyleSheet("font: 19pt; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; color: black;  position: relative; bottom: 50; background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
+            txt->setStyleSheet("font: 19pt; color: black;  position: relative; bottom: 50; background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
             txt->show();
             txt->setEnabled(false);
 
@@ -144,7 +143,7 @@ bool Game::gameIsActive()
             txt->setMinimumHeight(400);
             txt->setMinimumWidth(400);
             txt->setText("The winner is player two");
-            txt->setStyleSheet("font: 19pt; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; color: black;position: relative; bottom: 50;background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
+            txt->setStyleSheet("font: 19pt; color: black;position: relative; bottom: 50;background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
             txt->show();
             txt->setEnabled(false);
 

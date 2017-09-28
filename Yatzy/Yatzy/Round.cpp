@@ -63,6 +63,7 @@ void Round::changeImage(QPushButton *btn, int pic)
     }
 }
 
+
 void Round::checkResult(Dice dice, int column)
 {
     for (int i = 0; i < 18; i++)        //Sätter 0 som värde på alla platser

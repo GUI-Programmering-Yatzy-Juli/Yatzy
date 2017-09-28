@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     QMainWindow::centralWidget()->layout()->setContentsMargins(0,0,0,0);
+    ui->tableWidget->setEnabled(false);
     ui->label->setVisible(false);
     ui->btn_roll->setVisible(false);
       ui->btn_save0->setEnabled(false);
@@ -63,6 +64,8 @@ MainWindow::~MainWindow()
 void MainWindow::on_btn_roll_clicked()
 {
     g->update(ui);
+
+    ui->tableWidget->setEnabled(true);
 
 }
 
@@ -134,8 +137,9 @@ void MainWindow::on_tableWidget_cellClicked(int row, int column)
     }
     */
 
-    g->makeChoice(row, column);
-    g->round->makeChoice(row, column);
+          g->round->makeChoice(row, column);
+
+
 
     /*Använd typ denna för att välja skit fast den blir ju implementerad i rounds med str o green
  Sedan för att reseta så kan man använda clearcontents men då måste vi ha kunnat implementerat funktionen för att spara tärningar. eller så gör vi en array med en while loop
