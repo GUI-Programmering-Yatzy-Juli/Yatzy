@@ -20,7 +20,7 @@ void Game::update(Ui::MainWindow *ui)
 {
     round = new Round(ui, this);
 
-    if (gameIsActive())
+    if (gameIsActive(ui))
     {
         qDebug() << "Runda: " << numRounds;
         if (p1.rollsLeft != 0)
@@ -87,18 +87,15 @@ void Game::update(Ui::MainWindow *ui)
              numRounds++;
              update(ui);
         }
-    if(numRounds > 15)
-    {
-        ui->btn_roll->setEnabled(false);
-     }
     }
 }
 
-bool Game::gameIsActive()
+bool Game::gameIsActive(Ui::MainWindow *ui)
 {
 
     if (numRounds > 15)
     {
+        ui->btn_roll->setEnabled(false);
         //utnämn vinnaren
         if (p1.score > p2.score)
         {
@@ -185,11 +182,19 @@ bool Game::gameIsActive()
 void Game::calcScore(int pCol)
 {
     score[6][pCol] = calcPointsTillBonus(pCol);     //Poäng till bonus col 6
-    if (score[6][pCol] >= 63)                       //Bonus col 7
+    if (score[6][pCol] <= 0)                       //Bonus col 7
     {
         score[7][pCol] = 50;
     }
     score[17][pCol] = calcTotal(pCol);
+    if (p1.pNum == pCol)
+    {
+        p1.score = calcTotal(pCol);
+    }
+    else if (p2.pNum == pCol)
+    {
+        p2.score = calcTotal(pCol);
+    }
 }
 
 int Game::calcPointsTillBonus(int pCol)
@@ -199,10 +204,8 @@ int Game::calcPointsTillBonus(int pCol)
     for (int i = 0; i < 6; i++)
     {
         sum += score[i][pCol];
-
     }
-    qDebug() << "Du har" << 63 - sum << "poäng till bonus";
-    return sum;
+    return 63 - sum;
 }
 
 int Game::calcTotal(int pCol)
@@ -210,18 +213,19 @@ int Game::calcTotal(int pCol)
     int sum = 0;
     for (int i = 0; i < 17; i++)
     {
-        sum += score[i][pCol];
+        if(i != 6)
+        {
+            sum += score[i][pCol];
+        }
     }
-    qDebug() << "TOTAAAAAAAAAAALa " << sum;
+    qDebug() << "TOTALTALTLATL SUMMAMAMAMNAMAN " << sum;
     return sum;
 }
 
 void Game::showScore(Ui::MainWindow *ui, int pCol)
 {
-    calcScore(pCol);
-    for (int pCol = 0; pCol < 2; pCol++)
-    {
-        for (int r = 0; r < 17; r++)
+        calcScore(pCol);
+        for (int r = 0; r < 18; r++)
         {
             if (score[r][pCol] > 0)
             {
@@ -231,13 +235,17 @@ void Game::showScore(Ui::MainWindow *ui, int pCol)
                 {
                     ui->tableWidget->item(r, pCol)->setBackgroundColor(Qt::green);
                 }
+                else
+                {
+                    ui->tableWidget->item(r, pCol)->setBackground(Qt::lightGray);
+                }
             }
         }
-    }
-    qDebug() << score[0][0] << score[1][0] << score[2][0] << score[3][0] << score[4][0] << score[5][0] << score[6][0] << score[7][0] << score[8][0]
-             << score[9][0] << score[10][0] << score[11][0] << score[12][0] << score[13][0] << score[14][0] << score[15][0] << score[16][0] << score[17][0];
-    qDebug() << score[0][1] << score[1][1] << score[2][1] << score[3][1] << score[4][1] << score[5][1] << score[6][1] << score[7][1] << score[8][1]
-             << score[9][1] << score[10][1] << score[11][1] << score[12][1] << score[13][1] << score[14][1] << score[15][1] << score[16][1] << score[17][0];
+        qDebug() << score[0][0] << score[1][0] << score[2][0] << score[3][0] << score[4][0] << score[5][0] << score[6][0] << score[7][0] << score[8][0]
+                 << score[9][0] << score[10][0] << score[11][0] << score[12][0] << score[13][0] << score[14][0] << score[15][0] << score[16][0] << score[17][0];
+        qDebug() << score[0][1] << score[1][1] << score[2][1] << score[3][1] << score[4][1] << score[5][1] << score[6][1] << score[7][1] << score[8][1]
+                 << score[9][1] << score[10][1] << score[11][1] << score[12][1] << score[13][1] << score[14][1] << score[15][1] << score[16][1] << score[17][1];
+
 }
 
 void Game::saveDice(int dLoc)
@@ -274,5 +282,28 @@ void Game::btnAndLabelChange(Ui::MainWindow *ui, Player p)
     ui->label->setText("Player " + QString::number(p.pNum  + 1) + "    Runda " + QString::number(numRounds));
     ui->btn_roll->setText("Roll " + QString::number(p.rollsLeft) + " /3");
     ui->label->setText("Player " + QString::number(p.pNum + 1) + "    Runda " + QString::number(numRounds));
+
+    ui->btn_save0->setEnabled(true);
+    ui->btn_save1->setEnabled(true);
+    ui->btn_save2->setEnabled(true);
+    ui->btn_save3->setEnabled(true);
+    ui->btn_save4->setEnabled(true);
+
+    if(p.rollsLeft == 0)
+    {
+     ui->btn_save0->setEnabled(false);
+     ui->btn_save1->setEnabled(false);
+     ui->btn_save2->setEnabled(false);
+     ui->btn_save3->setEnabled(false);
+     ui->btn_save4->setEnabled(false);
+     ui->btn_save0->setChecked(false);
+     ui->btn_save1->setChecked(false);
+     ui->btn_save2->setChecked(false);
+     ui->btn_save3->setChecked(false);
+     ui->btn_save4->setChecked(false);
+
+
+    }
+
 }
 

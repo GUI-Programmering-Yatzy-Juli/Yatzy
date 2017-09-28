@@ -63,7 +63,6 @@ void Round::changeImage(QPushButton *btn, int pic)
     }
 }
 
-
 void Round::checkResult(Dice dice, int column)
 {
     for (int i = 0; i < 18; i++)        //Sätter 0 som värde på alla platser
@@ -412,7 +411,7 @@ void Round::isPossibleChangeColour (int r, int pCol, int score)
 
 void Round::makeChoice(int row, int column)
 {
-    if (column == current->pNum)
+    if (column == current->pNum && game->score[row][column] == 0)
     {
         game->score[row][column] = roundScore[row];
         if(roundScore[row] != 0)
@@ -420,6 +419,8 @@ void Round::makeChoice(int row, int column)
         table->tableWidget->setEnabled(false);
         table->btn_roll->setText("Roll 0/3");
         }
+        qDebug() << "currentplayer äääääääär" << current->pNum;
+        game->showScore(table, current->pNum);
         current->rollsLeft = 0;
 
 

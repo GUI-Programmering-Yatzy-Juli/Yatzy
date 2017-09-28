@@ -16,7 +16,7 @@ public:
     Game(Ui::MainWindow *ui);
     int numRounds = 1;
 
-    bool gameIsActive();
+    bool gameIsActive(Ui::MainWindow *ui);
 
     Round *round;
 
