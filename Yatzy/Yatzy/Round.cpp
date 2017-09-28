@@ -422,6 +422,16 @@ void Round::makeChoice(int row, int column)
         if(roundScore[row] != 0)
         {
         table->tableWidget->setEnabled(false);
+        table->btn_save0->setChecked(false);
+        table->btn_save1->setChecked(false);
+        table->btn_save2->setChecked(false);
+        table->btn_save3->setChecked(false);
+        table->btn_save4->setChecked(false);
+        table->btn_save0->setEnabled(false);
+        table->btn_save1->setEnabled(false);
+        table->btn_save2->setEnabled(false);
+        table->btn_save3->setEnabled(false);
+        table->btn_save4->setEnabled(false);
         table->btn_roll->setText("Roll 0/3");
         }
         game->showScore(table, current->pNum);
