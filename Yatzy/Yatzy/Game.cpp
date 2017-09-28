@@ -19,7 +19,7 @@ void Game::update(Ui::MainWindow *ui)
 {
     qDebug() << "funktion";
 
-    Round round(ui, this);
+    round = new Round(ui, this);
 
     if (gameIsActive())
     {
@@ -27,7 +27,7 @@ void Game::update(Ui::MainWindow *ui)
 
        if (p1.rollsLeft != 0)
         {
-            round.newRound(&p1);
+            round->newRound(&p1);
             //qDebug() << "p1";
             ui->label->setText("Player 1");                                 // Skulle kunna bli en while(p1.rollsLeft >= 1)   ui->label->setText("Player 1"); //
             ui->label->setStyleSheet("font: 75 14pt");
@@ -37,7 +37,7 @@ void Game::update(Ui::MainWindow *ui)
         }
         else if (p2.rollsLeft != 0)
         {
-            round.newRound(&p2);
+            round->newRound(&p2);
             //qDebug() << "p2";
             ui->label->setText("Player 2");
             ui->label->setStyleSheet("font: 75 14pt");
@@ -170,9 +170,12 @@ void Game::makeChoice(int row, int column)
 
 }
 
-void Game::saveDice(int d)
+void Game::saveDice(int dLoc)
 {
-
+    // dLoc är platsen på tärnigen man vill spara
+    qDebug() << dLoc << round->current->savedDice[dLoc] << round->dice.valueDice[dLoc];
+    round->current->savedDice[dLoc] = round->dice.valueDice[dLoc];
+    qDebug() << dLoc << round->current->savedDice[dLoc] << round->dice.valueDice[dLoc];
 }
 
 void Game::populateArray()

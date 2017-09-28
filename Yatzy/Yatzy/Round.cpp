@@ -6,17 +6,18 @@ Round::Round(Ui::MainWindow *ui, Game *g)
 {
     table = ui;
     game = new Game(ui);
-
 }
 
 void Round::newRound(Player *currentP)
 {
+    current = currentP;
     qDebug() << "Rullar tärningar";
     currentP->checkSavedDice(&dice, currentP);
     checkResult(dice, currentP->pNum);
     currentP->rollsLeft--;
     showImage();
 }
+
 void Round::showImage()
 {
     //Något sånt här för bild för tärnings value förmodeligen bättre att göra en for loop på den

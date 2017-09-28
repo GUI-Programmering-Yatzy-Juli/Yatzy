@@ -25,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent) :
       ui->btn_save2->setEnabled(false);
       ui->btn_save3->setEnabled(false);
       ui->btn_save4->setEnabled(false);
-     /*
+     
       QPixmap img1(":/new/prefix1/Dices/1.png");
       QPixmap img2(":/new/prefix1/Dices/2.png");
       QPixmap img3(":/new/prefix1/Dices/3.png");
@@ -52,7 +52,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
       ui->btn_save4->setIcon(ButtonIcon5);
       ui->btn_save4->setIconSize(QSize(100,100));
-    */
+    
 }
 
 MainWindow::~MainWindow()

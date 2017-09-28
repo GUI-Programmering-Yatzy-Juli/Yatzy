@@ -22,6 +22,7 @@ public:
 
     int player1Turn = 0;
     int player2Turn = 0;
+    Player *current;
 
 private:
     void showImage();

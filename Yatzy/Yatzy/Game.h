@@ -8,7 +8,7 @@
 #include <QPushButton>
 #include <QObject>
 
-
+class Round;
 class Game
 {
 
@@ -17,6 +17,8 @@ public:
     int numRounds = 1;
 
     bool gameIsActive();
+
+    Round *round;
 
     Player p1;
     Player p2;
