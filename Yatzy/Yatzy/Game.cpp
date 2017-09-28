@@ -25,55 +25,28 @@ void Game::update(Ui::MainWindow *ui)
     {
         qDebug() << "Runda: " << numRounds;
 
-       if (p1.rollsLeft != 0)
+        if (p1.rollsLeft != 0)
         {
-            round->newRound(&p1);
-           for(int i = 0; i < 3; i++)
-           {
-               QString myStr = QString::number(p1.rollsLeft);
-
-               ui->btn_roll->setText("Roll " + myStr + " /3");
-           }
-            round.newRound(&p1);
-            //qDebug() << "p1";
-            for(int i = 1; i < 16; i++)
-        {
-            QString myStr = QString::number(numRounds);
-            ui->label->setText("Player 1 Runda " + myStr);                                 // Skulle kunna bli en while(p1.rollsLeft >= 1)   ui->label->setText("Player 1"); //
-            ui->label->setStyleSheet("font: 75 14pt");
-        }
-            qDebug() << "Slag kvar för spelare 1: " << p1.rollsLeft;
-            calcScore(p1.pNum);
-            showScore(ui);
+             round->newRound(&p1);
+             btnAndLabelChange(ui, p1);
+             calcScore(p1.pNum);
+             showScore(ui);
         }
         else if (p2.rollsLeft != 0)
         {
             round->newRound(&p2);
-           for(int i = 0; i < 3; i++)
-           {
-               QString myStr = QString::number(p2.rollsLeft );
-               ui->btn_roll->setText("Roll " + myStr + " /3");
-           }
-            round.newRound(&p2);
-            //qDebug() << "p2";
-            for(int i = 0; i < 16; i++)
-        {
-            QString myStr = QString::number(numRounds);
-            ui->label->setText("Player 2 Runda " + myStr);                                 // Skulle kunna bli en while(p1.rollsLeft >= 1)   ui->label->setText("Player 1"); //
-            ui->label->setStyleSheet("font: 75 14pt");
-        }
-            qDebug() << "Slag kvar för spelare 2: " << p2.rollsLeft;
-            calcScore(p1.pNum);
+            btnAndLabelChange(ui, p2);
+            calcScore(p2.pNum);
+            showScore(ui);
         }
         else
         {
-            p1.rollsLeft = 3;
-            p2.rollsLeft = 3;
-            numRounds++;
-            update(ui);
+             p1.rollsLeft = 3;
+             p2.rollsLeft = 3;
+             numRounds++;
+             update(ui);
         }
-    }
-
+     }
 }
 
 bool Game::gameIsActive()
@@ -194,13 +167,20 @@ void Game::makeChoice(int row, int column)
 void Game::saveDice(int dLoc)
 {
     // dLoc är platsen på tärnigen man vill spara
-    qDebug() << dLoc << round->current->savedDice[dLoc] << round->dice.valueDice[dLoc];
-    round->current->savedDice[dLoc] = round->dice.valueDice[dLoc];
-    qDebug() << dLoc << round->current->savedDice[dLoc] << round->dice.valueDice[dLoc];
+    if (round->current->savedDice[dLoc] == 0)
+    {
+        round->current->savedDice[dLoc] = round->dice.valueDice[dLoc];
+        qDebug() << "tärning sparad";
+    }
+    else if (round->current->savedDice[dLoc] != 0)
+    {
+        round->current->savedDice[dLoc] = 0;
+        qDebug() << "tärning osparad";
+    }
+
 }
 
 void Game::populateArray()
-
 {
     for (int p = 0; p > 2; p++)
     {
@@ -209,5 +189,11 @@ void Game::populateArray()
             score[r][p] = 0;
         }
     }
+}
+
+void Game::btnAndLabelChange(Ui::MainWindow *ui, Player p)
+{
+    ui->btn_roll->setText("Roll " + QString::number(p.rollsLeft + 1) + " /3");
+    ui->label->setText("Player " + QString::number(p.pNum + 1) + "    Runda " + QString::number(numRounds));
 }
 

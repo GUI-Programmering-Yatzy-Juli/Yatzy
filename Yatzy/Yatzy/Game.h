@@ -36,6 +36,8 @@ public:
 
 private:
 
+    void btnAndLabelChange(Ui::MainWindow *ui, Player p);
+
 public slots:
      void update(Ui::MainWindow *ui);
 };
