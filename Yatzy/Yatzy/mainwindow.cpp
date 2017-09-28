@@ -19,9 +19,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     QMainWindow::centralWidget()->layout()->setContentsMargins(0,0,0,0);
+    ui->tableWidget->setEnabled(false);
     ui->label->setVisible(false);
     ui->btn_roll->setVisible(false);
-      ui->btn_save0->setEnabled(false);     // Ska bli kopplat med dice.valueDice så ifall valueDice inte har något värde så är setEnabled(false)
+      ui->btn_save0->setEnabled(false);
       ui->btn_save1->setEnabled(false);
       ui->btn_save2->setEnabled(false);
       ui->btn_save3->setEnabled(false);
@@ -64,12 +65,14 @@ MainWindow::~MainWindow()
 void MainWindow::on_btn_roll_clicked()
 {
     g->update(ui);
-    enableSaveBtn();
+
+    ui->tableWidget->setEnabled(true);
+
 }
 
 void MainWindow::on_btn_roll_2_clicked()
 {
-
+    enableSaveBtn();
     ui->label->setVisible(true);
     ui->btn_roll->setVisible(true);
     ui->btn_roll_2->setVisible(false);
@@ -108,7 +111,7 @@ void MainWindow::on_btn_rules_clicked()
                "2 par   \t\t|22|\tSå högt som möjligt\n"
                "triss   \t\t|18|\tSå högt som möjligt\n"
                "fyrtal  \t\t|24|\tSå högt som möjligt\n"
-               "L.stege \t|15 |\tett till fem\n"
+               "L.stege \t|15|\tett till fem\n"
                "S.stege \t|20|\ttvå till sex\n"
                "kåk	    \t|28 |\ttre av en sort, två av en annan\n"
                "chans   \t|30|\tSå högt som möjligt\n"
@@ -129,6 +132,7 @@ void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
     qDebug() << "Du tryckte:" << row << column;
     g->round->makeChoice(row, column);
+          g->round->makeChoice(row, column);
 }
 
 void MainWindow::enableSaveBtn()
@@ -140,28 +144,24 @@ void MainWindow::enableSaveBtn()
     ui->btn_save4->setEnabled(true);
 }
 
-void MainWindow::on_btn_save0_clicked()
+void MainWindow::on_btn_save0_toggled(bool checked)
 {
-    g->saveDice(0);
+       g->saveDice(0);
 }
-
-void MainWindow::on_btn_save1_clicked()
+void MainWindow::on_btn_save1_toggled(bool checked)
 {
-    g->saveDice(1);
+       g->saveDice(1);
 }
-
-void MainWindow::on_btn_save2_clicked()
+void MainWindow::on_btn_save2_toggled(bool checked)
 {
-    g->saveDice(2);
+       g->saveDice(2);
 }
-
-void MainWindow::on_btn_save3_clicked()
+void MainWindow::on_btn_save3_toggled(bool checked)
 {
-    g->saveDice(3);
+       g->saveDice(3);
 }
-
-void MainWindow::on_btn_save4_clicked()
+void MainWindow::on_btn_save4_toggled(bool checked)
 {
-    g->saveDice(4);
+       g->saveDice(4);
 }
 

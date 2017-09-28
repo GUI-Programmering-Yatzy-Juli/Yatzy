@@ -28,12 +28,57 @@ void Game::update(Ui::MainWindow *ui)
              round->newRound(&p1);
              btnAndLabelChange(ui, p1);
              showScore(ui, p1.pNum);
+             //calcScore(p1.pNum);
+             showScore(ui);
+             ui->btn_save0->setEnabled(true);
+             ui->btn_save1->setEnabled(true);
+             ui->btn_save2->setEnabled(true);
+             ui->btn_save3->setEnabled(true);
+             ui->btn_save4->setEnabled(true);
+
+             if(p1.rollsLeft == 0)
+             {
+              ui->btn_save0->setEnabled(false);
+              ui->btn_save1->setEnabled(false);
+              ui->btn_save2->setEnabled(false);
+              ui->btn_save3->setEnabled(false);
+              ui->btn_save4->setEnabled(false);
+              ui->btn_save0->setChecked(false);
+              ui->btn_save1->setChecked(false);
+              ui->btn_save2->setChecked(false);
+              ui->btn_save3->setChecked(false);
+              ui->btn_save4->setChecked(false);
+
+
+             }
+
         }
         else if (p2.rollsLeft != 0)
         {
             round->newRound(&p2);
             btnAndLabelChange(ui, p2);
             showScore(ui, p2.pNum);
+            //calcScore(p2.pNum);
+            showScore(ui);
+            ui->btn_save0->setEnabled(true);
+            ui->btn_save1->setEnabled(true);
+            ui->btn_save2->setEnabled(true);
+            ui->btn_save3->setEnabled(true);
+            ui->btn_save4->setEnabled(true);
+            if(p2.rollsLeft == 0)
+            {
+             ui->btn_save0->setEnabled(false);
+             ui->btn_save1->setEnabled(false);
+             ui->btn_save2->setEnabled(false);
+             ui->btn_save3->setEnabled(false);
+             ui->btn_save4->setEnabled(false);
+             ui->btn_save0->setChecked(false);
+             ui->btn_save1->setChecked(false);
+             ui->btn_save2->setChecked(false);
+             ui->btn_save3->setChecked(false);
+             ui->btn_save4->setChecked(false);
+            }
+
         }
         else
         {
@@ -42,7 +87,11 @@ void Game::update(Ui::MainWindow *ui)
              numRounds++;
              update(ui);
         }
+    if(numRounds > 15)
+    {
+        ui->btn_roll->setEnabled(false);
      }
+    }
 }
 
 bool Game::gameIsActive()
@@ -59,6 +108,10 @@ bool Game::gameIsActive()
             txt->setMaximumWidth(400);
             txt->setMinimumHeight(400);
             txt->setMinimumWidth(400);
+            txt->setText("The winner is player two");
+            txt->setStyleSheet("font: 19pt; color: black;position: relative; bottom: 50;background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
+            txt->show();
+            txt->setEnabled(false);
 
             QMediaPlayer * music = new QMediaPlayer();
             music->setMedia(QUrl("qrc:/new/prefix1/Dices/YOU WIN.mp3"));
@@ -80,6 +133,10 @@ bool Game::gameIsActive()
             txt->setMaximumWidth(400);
             txt->setMinimumHeight(400);
             txt->setMinimumWidth(400);
+            txt->setText("The winner is player one");
+            txt->setStyleSheet("font: 19pt; color: black;  position: relative; bottom: 50; background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
+            txt->show();
+            txt->setEnabled(false);
 
             QMediaPlayer * music = new QMediaPlayer();
             music->setMedia(QUrl("qrc:/new/prefix1/Dices/YOU WIN.mp3"));
@@ -99,6 +156,10 @@ bool Game::gameIsActive()
             txt->setMaximumWidth(400);
             txt->setMinimumHeight(400);
             txt->setMinimumWidth(400);
+            txt->setText("It's a tie stand down, we'll get them another day lads.");
+            txt->setStyleSheet("font: 19pt;text-border: 12px 12px yellow;  color: black; position: relative; bottom: 50; background-image: url(:/new/prefix1/fire/tie.png); background-repeat: no-repeat;");
+            txt->show();
+            txt->setEnabled(false);
 
             QMediaPlayer * music = new QMediaPlayer();
             music->setMedia(QUrl("qrc:/new/prefix1/Dices/Tie.mp3"));
@@ -209,6 +270,8 @@ void Game::populateArray()
 
 void Game::btnAndLabelChange(Ui::MainWindow *ui, Player p)
 {
+    ui->btn_roll->setText("Rolls left " + QString::number(p.rollsLeft ) + " /3");
+    ui->label->setText("Player " + QString::number(p.pNum  + 1) + "    Runda " + QString::number(numRounds));
     ui->btn_roll->setText("Roll " + QString::number(p.rollsLeft) + " /3");
     ui->label->setText("Player " + QString::number(p.pNum + 1) + "    Runda " + QString::number(numRounds));
 }
