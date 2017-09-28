@@ -28,7 +28,7 @@ public:
     void calcScore(int pCol);
     int calcPointsTillBonus(int pCol);
     int calcTotal(int pCol);
-    void showScore(Ui::MainWindow *ui);
+    void showScore(Ui::MainWindow *ui, int pCol);
 
     void saveDice(int d);
     void populateArray();

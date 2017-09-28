@@ -18,27 +18,22 @@ Game::Game(Ui::MainWindow *ui)
 
 void Game::update(Ui::MainWindow *ui)
 {
-    qDebug() << "funktion";
-
     round = new Round(ui, this);
 
     if (gameIsActive())
     {
         qDebug() << "Runda: " << numRounds;
-
         if (p1.rollsLeft != 0)
         {
              round->newRound(&p1);
              btnAndLabelChange(ui, p1);
-             //calcScore(p1.pNum);
-             showScore(ui);
+             showScore(ui, p1.pNum);
         }
         else if (p2.rollsLeft != 0)
         {
             round->newRound(&p2);
             btnAndLabelChange(ui, p2);
-            //calcScore(p2.pNum);
-            showScore(ui);
+            showScore(ui, p2.pNum);
         }
         else
         {
@@ -128,14 +123,12 @@ bool Game::gameIsActive()
 
 void Game::calcScore(int pCol)
 {
-
     score[6][pCol] = calcPointsTillBonus(pCol);     //Poäng till bonus col 6
     if (score[6][pCol] >= 63)                       //Bonus col 7
     {
         score[7][pCol] = 50;
     }
     score[17][pCol] = calcTotal(pCol);
-    qDebug() << score[17][pCol];
 }
 
 int Game::calcPointsTillBonus(int pCol)
@@ -144,8 +137,10 @@ int Game::calcPointsTillBonus(int pCol)
     int sum = 0;
     for (int i = 0; i < 6; i++)
     {
-        sum = score[i][pCol];
+        sum += score[i][pCol];
+
     }
+    qDebug() << "Du har" << 63 - sum << "poäng till bonus";
     return sum;
 }
 
@@ -154,13 +149,15 @@ int Game::calcTotal(int pCol)
     int sum = 0;
     for (int i = 0; i < 17; i++)
     {
-        score[i][pCol] += sum;
+        sum += score[i][pCol];
     }
+    qDebug() << "TOTAAAAAAAAAAALa " << sum;
     return sum;
 }
 
-void Game::showScore(Ui::MainWindow *ui)
+void Game::showScore(Ui::MainWindow *ui, int pCol)
 {
+    calcScore(pCol);
     for (int pCol = 0; pCol < 2; pCol++)
     {
         for (int r = 0; r < 17; r++)
@@ -169,7 +166,10 @@ void Game::showScore(Ui::MainWindow *ui)
             {
                 QString myStr = QString::number(score[r][pCol]);
                 ui->tableWidget->setItem(r, pCol, new QTableWidgetItem(myStr));
-                ui->tableWidget->item(r, pCol)->setBackgroundColor(Qt::yellow);
+                if (r != 6 && r != 7 && r != 17)
+                {
+                    ui->tableWidget->item(r, pCol)->setBackgroundColor(Qt::green);
+                }
             }
         }
     }

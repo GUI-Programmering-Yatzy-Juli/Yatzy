@@ -412,7 +412,7 @@ void Round::isPossibleChangeColour (int r, int pCol, int score)
     if (game->score[r][pCol] == 0 && r != 6 && r != 7 && r != 17)
     {
         table->tableWidget->setItem(r, pCol, new QTableWidgetItem(myStr));
-        table->tableWidget->item(r, pCol)->setBackgroundColor(Qt::green);
+        table->tableWidget->item(r, pCol)->setBackgroundColor(Qt::yellow);
     }
 }
 
@@ -421,7 +421,6 @@ void Round::makeChoice(int row, int column)
     if (column == current->pNum)
     {
         game->score[row][column] = roundScore[row];
-        game->calcScore(column);
         current->rollsLeft = 0;
     }
     else
