@@ -415,7 +415,14 @@ void Round::makeChoice(int row, int column)
     if (column == current->pNum)
     {
         game->score[row][column] = roundScore[row];
+        if(roundScore[row] != 0)
+        {
+        table->tableWidget->setEnabled(false);
+        table->btn_roll->setText("Roll 0/3");
+        }
         current->rollsLeft = 0;
+
+
     }
     else
     {

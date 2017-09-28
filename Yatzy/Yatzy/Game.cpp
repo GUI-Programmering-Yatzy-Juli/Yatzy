@@ -29,7 +29,7 @@ void Game::update(Ui::MainWindow *ui)
              btnAndLabelChange(ui, p1);
              showScore(ui, p1.pNum);
              //calcScore(p1.pNum);
-             showScore(ui);
+             showScore(ui, p1.pNum);
              ui->btn_save0->setEnabled(true);
              ui->btn_save1->setEnabled(true);
              ui->btn_save2->setEnabled(true);
@@ -59,7 +59,7 @@ void Game::update(Ui::MainWindow *ui)
             btnAndLabelChange(ui, p2);
             showScore(ui, p2.pNum);
             //calcScore(p2.pNum);
-            showScore(ui);
+            showScore(ui , p2.pNum);
             ui->btn_save0->setEnabled(true);
             ui->btn_save1->setEnabled(true);
             ui->btn_save2->setEnabled(true);
