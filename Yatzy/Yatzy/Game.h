@@ -30,9 +30,9 @@ public:
     int calcTotal(int pCol);
     void showScore(Ui::MainWindow *ui);
 
-    void makeChoice(int row, int column);
     void saveDice(int d);
     void populateArray();
+
 
 private:
 

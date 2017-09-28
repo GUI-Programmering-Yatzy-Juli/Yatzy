@@ -5,13 +5,14 @@
 Round::Round(Ui::MainWindow *ui, Game *g)
 {
     table = ui;
-    game = new Game(ui);
+    game = g;
 }
 
 void Round::newRound(Player *currentP)
 {
     current = currentP;
     qDebug() << "Rullar tärningar";
+    resetColour();
     currentP->checkSavedDice(&dice, currentP);
     checkResult(dice, currentP->pNum);
     currentP->rollsLeft--;
@@ -20,46 +21,41 @@ void Round::newRound(Player *currentP)
 
 void Round::showImage()
 {
+    //Något sånt här för bild för tärnings value förmodeligen bättre att göra en for loop på den
+    //fast här behöver vi koppla dice.valueDice till denna klass så vi kan hämta ut värdet
     changeImage(table->btn_save0, dice.valueDice[0]);
     changeImage(table->btn_save1, dice.valueDice[1]);
     changeImage(table->btn_save2, dice.valueDice[2]);
     changeImage(table->btn_save3, dice.valueDice[3]);
     changeImage(table->btn_save4, dice.valueDice[4]);
-
 }
 
 void Round::changeImage(QPushButton *btn, int pic)
 {
-    QIcon ButtonIcon1(QPixmap(":/new/prefix1/Dices/1.png"));
-    QIcon ButtonIcon2(QPixmap(":/new/prefix1/Dices/2.png"));
-    QIcon ButtonIcon3(QPixmap(":/new/prefix1/Dices/3.png"));
-    QIcon ButtonIcon4(QPixmap(":/new/prefix1/Dices/4.png"));
-    QIcon ButtonIcon5(QPixmap(":/new/prefix1/Dices/5.png"));
-    QIcon ButtonIcon6(QPixmap(":/new/prefix1/Dices/6.png"));
     switch (pic)
     {
     case 1:
-        btn->setIcon(ButtonIcon1);
+        btn->setIcon(QIcon(QPixmap(":/new/prefix1/Dices/1.png")));
         btn->setIconSize(QSize(100, 100));
         break;
     case 2:
-        btn->setIcon(ButtonIcon2);
+        btn->setIcon(QIcon(QPixmap(":/new/prefix1/Dices/2.png")));
         btn->setIconSize(QSize(100, 100));
         break;
     case 3:
-        btn->setIcon(ButtonIcon3);
+        btn->setIcon(QIcon(QPixmap(":/new/prefix1/Dices/3.png")));
         btn->setIconSize(QSize(100, 100));
         break;
     case 4:
-        btn->setIcon(ButtonIcon4);
+        btn->setIcon(QIcon(QPixmap(":/new/prefix1/Dices/4.png")));
         btn->setIconSize(QSize(100, 100));
         break;
     case 5:
-        btn->setIcon(ButtonIcon5);
+        btn->setIcon(QIcon(QPixmap(":/new/prefix1/Dices/5.png")));
         btn->setIconSize(QSize(100, 100));
         break;
     case 6:
-        btn->setIcon(ButtonIcon6);
+        btn->setIcon(QIcon(QPixmap(":/new/prefix1/Dices/6.png")));
         btn->setIconSize(QSize(100, 100));
         break;
     default:
@@ -69,12 +65,10 @@ void Round::changeImage(QPushButton *btn, int pic)
 
 void Round::checkResult(Dice dice, int column)
 {
-    int roundScore[18];
     for (int i = 0; i < 18; i++)        //Sätter 0 som värde på alla platser
     {
         roundScore[i] = 0;
     }
-
     roundScore[8] = checkPair(dice);
     roundScore[9] = checkTwoPairs(dice);
     roundScore[10] = checkThreeOfAKind(dice);
@@ -107,6 +101,9 @@ void Round::checkResult(Dice dice, int column)
 
     //alla färger som blev gröna förutom den som man valde
     //ska bli vita igen
+    qDebug() << roundScore[0] << roundScore[1] << roundScore[2] << roundScore[3] << roundScore[4] << roundScore[5] << roundScore[6] << roundScore[7] << roundScore[8]
+             << roundScore[9] << roundScore[10] << roundScore[11] << roundScore[12] << roundScore[13] << roundScore[14] << roundScore[15] << roundScore[16] << roundScore[17];
+
 }
 
 int Round::checkPair(Dice dice)
@@ -403,10 +400,40 @@ void Round::isPossibleChangeColour (int r, int pCol, int score)
      *  score är antalet poäng villkoret är värt
      */
 
-
     QString myStr = QString::number(score);
 
-    table->tableWidget->setItem(r, pCol, new QTableWidgetItem(myStr));
-    table->tableWidget->item(r, pCol)->setBackgroundColor(Qt::green);
+    if (game->score[r][pCol] == 0 && r != 6 && r != 7 && r != 17)
+    {
+        table->tableWidget->setItem(r, pCol, new QTableWidgetItem(myStr));
+        table->tableWidget->item(r, pCol)->setBackgroundColor(Qt::green);
+    }
 }
 
+void Round::makeChoice(int row, int column)
+{
+    if (column == current->pNum)
+    {
+        game->score[row][column] = roundScore[row];
+        game->calcScore(column);
+        current->rollsLeft = 0;
+    }
+    else
+    {
+        qDebug() << "inte tillåtet";
+    }
+}
+
+void Round::resetColour()
+{
+    for (int r = 0; r < 18; r++)
+    {
+        for (int pCol = 0; pCol < 2; pCol++)
+        {
+            if (game->score[r][pCol] == 0 && r != 6 && r != 7 && r != 17)
+            {
+                table->tableWidget->setItem(r, pCol, new QTableWidgetItem(""));
+                table->tableWidget->item(r, pCol)->setBackground(Qt::white);
+            }
+        }
+    }
+}

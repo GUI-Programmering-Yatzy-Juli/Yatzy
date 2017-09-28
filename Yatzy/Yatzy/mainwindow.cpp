@@ -128,12 +128,22 @@ void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
     qDebug() << "Du tryckte:" << row << column;
 
-    if(ui->tableWidget->item(row, column) != 0)
+    /*if(ui->tableWidget->item(row, column) != 0)
     {
         ui->tableWidget->clearContents();
     }
+    */
 
     g->makeChoice(row, column);
+    g->round->makeChoice(row, column);
+
+    /*Använd typ denna för att välja skit fast den blir ju implementerad i rounds med str o green
+ Sedan för att reseta så kan man använda clearcontents men då måste vi ha kunnat implementerat funktionen för att spara tärningar. eller så gör vi en array med en while loop
+ och varje gång vi använder vår click för att markera alternativ så blir det en hardsave typ(Asså vi får på något sätt göra så att row och column får det grund värdet(mystr)
+ på det sättet så skulle det kanske inte blir clearat
+ kan vara bättre att lägga clearcontents på Roll knappen och kanske kolla ifall man kan göra exceptions på den
+   */
+
     //en funktion kan skicka iväg och köra en annan funktion t.ex.
     //isPossibleChoice(int row, int column
 }
