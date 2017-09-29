@@ -21,39 +21,26 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tableWidget->setEnabled(false);
     ui->label->setVisible(false);
     ui->btn_roll->setVisible(false);
-      ui->btn_save0->setEnabled(false);
-      ui->btn_save1->setEnabled(false);
-      ui->btn_save2->setEnabled(false);
-      ui->btn_save3->setEnabled(false);
-      ui->btn_save4->setEnabled(false);
-     
-      QPixmap img1(":/new/prefix1/Dices/1.png");
-      QPixmap img2(":/new/prefix1/Dices/2.png");
-      QPixmap img3(":/new/prefix1/Dices/3.png");
-      QPixmap img4(":/new/prefix1/Dices/4.png");
-      QPixmap img5(":/new/prefix1/Dices/5.png");
-      QPixmap img6(":/new/prefix1/Dices/6.png");
-      QIcon ButtonIcon1(img1);
-      QIcon ButtonIcon2(img2);
-      QIcon ButtonIcon3(img3);
-      QIcon ButtonIcon4(img4);
-      QIcon ButtonIcon5(img5);
-      QIcon ButtonIcon6(img6);
+    ui->btn_save0->setEnabled(false);
+    ui->btn_save1->setEnabled(false);
+    ui->btn_save2->setEnabled(false);
+    ui->btn_save3->setEnabled(false);
+    ui->btn_save4->setEnabled(false);
 
-      ui->btn_save0->setIcon(ButtonIcon1);
-      ui->btn_save0->setIconSize(QSize(100,100));
-      ui->btn_save1->setIcon(ButtonIcon2);
-      ui->btn_save1->setIconSize(QSize(100,100));
+    ui->btn_save0->setIcon(QIcon(QPixmap(":/new/prefix1/Dices/1.png")));
+    ui->btn_save0->setIconSize(QSize(100,100));
 
-      ui->btn_save2->setIcon(ButtonIcon3);
-      ui->btn_save2->setIconSize(QSize(100,100));
+    ui->btn_save1->setIcon(QIcon(QPixmap(":/new/prefix1/Dices/2.png")));
+    ui->btn_save1->setIconSize(QSize(100,100));
 
-      ui->btn_save3->setIcon(ButtonIcon4);
-      ui->btn_save3->setIconSize(QSize(100,100));
+    ui->btn_save2->setIcon(QIcon(QPixmap(":/new/prefix1/Dices/3.png")));
+    ui->btn_save2->setIconSize(QSize(100,100));
 
-      ui->btn_save4->setIcon(ButtonIcon5);
-      ui->btn_save4->setIconSize(QSize(100,100));
-    
+    ui->btn_save3->setIcon(QIcon(QPixmap(":/new/prefix1/Dices/4.png")));
+    ui->btn_save3->setIconSize(QSize(100,100));
+
+    ui->btn_save4->setIcon(QIcon(QPixmap(":/new/prefix1/Dices/5.png")));
+    ui->btn_save4->setIconSize(QSize(100,100));
 }
 
 MainWindow::~MainWindow()
@@ -64,16 +51,12 @@ MainWindow::~MainWindow()
 void MainWindow::on_btn_roll_clicked()
 {
     g->update(ui);
-
     ui->tableWidget->setEnabled(true);
 }
 
 void MainWindow::on_btn_roll_2_clicked()
 {
     enableSaveBtn();
-    ui->label->setVisible(true);
-    ui->btn_roll->setVisible(true);
-    ui->btn_roll_2->setVisible(false);
 }
 
 void MainWindow::on_btn_exit_clicked()
@@ -127,7 +110,6 @@ void MainWindow::on_btn_rules_clicked()
 void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
     g->round->makeChoice(row, column);
-          g->round->makeChoice(row, column);
 }
 
 void MainWindow::enableSaveBtn()
@@ -137,6 +119,9 @@ void MainWindow::enableSaveBtn()
     ui->btn_save2->setEnabled(true);
     ui->btn_save3->setEnabled(true);
     ui->btn_save4->setEnabled(true);
+    ui->label->setVisible(true);
+    ui->btn_roll->setVisible(true);
+    ui->btn_roll_2->setVisible(false);
 }
 
 void MainWindow::on_btn_save0_toggled(bool checked)

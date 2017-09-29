@@ -19,8 +19,6 @@ void Round::newRound(Player *currentP)
 
 void Round::showImage()
 {
-    //Något sånt här för bild för tärnings value förmodeligen bättre att göra en for loop på den
-    //fast här behöver vi koppla dice.valueDice till denna klass så vi kan hämta ut värdet
     changeImage(table->btn_save0, dice.valueDice[0]);
     changeImage(table->btn_save1, dice.valueDice[1]);
     changeImage(table->btn_save2, dice.valueDice[2]);
@@ -97,10 +95,6 @@ void Round::checkResult(Dice dice, int column)
 
 int Round::checkPair(Dice dice)
 {
-    //här är par
-    //Den kollar bara ifall ett par finns, den måste kolla ifall det finns flera par.
-
-
     int firstPairValue = 0;
     int secondPairValue = 0;
 
@@ -120,9 +114,6 @@ int Round::checkPair(Dice dice)
                 {
                     secondPairValue = dice.valueDice[firstDice] * 2;
                 }
-
-                qDebug() << firstPairValue << secondPairValue;
-
                 if (firstPairValue > secondPairValue)
                 {
                     return firstPairValue;
@@ -139,10 +130,8 @@ int Round::checkPair(Dice dice)
 
 int Round::checkTwoPairs(Dice dice)
 {
-
     int firstPairValue = 0;
     int secondPairValue = 0;
-
     for (int firstDice = 0; firstDice < 5; firstDice++)
     {
        for (int secondDice = firstDice+1; secondDice < 5; secondDice++)
@@ -170,8 +159,6 @@ int Round::checkTwoPairs(Dice dice)
 
 int Round::checkThreeOfAKind(Dice dice)
 {
-    //Här är triss
-
     for (int firstDice = 0; firstDice < 5; firstDice++)
     {
        for (int secondDice = firstDice + 1; secondDice < 5; secondDice++)
@@ -180,7 +167,6 @@ int Round::checkThreeOfAKind(Dice dice)
            {
                if (dice.valueDice[firstDice] == dice.valueDice[secondDice] && dice.valueDice[secondDice] == dice.valueDice[thirdDice])
                {
-                    //här blir det triss
                     return dice.valueDice[firstDice] * 3;
                }
            }
@@ -191,7 +177,6 @@ int Round::checkThreeOfAKind(Dice dice)
 
 int Round::checkFourOfAKind(Dice dice)
 {
-    //Här är fyrtal
     for (int firstDice = 0; firstDice < 5; firstDice++)
     {
        for (int secondDice = firstDice + 1; secondDice < 5; secondDice++)
@@ -204,7 +189,6 @@ int Round::checkFourOfAKind(Dice dice)
                             dice.valueDice[firstDice] == dice.valueDice[thirdDice] &&
                             dice.valueDice[firstDice] == dice.valueDice[fourthDice])
                     {
-                        //här blir det fyrtal
                         return dice.valueDice[firstDice] * 4;
                     }
                 }
@@ -216,8 +200,6 @@ int Round::checkFourOfAKind(Dice dice)
 
 int Round::checkYatzy(Dice dice)
 {
-
-    //Här är yahtzee
     if (    dice.valueDice[0] == dice.valueDice[1] &&
             dice.valueDice[0] == dice.valueDice[2] &&
             dice.valueDice[0] == dice.valueDice[3] &&
@@ -230,39 +212,36 @@ int Round::checkYatzy(Dice dice)
 
 int Round::checkSmallLadder(Dice dice)
 {
-    //liten stege
-
     bool one = false;
     bool two = false;
     bool three = false;
     bool four = false;
     bool five = false;
-
-    for (int firstDice = 0; firstDice < 5; firstDice++)     //kollar ifall det finns 1
+    for (int firstDice = 0; firstDice < 5; firstDice++)
     {
         if(dice.valueDice[firstDice] == 1)
             one  = true;
     }
 
-    for (int firstDice = 0; firstDice < 5; firstDice++)     //kollar ifall det finns 2
+    for (int firstDice = 0; firstDice < 5; firstDice++)
     {
         if(dice.valueDice[firstDice] == 2)
             two  = true;
     }
 
-    for (int firstDice = 0; firstDice < 5; firstDice++)     //kollar ifall det finns 3
+    for (int firstDice = 0; firstDice < 5; firstDice++)
     {
         if(dice.valueDice[firstDice] == 3)
             three  = true;
     }
 
-    for (int firstDice = 0; firstDice < 5; firstDice++)     //kollar ifall det finns 4
+    for (int firstDice = 0; firstDice < 5; firstDice++)
     {
         if(dice.valueDice[firstDice] == 4)
             four  = true;
     }
 
-    for (int firstDice = 0; firstDice < 5; firstDice++)     //kollar ifall det finns 4
+    for (int firstDice = 0; firstDice < 5; firstDice++)
     {
         if(dice.valueDice[firstDice] == 5)
             five  = true;
@@ -270,8 +249,6 @@ int Round::checkSmallLadder(Dice dice)
 
     if (one && two && three && four && five)
     {
-        //här blir det liten stege
-
         return 15;
     }
     return 0;
@@ -279,51 +256,28 @@ int Round::checkSmallLadder(Dice dice)
 
 int Round::checkBigLadder(Dice dice)
 {
-    //stor stege
-
     bool two = false;
     bool three = false;
     bool four = false;
     bool five = false;
     bool six = false;
-
-
-
-    for (int firstDice = 0; firstDice < 5; firstDice++)     //kollar ifall det finns 2
-    {
+    for (int firstDice = 0; firstDice < 5; firstDice++)
         if(dice.valueDice[firstDice] == 2)
             two  = true;
-    }
-
-    for (int firstDice = 0; firstDice < 5; firstDice++)     //kollar ifall det finns 3
-    {
+    for (int firstDice = 0; firstDice < 5; firstDice++)
         if(dice.valueDice[firstDice] == 3)
             three  = true;
-    }
-
-    for (int firstDice = 0; firstDice < 5; firstDice++)     //kollar ifall det finns 4
-    {
+    for (int firstDice = 0; firstDice < 5; firstDice++)
         if(dice.valueDice[firstDice] == 4)
             four  = true;
-    }
-
-    for (int firstDice = 0; firstDice < 5; firstDice++)     //kollar ifall det finns 5
-    {
+    for (int firstDice = 0; firstDice < 5; firstDice++)
         if(dice.valueDice[firstDice] == 5)
             five  = true;
-    }
-
-    for (int firstDice = 0; firstDice < 5; firstDice++)     //kollar ifall det finns 6
-    {
+    for (int firstDice = 0; firstDice < 5; firstDice++)
         if(dice.valueDice[firstDice] == 6)
             six  = true;
-    }
-
     if (two && three && four && five && six)
-    {
-        //här blir det stor stege
         return 20;
-    }
     return 0;
 }
 
@@ -343,7 +297,6 @@ int Round::checkFullHouse(Dice dice)
            {
                if (dice.valueDice[firstDice] == dice.valueDice[secondDice] && dice.valueDice[secondDice] == dice.valueDice[thirdDice])
                {
-                    //här blir det triss
                     if (threes)
                         break;
                     threes = true;
@@ -352,14 +305,12 @@ int Round::checkFullHouse(Dice dice)
            }
        }
     }
-
     for (int firstDice = 0; firstDice < 5; firstDice++)
     {
        for (int secondDice = firstDice+1; secondDice < 5; secondDice++)
        {
            if (dice.valueDice[firstDice] == dice.valueDice[secondDice] and dice.valueDice[firstDice] != threesNum)
            {
-                //här blir det par
                if (pair)
                    break;
                pair = true;
@@ -367,32 +318,22 @@ int Round::checkFullHouse(Dice dice)
            }
        }
     }
-
     if (pair && threes && pairNum != threesNum)
-    {
         return (threesNum * 3) + (pairNum * 2);
-    }
     else
-    {
         return 0;
-    }
 }
 
 int Round::checkChance(Dice dice)
 {
     int sum = 0;
-
     for (int i = 0; i < 5; i++)
-    {
         sum +=dice.valueDice[i];
-    }
-    //ska returna summan av alla tärningar
     return sum;
 }
 
 int Round::checkNum(Dice dice, int n)
 {
-
     int sum = 0;
     for (int i = 0; i < 6; i++)
         if (dice.valueDice[i] == n)
@@ -407,9 +348,7 @@ void Round::isPossibleChangeColour (int r, int pCol, int score)
      *  x är beroende på vilken spelare det är. spelare 1 = 0 spelare 2 = 1
      *  score är antalet poäng villkoret är värt
      */
-
     QString myStr = QString::number(score);
-
     if (game->score[r][pCol] == 0 && r != 6 && r != 7 && r != 17)
     {
         table->tableWidget->setItem(r, pCol, new QTableWidgetItem(myStr));
@@ -424,29 +363,10 @@ void Round::makeChoice(int row, int column)
         game->score[row][column] = roundScore[row];
         if(roundScore[row] != 0)
         {
-            /*QMediaPlayer * music = new QMediaPlayer();
-            music->setMedia(QUrl("qrc:/new/prefix1/Dices/choice.mp3"));
-            music->play();*/
-        table->tableWidget->setEnabled(false);
-        table->btn_save0->setChecked(false);
-        table->btn_save1->setChecked(false);
-        table->btn_save2->setChecked(false);
-        table->btn_save3->setChecked(false);
-        table->btn_save4->setChecked(false);
-        table->btn_save0->setEnabled(false);
-        table->btn_save1->setEnabled(false);
-        table->btn_save2->setEnabled(false);
-        table->btn_save3->setEnabled(false);
-        table->btn_save4->setEnabled(false);
-        table->btn_roll->setText("Roll 0/3");
+            outOfRolls();
         }
         game->showScore(table, current->pNum);
         current->rollsLeft = 0;
-
-
-    }
-    else
-    {
     }
 }
 
@@ -463,4 +383,23 @@ void Round::resetColour()
             }
         }
     }
+}
+
+void Round::outOfRolls()
+{
+    /*QMediaPlayer * music = new QMediaPlayer();
+    music->setMedia(QUrl("qrc:/new/prefix1/Dices/choice.mp3"));
+    music->play();*/
+table->tableWidget->setEnabled(false);
+table->btn_save0->setChecked(false);
+table->btn_save1->setChecked(false);
+table->btn_save2->setChecked(false);
+table->btn_save3->setChecked(false);
+table->btn_save4->setChecked(false);
+table->btn_save0->setEnabled(false);
+table->btn_save1->setEnabled(false);
+table->btn_save2->setEnabled(false);
+table->btn_save3->setEnabled(false);
+table->btn_save4->setEnabled(false);
+table->btn_roll->setText("Roll 0/3");
 }

@@ -11,32 +11,20 @@ class Round
 {
 public:
     Round(Ui::MainWindow *ui, Game *g);
-
-
-
     void newRound(Player *currentP);
-
-    void isPossibleChangeColour (int r, int pCol, int score);
-
     void makeChoice(int row, int column);
-
-    void resetColour();
-
     Dice dice;
-
     int roundScore[18];
-
     int player1Turn = 0;
     int player2Turn = 0;
     Player *current;
-
 private:
+    void isPossibleChangeColour (int r, int pCol, int score);
+    void outOfRolls();
+    void resetColour();
     void showImage();
     void changeImage(QPushButton *btn, int pic);
     int checkNum(Dice dice, int n);
-
-
-
     void checkResult(Dice dice, int column);
     int checkPair(Dice dice);
     int checkThreeOfAKind(Dice dice);
@@ -47,12 +35,9 @@ private:
     int checkBigLadder(Dice dice);
     int checkFullHouse(Dice dice);
     int checkChance(Dice dice);
-
     Game *game;
     Ui::MainWindow *table;
-
 public slots:
-    void startNewRound(Player *currentP);
 };
 
 #endif // ROUND_H

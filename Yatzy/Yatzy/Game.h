@@ -9,35 +9,25 @@
 class Round;
 class Game
 {
-
 public:
     Game(Ui::MainWindow *ui);
     int numRounds = 1;
-
-    bool gameIsActive(Ui::MainWindow *ui);
-
     Round *round;
-
     Player p1;
     Player p2;
-
     int score[19][2];
-
+    void saveDice(int d);
+    void populateArray();
+    void update(Ui::MainWindow *ui);
+    void showScore(Ui::MainWindow *ui, int pCol);
+private:
+    bool gameIsActive(Ui::MainWindow *ui);
     void calcScore(int pCol);
     int calcPointsTillBonus(int pCol);
     int calcTotal(int pCol);
-    void showScore(Ui::MainWindow *ui, int pCol);
-
-    void saveDice(int d);
-    void populateArray();
-
-
-private:
-
+    void tie();
+    void win(int pNum);
     void btnAndLabelChange(Ui::MainWindow *ui, Player p);
-
-public slots:
-     void update(Ui::MainWindow *ui);
 };
 
 #endif // GAME_H

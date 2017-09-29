@@ -47,68 +47,15 @@ bool Game::gameIsActive(Ui::MainWindow *ui)
         //utnämn vinnaren
         if (p1.score > p2.score)
         {
-            QTextEdit *txt = new QTextEdit();
-            txt->setMaximumHeight(400);
-            txt->setMaximumWidth(400);
-            txt->setMinimumHeight(400);
-            txt->setMinimumWidth(400);
-            txt->setText("The winner is player two");
-            txt->setStyleSheet("font: 19pt; color: black;position: relative; bottom: 50;background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
-            txt->show();
-            txt->setEnabled(false);
-
-            QMediaPlayer * music = new QMediaPlayer();
-            music->setMedia(QUrl("qrc:/new/prefix1/Dices/YOU WIN.mp3"));
-            music->play();
-
-
-                    txt->setText("The winner is player one");
-                    txt->setStyleSheet("font: 15pt ; background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
-                    txt->show();
-
-                    txt->setEnabled(false);
-
+            win(p1.pNum + 1);
         }
         else if (p1.score < p2.score)
         {
-            QTextEdit *txt = new QTextEdit();
-            txt->setMaximumHeight(400);
-            txt->setMaximumWidth(400);
-            txt->setMinimumHeight(400);
-            txt->setMinimumWidth(400);
-            txt->setText("The winner is player one");
-            txt->setStyleSheet("font: 19pt; color: black;  position: relative; bottom: 50; background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
-            txt->show();
-            txt->setEnabled(false);
-
-            QMediaPlayer * music = new QMediaPlayer();
-            music->setMedia(QUrl("qrc:/new/prefix1/Dices/YOU WIN.mp3"));
-            music->play();
-
-                    txt->setText("The winner is player two");
-                    txt->setStyleSheet("font: 15pt ; background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
-                    txt->show();
-
-                    txt->setEnabled(false);
+            win(p2.pNum + 1);
         }
         else if (p1.score == p2.score)
         {
-            QTextEdit *txt = new QTextEdit();
-            txt->setMaximumHeight(400);
-            txt->setMaximumWidth(400);
-            txt->setMinimumHeight(400);
-            txt->setMinimumWidth(400);
-            txt->setText("It's a tie stand down, we'll get them another day lads.");
-            txt->setStyleSheet("font: 19pt;text-border: 12px 12px yellow;  color: black; position: relative; bottom: 50; background-image: url(:/new/prefix1/fire/tie.png); background-repeat: no-repeat;");
-            txt->show();
-            txt->setEnabled(false);
-            QMediaPlayer * music = new QMediaPlayer();
-            music->setMedia(QUrl("qrc:/new/prefix1/Dices/Tie.mp3"));
-            music->play();
-                    txt->setText("It's a tie stand down, we'll get them another day lads.");
-                    txt->setStyleSheet("font: 15pt ; background-image: url(:/new/prefix1/fire/tie.png); background-repeat: no-repeat;");
-                    txt->show();
-                    txt->setEnabled(false);
+            tie();
         }
         return false;
     }
@@ -211,8 +158,6 @@ void Game::btnAndLabelChange(Ui::MainWindow *ui, Player p)
 {
     ui->btn_roll->setText("Rolls left " + QString::number(p.rollsLeft ) + " /3");
     ui->label->setText("Player " + QString::number(p.pNum  + 1) + "    Runda " + QString::number(numRounds)+ " /15");
-    ui->btn_roll->setText("Roll " + QString::number(p.rollsLeft) + " /3");
-    ui->label->setText("Player " + QString::number(p.pNum + 1) + "    Runda " + QString::number(numRounds)+ " /15");
 
     ui->btn_save0->setEnabled(true);
     ui->btn_save1->setEnabled(true);
@@ -235,3 +180,34 @@ void Game::btnAndLabelChange(Ui::MainWindow *ui, Player p)
     }
 }
 
+void Game::tie()
+{
+    QTextEdit *txt = new QTextEdit();
+    txt->setMaximumHeight(400);
+    txt->setMaximumWidth(400);
+    txt->setMinimumHeight(400);
+    txt->setMinimumWidth(400);
+    txt->setText("It's a tie stand down, we'll get them another day lads.");
+    txt->setStyleSheet("font: 19pt;text-border: 12px 12px yellow;  color: black; position: relative; bottom: 50; background-image: url(:/new/prefix1/fire/tie.png); background-repeat: no-repeat;");
+    txt->show();
+    txt->setEnabled(false);
+    QMediaPlayer * music = new QMediaPlayer();
+    music->setMedia(QUrl("qrc:/new/prefix1/Dices/Tie.mp3"));
+    music->play();
+}
+
+void Game::win(int pNum)
+{
+    QTextEdit *txt = new QTextEdit();
+    txt->setMaximumHeight(400);
+    txt->setMaximumWidth(400);
+    txt->setMinimumHeight(400);
+    txt->setMinimumWidth(400);
+    txt->setText("The winner is player " + QString::number(pNum));
+    txt->setStyleSheet("font: 19pt; color: black;position: relative; bottom: 50;background-image: url(:/new/prefix1/fire/firew.png); background-repeat: no-repeat;");
+    txt->show();
+    txt->setEnabled(false);
+    QMediaPlayer * music = new QMediaPlayer();
+    music->setMedia(QUrl("qrc:/new/prefix1/Dices/YOU WIN.mp3"));
+    music->play();
+}

@@ -9,11 +9,7 @@ class Dice
 public:
     Dice();
     void roll();
-
     int valueDice[5];
-
-private:
-
 };
 
 #endif // DICE_H
