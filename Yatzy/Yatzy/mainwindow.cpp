@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QPushButton>
 #include <QMessageBox>
+#include <QMediaPlayer>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -65,7 +66,6 @@ void MainWindow::on_btn_roll_clicked()
     g->update(ui);
 
     ui->tableWidget->setEnabled(true);
-
 }
 
 void MainWindow::on_btn_roll_2_clicked()
@@ -109,7 +109,7 @@ void MainWindow::on_btn_rules_clicked()
                "fyrtal  \t\t|24|\tSå högt som möjligt\n"
                "L.stege \t|15|\tett till fem\n"
                "S.stege \t|20|\ttvå till sex\n"
-               "kåk	    \t|28 |\ttre av en sort, två av en annan\n"
+               "kåk	    \t|28|\ttre av en sort, två av en annan\n"
                "chans   \t|30|\tSå högt som möjligt\n"
                "Yatzy   \t\t|50|\tfem lika\n"
                "summa   \t|374|\ttotalt\n"
