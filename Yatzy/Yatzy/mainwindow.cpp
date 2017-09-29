@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->btn_save3->setEnabled(false);
     ui->btn_save4->setEnabled(false);
 
-    ui->btn_save0->setIcon(QIcon(QPixmap(":/new/prefix1/Dices/1.png")));
+    ui->btn_save0->setIcon(QIcon(QPixmap(":/new/prefix1/Dices/1.png"))); //Bilden på tärning 1 tillhör Ragnar Nohre och är hämtad från https://se.linkedin.com/in/ragnar-nohre-098b5a31
     ui->btn_save0->setIconSize(QSize(100,100));
 
     ui->btn_save1->setIcon(QIcon(QPixmap(":/new/prefix1/Dices/2.png")));
@@ -42,6 +42,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->btn_save4->setIcon(QIcon(QPixmap(":/new/prefix1/Dices/5.png")));
     ui->btn_save4->setIconSize(QSize(100,100));
+
 }
 
 MainWindow::~MainWindow()
@@ -78,6 +79,11 @@ void MainWindow::on_btn_rules_clicked()
             tr("Yahtzee"),
             tr("Yatzy är ett tärningsspel för en eller flera spelare där det gäller att"
                " samla poäng genom att med fem tärningar och tre kast under 15 omgångar, försöka få in kombinationer enligt följande tabell:\n"
+               " \n"
+               "För att spara tärningar till nästa kast så trycker man på tärningen så att knappen är intryckt.\n"
+               "Om en spelare inte kan, eller vill, skriva in poäng på någon av de möjliga alternativen så ska spelaren bara fortsätta att trycka på roll-knappen. \n"
+               "De alternativen som är möjliga färgas gula. Det är endast möjligt att välja ett gult alternativ. När du har valt ett alternativ så blir det grönt och rundan är över. \n"
+               " \n"
                "Villkor \t\t|Max|\tkommentar \n"
                "Ettor   \t\t|5|\tSå många som möjligt\n"
                "tvåor   \t\t|10|\tSå många som möjligt\n"
