@@ -1,5 +1,6 @@
 #include "Round.h"
 #include <QMediaPlayer>
+#include <qdebug.h>
 
 Round::Round(Ui::MainWindow *ui, Game *g)
 {
@@ -114,16 +115,16 @@ int Round::checkPair(Dice dice)
                 {
                     secondPairValue = dice.valueDice[firstDice] * 2;
                 }
-                if (firstPairValue > secondPairValue)
-                {
-                    return firstPairValue;
-                }
-                else
-                {
-                    return secondPairValue ;
-                }
            }
        }
+    }
+    if (firstPairValue > secondPairValue)
+    {
+        return firstPairValue;
+    }
+    else if (firstPairValue < secondPairValue)
+    {
+        return secondPairValue;
     }
     return 0;
 }
