@@ -66,11 +66,6 @@ void MainWindow::on_btn_roll_clicked()
     g->update(ui);
 
     ui->tableWidget->setEnabled(true);
-
-    QMediaPlayer * music = new QMediaPlayer();
-    music->setMedia(QUrl("qrc:/new/prefix1/Dices/ru.mp3"));
-    music->play();
-
 }
 
 void MainWindow::on_btn_roll_2_clicked()
