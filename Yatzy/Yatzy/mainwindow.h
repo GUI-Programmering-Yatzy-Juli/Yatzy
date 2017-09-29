@@ -26,7 +26,7 @@ private slots:
     void on_btn_roll_2_clicked();
     void on_btn_exit_clicked();
     void on_btn_rules_clicked();
-
+    void on_pushButton_clicked();
     void on_tableWidget_cellClicked(int row, int column);
 
     void on_btn_save0_toggled(bool checked);

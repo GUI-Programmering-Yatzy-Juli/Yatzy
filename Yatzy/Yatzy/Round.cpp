@@ -388,9 +388,9 @@ void Round::resetColour()
 
 void Round::outOfRolls()
 {
-    /*QMediaPlayer * music = new QMediaPlayer();
+    QMediaPlayer * music = new QMediaPlayer();
     music->setMedia(QUrl("qrc:/new/prefix1/Dices/choice.mp3"));
-    music->play();*/
+    music->play();
 table->tableWidget->setEnabled(false);
 table->btn_save0->setChecked(false);
 table->btn_save1->setChecked(false);

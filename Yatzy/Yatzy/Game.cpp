@@ -43,7 +43,6 @@ bool Game::gameIsActive(Ui::MainWindow *ui)
 
     if (numRounds > 15)
     {
-        ui->btn_roll->setEnabled(false);
         //utnämn vinnaren
         if (p1.score > p2.score)
         {
@@ -57,6 +56,9 @@ bool Game::gameIsActive(Ui::MainWindow *ui)
         {
             tie();
         }
+        ui->btn_roll->setVisible(false);
+        ui->label->setVisible(false);
+        ui->pushButton->setVisible(true);
         return false;
     }
     else
@@ -112,8 +114,14 @@ void Game::showScore(Ui::MainWindow *ui, int pCol)
         calcScore(pCol);
         for (int r = 0; r < 18; r++)
         {
-            if (score[r][pCol] > 0)
-            {
+            if (score[r][pCol] > 0 || r == 7 || r == 6)
+                       if (score[r][pCol] > 0)
+                       {
+                           if (score[6][pCol] < 0)
+                           {
+                               ui->tableWidget->setItem(6, pCol, new QTableWidgetItem("0"));
+                               ui->tableWidget->item(6, pCol)->setBackground(Qt::lightGray);
+                           }
                 QString myStr = QString::number(score[r][pCol]);
                 ui->tableWidget->setItem(r, pCol, new QTableWidgetItem(myStr));
                 if (r != 6 && r != 7 && r != 17)
@@ -188,7 +196,7 @@ void Game::tie()
     txt->setMinimumHeight(400);
     txt->setMinimumWidth(400);
     txt->setText("It's a tie stand down, we'll get them another day lads.");
-    txt->setStyleSheet("font: 19pt;text-border: 12px 12px yellow;  color: black; position: relative; bottom: 50; background-image: url(:/new/prefix1/fire/tie.png); background-repeat: no-repeat;");
+    txt->setStyleSheet("font: 19pt;color: black; position: relative; bottom: 50; background-image: url(:/new/prefix1/fire/tie.png); background-repeat: no-repeat;");
     txt->show();
     txt->setEnabled(false);
     QMediaPlayer * music = new QMediaPlayer();
