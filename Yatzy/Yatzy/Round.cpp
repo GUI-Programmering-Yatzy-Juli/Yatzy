@@ -110,14 +110,18 @@ int Round::checkPair(Dice dice)
        {
            if (dice.valueDice[firstDice] == dice.valueDice[secondDice] && dice.valueDice[firstDice] != 0)
            {
-                if (firstPairValue != 0)
-                    secondPairValue = dice.valueDice[firstDice] * 2;
-
-                if (secondPairValue == 0)
+                if (firstPairValue == 0)
+                {
                     firstPairValue = dice.valueDice[firstDice] * 2;
+                    dice.valueDice[firstDice] = 0;
+                    dice.valueDice[secondDice] = 0;
+                }
+                else if (secondPairValue == 0 && dice.valueDice[firstDice != 0])
+                {
+                    secondPairValue = dice.valueDice[firstDice] * 2;
+                }
 
-                dice.valueDice[firstDice] = 0;
-                dice.valueDice[secondDice] = 0;
+                qDebug() << firstPairValue << secondPairValue;
 
                 if (firstPairValue > secondPairValue)
                 {
@@ -125,7 +129,7 @@ int Round::checkPair(Dice dice)
                 }
                 else
                 {
-                    return secondPairValue;
+                    return secondPairValue ;
                 }
            }
        }
