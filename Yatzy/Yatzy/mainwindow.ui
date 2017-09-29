@@ -94,7 +94,7 @@
 background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>Rules</string>
+       <string>How to play</string>
       </property>
       <property name="checkable">
        <bool>false</bool>
@@ -662,7 +662,7 @@ font: 75 28pt &quot;MS Shell Dlg 2&quot;;</string>
       <property name="maximumSize">
        <size>
         <width>200</width>
-        <height>1016</height>
+        <height>1020</height>
        </size>
       </property>
       <property name="autoFillBackground">
@@ -834,7 +834,7 @@ font: 75 28pt &quot;MS Shell Dlg 2&quot;;</string>
      <x>0</x>
      <y>0</y>
      <width>1161</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
