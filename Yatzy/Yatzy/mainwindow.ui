@@ -54,162 +54,8 @@
     <string notr="true">background-color: rgb(106, 200, 62);</string>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-<<<<<<< HEAD
     <item row="3" column="4">
      <widget class="QPushButton" name="btn_save3">
-=======
-    <item row="1" column="3">
-     <widget class="QPushButton" name="btn_save1">
-     <widget class="QPushButton" name="btn_roll_2">
->>>>>>> 612df46d41e3bb383dd726959f4b683e552ad9c9
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>300</width>
-        <height>44</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>820</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 22pt &quot;Adobe Fangsong Std R&quot;;
-border-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>Start</string>
-      </property>
-      <property name="checkable">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QPushButton" name="btn_rules">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>298</width>
-        <height>44</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>820</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-<<<<<<< HEAD
-        <pointsize>30</pointsize>
-       </font>
-      </property>
-=======
-        <family>Adobe Fangsong Std R</family>
-        <pointsize>22</pointsize>
-       </font>
-      </property>
-      <property name="toolTip">
-       <string notr="true" extracomment="Yahtzee spela och besegra dina vänner">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Yahtzee spel, spela och besegra dina vänner&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="toolTipDuration">
-       <number>10</number>
-      </property>
-      <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Yahtzee spel, spela och besegra dina vänner&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
->>>>>>> 612df46d41e3bb383dd726959f4b683e552ad9c9
-      <property name="styleSheet">
-       <string notr="true">border-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-<<<<<<< HEAD
-       <string/>
-=======
-       <string>Rules</string>
->>>>>>> 612df46d41e3bb383dd726959f4b683e552ad9c9
-      </property>
-      <property name="checkable">
-       <bool>false</bool>
-      </property>
-      <property name="checked">
-       <bool>false</bool>
-      </property>
-      <property name="autoDefault">
-       <bool>false</bool>
-      </property>
-      <property name="default">
-       <bool>false</bool>
-      </property>
-      <property name="flat">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="4">
-     <widget class="QPushButton" name="btn_save2">
-    <item row="1" column="2">
-     <widget class="QPushButton" name="btn_roll">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>300</width>
-        <height>44</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>820</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 22pt &quot;Adobe Fangsong Std R&quot;;
-border-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-<<<<<<< HEAD
-    <item row="1" column="4">
-     <widget class="QPushButton" name="btn_save1">
-=======
-    <item row="3" column="3">
-     <widget class="QPushButton" name="btn_save3">
-       <string>Roll</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="5">
-     <widget class="QPushButton" name="btn_exit">
->>>>>>> 612df46d41e3bb383dd726959f4b683e552ad9c9
       <property name="sizePolicy">
        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
         <horstretch>0</horstretch>
@@ -220,25 +66,19 @@ background-color: rgb(255, 255, 255);</string>
        <size>
         <width>100</width>
         <height>100</height>
-        <height>44</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
         <width>200</width>
         <height>200</height>
-        <height>100</height>
        </size>
       </property>
-<<<<<<< HEAD
-=======
       <property name="font">
        <font>
-<<<<<<< HEAD
         <pointsize>30</pointsize>
        </font>
       </property>
->>>>>>> 612df46d41e3bb383dd726959f4b683e552ad9c9
       <property name="styleSheet">
        <string notr="true">border-color: rgb(0, 0, 0);</string>
       </property>
@@ -247,39 +87,72 @@ background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="checkable">
        <bool>true</bool>
-        <family>MS Shell Dlg 2</family>
-        <pointsize>28</pointsize>
-        <weight>9</weight>
-        <italic>false</italic>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 0, 0);
-font: 75 28pt &quot;MS Shell Dlg 2&quot;;</string>
-      </property>
-      <property name="text">
-       <string>EXIT</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="2" alignment="Qt::AlignHCenter|Qt::AlignTop">
-     <widget class="QLabel" name="label">
+    <item row="2" column="4">
+     <widget class="QPushButton" name="btn_save2">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>200</width>
+        <height>200</height>
+       </size>
+      </property>
       <property name="styleSheet">
-       <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+       <string notr="true">border-color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
-       <string>Player 1</string>
+       <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
-    <item row="0" column="0">
+    <item row="1" column="4">
+     <widget class="QPushButton" name="btn_save1">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>200</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" rowspan="5">
      <widget class="QTableWidget" name="tableWidget">
       <property name="enabled">
        <bool>true</bool>
@@ -310,6 +183,7 @@ font: 75 28pt &quot;MS Shell Dlg 2&quot;;</string>
       </property>
       <property name="font">
        <font>
+        <pointsize>14</pointsize>
         <italic>false</italic>
         <underline>false</underline>
         <strikeout>false</strikeout>
@@ -401,7 +275,7 @@ background-color: rgb(255, 255, 255);</string>
        <number>2</number>
       </property>
       <attribute name="horizontalHeaderVisible">
-       <bool>false</bool>
+       <bool>true</bool>
       </attribute>
       <attribute name="horizontalHeaderCascadingSectionResizes">
        <bool>false</bool>
@@ -419,7 +293,7 @@ background-color: rgb(255, 255, 255);</string>
        <bool>true</bool>
       </attribute>
       <attribute name="verticalHeaderVisible">
-       <bool>false</bool>
+       <bool>true</bool>
       </attribute>
       <attribute name="verticalHeaderCascadingSectionResizes">
        <bool>true</bool>
@@ -862,7 +736,6 @@ background-color: rgb(255, 255, 255);</string>
       <property name="maximumSize">
        <size>
         <width>200</width>
-<<<<<<< HEAD
         <height>100</height>
        </size>
       </property>
@@ -913,170 +786,33 @@ background-color: rgb(255, 255, 255);</string>
        <string>Start</string>
       </property>
       <property name="checkable">
-=======
-        <height>1020</height>
-       </size>
-      </property>
-      <property name="autoFillBackground">
->>>>>>> 612df46d41e3bb383dd726959f4b683e552ad9c9
        <bool>false</bool>
       </property>
+     </widget>
+    </item>
+    <item row="0" column="1" alignment="Qt::AlignHCenter|Qt::AlignTop">
+     <widget class="QLabel" name="label">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+        <pointsize>14</pointsize>
+        <weight>9</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
       </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
+      <property name="text">
+       <string>Player 1</string>
       </property>
-      <widget class="QPushButton" name="btn_save0">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>100</width>
-         <height>100</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>200</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-color: rgb(0, 0, 0);</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="checkable">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="btn_save1">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>100</width>
-         <height>100</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>200</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-color: rgb(0, 0, 0);</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="checkable">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="btn_save2">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>100</width>
-         <height>100</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>200</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-color: rgb(0, 0, 0);</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="checkable">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="btn_save3">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>100</width>
-         <height>100</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>200</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>30</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-color: rgb(0, 0, 0);</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="checkable">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="btn_save4">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>100</width>
-         <height>100</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>200</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-color: rgb(0, 0, 0);</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="checkable">
-        <bool>true</bool>
-       </property>
-      </widget>
      </widget>
     </item>
     <item row="5" column="3">

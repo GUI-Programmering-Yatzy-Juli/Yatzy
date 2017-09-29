@@ -118,9 +118,9 @@ int Round::checkPair(Dice dice)
                 {
                     return firstPairValue;
                 }
-                else
+                else if (firstPairValue < secondPairValue)
                 {
-                    return secondPairValue ;
+                    return secondPairValue;
                 }
            }
        }
