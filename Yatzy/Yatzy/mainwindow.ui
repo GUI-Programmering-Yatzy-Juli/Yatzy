@@ -55,6 +55,40 @@
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="1" column="3">
+     <widget class="QPushButton" name="btn_roll_2">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>300</width>
+        <height>44</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>820</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 22pt &quot;Adobe Fangsong Std R&quot;;
+border-color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Start</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="btn_rules">
      <widget class="QPushButton" name="btn_save1">
       <property name="sizePolicy">
        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
@@ -85,6 +119,8 @@
       </property>
      </widget>
     </item>
+    <item row="1" column="2">
+     <widget class="QPushButton" name="btn_roll">
     <item row="2" column="3">
      <widget class="QPushButton" name="btn_save2">
       <property name="sizePolicy">
@@ -105,10 +141,19 @@
         <height>200</height>
        </size>
       </property>
+      <property name="layoutDirection">
+       <enum>Qt::RightToLeft</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true">border-color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
+       <string>Roll</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="5">
+     <widget class="QPushButton" name="btn_exit">
        <string/>
       </property>
       <property name="checkable">
@@ -127,17 +172,48 @@
       <property name="minimumSize">
        <size>
         <width>100</width>
+        <height>44</height>
         <height>100</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
         <width>200</width>
+        <height>100</height>
         <height>200</height>
        </size>
       </property>
       <property name="font">
        <font>
+        <family>MS Shell Dlg 2</family>
+        <pointsize>28</pointsize>
+        <weight>9</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 0, 0);
+font: 75 28pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>EXIT</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2" alignment="Qt::AlignHCenter|Qt::AlignTop">
+     <widget class="QLabel" name="label">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Player 1</string>
         <pointsize>30</pointsize>
        </font>
       </property>
@@ -565,6 +641,8 @@ background-color: rgb(255, 255, 255);</string>
       </item>
      </widget>
     </item>
+    <item row="0" column="5">
+     <widget class="QSplitter" name="splitter">
     <item row="0" column="3">
      <widget class="QPushButton" name="btn_save0">
       <property name="sizePolicy">
@@ -812,6 +890,36 @@ background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>Player 1</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4">
+     <widget class="QPushButton" name="pushButton">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>300</width>
+        <height>44</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>820</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 22pt &quot;Adobe Fangsong Std R&quot;;
+border-color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Restart</string>
       </property>
      </widget>
     </item>
