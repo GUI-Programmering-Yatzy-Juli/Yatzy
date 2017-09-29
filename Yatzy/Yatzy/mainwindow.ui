@@ -78,6 +78,7 @@
        <string notr="true">border-color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
+       <string>How to play</string>
        <string/>
       </property>
       <property name="checkable">
@@ -743,6 +744,7 @@ background-color: rgb(255, 255, 255);</string>
       <property name="maximumSize">
        <size>
         <width>200</width>
+        <height>1020</height>
         <height>200</height>
        </size>
       </property>
@@ -823,7 +825,7 @@ background-color: rgb(255, 255, 255);</string>
      <x>0</x>
      <y>0</y>
      <width>1161</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
