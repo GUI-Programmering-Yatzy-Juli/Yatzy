@@ -200,7 +200,6 @@ int Round::checkFourOfAKind(Dice dice)
                             dice.valueDice[firstDice] == dice.valueDice[thirdDice] &&
                             dice.valueDice[firstDice] == dice.valueDice[fourthDice])
                     {
-                        dice.valueDice[firstDice] = 0;
                         //här blir det fyrtal
                         return dice.valueDice[firstDice] * 4;
                     }
