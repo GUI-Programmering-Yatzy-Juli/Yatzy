@@ -74,6 +74,12 @@
         <height>100</height>
        </size>
       </property>
+      <property name="font">
+       <font>
+        <family>Adobe Fangsong Std R</family>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
       <property name="toolTip">
        <string notr="true" extracomment="Yahtzee spela och besegra dina vänner">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Yahtzee spel, spela och besegra dina vänner&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
@@ -605,6 +611,15 @@ background-color: rgb(255, 255, 255);</string>
         <height>100</height>
        </size>
       </property>
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+        <pointsize>28</pointsize>
+        <weight>9</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(255, 0, 0);
 font: 75 28pt &quot;MS Shell Dlg 2&quot;;</string>
@@ -647,7 +662,7 @@ font: 75 28pt &quot;MS Shell Dlg 2&quot;;</string>
       <property name="maximumSize">
        <size>
         <width>200</width>
-        <height>1020</height>
+        <height>1016</height>
        </size>
       </property>
       <property name="autoFillBackground">
@@ -819,7 +834,7 @@ font: 75 28pt &quot;MS Shell Dlg 2&quot;;</string>
      <x>0</x>
      <y>0</y>
      <width>1161</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>
