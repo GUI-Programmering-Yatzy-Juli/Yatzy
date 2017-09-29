@@ -19,10 +19,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     QMainWindow::centralWidget()->layout()->setContentsMargins(0,0,0,0);
     ui->tableWidget->setEnabled(false);
-
-    ui->tableWidget->horizontalHeader()->setVisible(true);
-    ui->tableWidget->verticalHeader()->setVisible(true);
-
     ui->label->setVisible(false);
     ui->btn_roll->setVisible(false);
     ui->btn_save0->setEnabled(false);
