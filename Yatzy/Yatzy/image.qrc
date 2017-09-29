@@ -11,5 +11,7 @@
         <file>fire/tie.png</file>
         <file>Dices/YOU WIN.mp3</file>
         <file>Dices/Tie.mp3</file>
+        <file>Dices/choice.mp3</file>
+        <file>Dices/ru.mp3</file>
     </qresource>
 </RCC>

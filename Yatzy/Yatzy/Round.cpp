@@ -1,5 +1,5 @@
 #include "Round.h"
-
+#include <QMediaPlayer>
 
 Round::Round(Ui::MainWindow *ui, Game *g)
 {
@@ -421,6 +421,9 @@ void Round::makeChoice(int row, int column)
         game->score[row][column] = roundScore[row];
         if(roundScore[row] != 0)
         {
+            QMediaPlayer * music = new QMediaPlayer();
+            music->setMedia(QUrl("qrc:/new/prefix1/Dices/choice.mp3"));
+            music->play();
         table->tableWidget->setEnabled(false);
         table->btn_save0->setChecked(false);
         table->btn_save1->setChecked(false);

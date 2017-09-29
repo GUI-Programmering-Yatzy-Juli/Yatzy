@@ -210,9 +210,9 @@ void Game::populateArray()
 void Game::btnAndLabelChange(Ui::MainWindow *ui, Player p)
 {
     ui->btn_roll->setText("Rolls left " + QString::number(p.rollsLeft ) + " /3");
-    ui->label->setText("Player " + QString::number(p.pNum  + 1) + "    Runda " + QString::number(numRounds));
+    ui->label->setText("Player " + QString::number(p.pNum  + 1) + "    Runda " + QString::number(numRounds)+ " /15");
     ui->btn_roll->setText("Roll " + QString::number(p.rollsLeft) + " /3");
-    ui->label->setText("Player " + QString::number(p.pNum + 1) + "    Runda " + QString::number(numRounds));
+    ui->label->setText("Player " + QString::number(p.pNum + 1) + "    Runda " + QString::number(numRounds)+ " /15");
 
     ui->btn_save0->setEnabled(true);
     ui->btn_save1->setEnabled(true);
