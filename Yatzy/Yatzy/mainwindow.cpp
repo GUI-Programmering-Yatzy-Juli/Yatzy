@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QPushButton>
 #include <QMessageBox>
-#include <QProcess>
+#include <QMediaPlayer>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -24,7 +24,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tableWidget->verticalHeader()->setVisible(true);
 
     ui->label->setVisible(false);
-    ui->pushButton->setVisible(false);
     ui->btn_roll->setVisible(false);
     ui->btn_save0->setEnabled(false);
     ui->btn_save1->setEnabled(false);
@@ -118,12 +117,6 @@ void MainWindow::on_btn_rules_clicked()
                "summa\n") );
 }
 
-void MainWindow::on_pushButton_clicked()
-{
-    qApp->quit();
-    QProcess::startDetached(qApp->arguments()[0], qApp->arguments());
-}
-
 void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
     g->round->makeChoice(row, column);
@@ -131,6 +124,11 @@ void MainWindow::on_tableWidget_cellClicked(int row, int column)
 
 void MainWindow::enableSaveBtn()
 {
+    ui->btn_save0->setEnabled(true);
+    ui->btn_save1->setEnabled(true);
+    ui->btn_save2->setEnabled(true);
+    ui->btn_save3->setEnabled(true);
+    ui->btn_save4->setEnabled(true);
     ui->label->setVisible(true);
     ui->btn_roll->setVisible(true);
     ui->btn_roll_2->setVisible(false);
